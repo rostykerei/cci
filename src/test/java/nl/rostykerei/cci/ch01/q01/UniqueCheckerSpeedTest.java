@@ -1,11 +1,12 @@
 package nl.rostykerei.cci.ch01.q01;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class UniqueCheckerSpeedTest {
 
     @Test
-    //@Ignore
+    @Ignore
     public void testSpeed() {
         test(new UniqueCharsCheckerArray());
         test(new UniqueCharsCheckerHashSet());

@@ -1,11 +1,12 @@
 package nl.rostykerei.cci.ch01.q02;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class PermutationCheckerSpeedTest {
 
     @Test
-    //@Ignore
+    @Ignore
     public void testSpeed() {
         test(new PermutationCheckerArray());
         test(new PermutationCheckerHashMap());
