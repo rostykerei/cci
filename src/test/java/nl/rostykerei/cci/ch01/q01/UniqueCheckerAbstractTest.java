@@ -29,7 +29,7 @@ public abstract class UniqueCheckerAbstractTest<T extends UniqueCharsChecker> {
     public void testFalse() {
         assertFalse(checker.isUniqueCharsOnly("abcaefg"));
         assertFalse(checker.isUniqueCharsOnly("123451"));
-        assertFalse(checker.isUniqueCharsOnly("12345F6"));
+        assertFalse(checker.isUniqueCharsOnly("1234526"));
         assertFalse(checker.isUniqueCharsOnly("00"));
     }
 
