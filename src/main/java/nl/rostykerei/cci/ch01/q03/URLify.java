@@ -1,7 +1,17 @@
 package nl.rostykerei.cci.ch01.q03;
 
+/**
+ * Question 1.3 - URLify
+ */
 public class URLify {
 
+    /**
+     * Replaces all spaces in the input string with '%20'.
+     *
+     * @param input input string
+     * @param trueLength true length of the input string excluding padding spaces at the end
+     * @return result string
+     */
     public static char[] replaceSpaces(char[] input, int trueLength) {
         char[] output = new char[input.length];
 
