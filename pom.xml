@@ -8,6 +8,25 @@
     <artifactId>cci</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <name>Cracking the Coding Interview Solutions</name>
+
+    <description>My solutions for "Cracking the Coding Interview" book</description>
+
+    <developers>
+        <developer>
+            <id>rosty</id>
+            <name>Rosty Kerei</name>
+            <email>rosty.kerei@gmail.com</email>
+            <url>http://www.rostykerei.nl/</url>
+            <timezone>+1</timezone>
+            <roles>
+                <role>Developer</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <inceptionYear>2017</inceptionYear>
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -16,6 +35,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
 
 </project>
