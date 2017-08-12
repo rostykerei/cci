@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/rostykerei/cci.svg?branch=master)](https://travis-ci.org/rostykerei/cci)
+
 # Cracking the Coding Interview Solutions
 
 My solutions for "Cracking the Coding Interview" book
