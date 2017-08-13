@@ -19,7 +19,7 @@ public class ZeroMatrix {
         Set<Integer> zeroCols = new HashSet<>();
 
         for (int row = 0; row < input.length; row++) {
-            for(int col = 0; col < input[row].length; col++) {
+            for (int col = 0; col < input[row].length; col++) {
                 if (input[row][col] == 0) {
                     zeroRows.add(row);
                     zeroCols.add(col);
