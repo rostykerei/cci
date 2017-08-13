@@ -3,8 +3,14 @@ package nl.rostykerei.cci.ch01.q01;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Implementation of {@link UniqueCharsChecker} using a hash-set.
+ *
+ * @author Rosty Kerei
+ */
 public class UniqueCharsCheckerHashSet implements UniqueCharsChecker {
 
+    @Override
     public boolean isUniqueCharsOnly(String input) {
         Set<Character> characterSet = new HashSet<Character>();
 

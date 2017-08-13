@@ -1,7 +1,14 @@
 package nl.rostykerei.cci.ch01.q01;
 
+
+/**
+ * Implementation of {@link UniqueCharsChecker} using a string.
+ *
+ * @author Rosty Kerei
+ */
 public class UniqueCharsCheckerString implements UniqueCharsChecker {
 
+    @Override
     public boolean isUniqueCharsOnly(String input) {
         String checker = "";
 

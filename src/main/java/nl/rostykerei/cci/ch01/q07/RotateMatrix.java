@@ -1,7 +1,9 @@
 package nl.rostykerei.cci.ch01.q07;
 
 /**
- * Question 1.6 - Rotate Matrix
+ * Question 1.6 - Rotate Matrix.
+ *
+ * @author Rosty Kerei
  */
 public class RotateMatrix {
 

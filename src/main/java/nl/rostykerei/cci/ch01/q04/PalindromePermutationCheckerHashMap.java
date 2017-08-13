@@ -3,6 +3,11 @@ package nl.rostykerei.cci.ch01.q04;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Implementation of {@link PalindromePermutationChecker} using a hash-map.
+ *
+ * @author Rosty Kerei
+ */
 public class PalindromePermutationCheckerHashMap implements PalindromePermutationChecker {
 
     public boolean isPalindromePermutation(String input) {

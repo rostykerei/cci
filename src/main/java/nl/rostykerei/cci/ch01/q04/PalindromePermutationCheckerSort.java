@@ -2,6 +2,11 @@ package nl.rostykerei.cci.ch01.q04;
 
 import java.util.Arrays;
 
+/**
+ * Implementation of {@link PalindromePermutationChecker} using a arrays sort function.
+ *
+ * @author Rosty Kerei
+ */
 public class PalindromePermutationCheckerSort implements PalindromePermutationChecker {
 
     public boolean isPalindromePermutation(String input) {

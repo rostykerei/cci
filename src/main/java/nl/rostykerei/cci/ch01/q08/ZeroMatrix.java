@@ -4,7 +4,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Question 1.8 - Zero Matrix
+ * Question 1.8 - Zero Matrix.
+ *
+ * @author Rosty Kerei
  */
 public class ZeroMatrix {
 
