@@ -8,7 +8,7 @@ public class URLify {
     /**
      * Replaces all spaces in the input string with '%20'.
      *
-     * @param input input string
+     * @param input      input string
      * @param trueLength true length of the input string excluding padding spaces at the end
      * @return result string
      */

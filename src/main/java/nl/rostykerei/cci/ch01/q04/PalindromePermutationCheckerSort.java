@@ -14,8 +14,7 @@ public class PalindromePermutationCheckerSort implements PalindromePermutationCh
         for (int i = 0; i < chars.length; i++) {
             if (i < chars.length - 1 && chars[i] == chars[i + 1]) {
                 count++;
-            }
-            else {
+            } else {
                 if (count % 2 != 0) {
                     if (oddFound) {
                         return false;
