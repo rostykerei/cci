@@ -3,7 +3,7 @@ package nl.rostykerei.cci.ch01.q01;
 public class UniqueCharsCheckerArray implements UniqueCharsChecker {
 
     public boolean isUniqueCharsOnly(String input) {
-        int ARRAY_LENGTH = 128; // 128 for ASCII, Character.MAX_VALUE for Unicode
+        int ARRAY_LENGTH = 255; // 255 for ASCII, Character.MAX_VALUE for Unicode
 
         if (input.length() <= ARRAY_LENGTH) {
             boolean[] checker = new boolean[ARRAY_LENGTH + 1];
