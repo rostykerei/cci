@@ -1,7 +1,9 @@
 package nl.rostykerei.cci.ch01.q03;
 
 /**
- * Question 1.3 - URLify
+ * Question 1.3 - URLify.
+ *
+ * @author Rosty Kerei
  */
 public class URLify {
 

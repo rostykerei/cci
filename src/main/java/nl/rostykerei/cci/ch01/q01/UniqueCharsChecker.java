@@ -1,7 +1,9 @@
 package nl.rostykerei.cci.ch01.q01;
 
 /**
- * Question 1.1 - Is Unique
+ * Question 1.1 - Is Unique.
+ *
+ *  @author Rosty Kerei
  */
 public interface UniqueCharsChecker {
 

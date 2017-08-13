@@ -1,7 +1,9 @@
 package nl.rostykerei.cci.ch01.q05;
 
 /**
- * Question 1.5 - One Away
+ * Question 1.5 - One Away.
+ *
+ * @author Rosty Kerei
  */
 public class OneAwayChecker {
 

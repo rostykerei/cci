@@ -1,7 +1,13 @@
 package nl.rostykerei.cci.ch01.q02;
 
+/**
+ * Implementation of {@link PermutationChecker} using an array.
+ *
+ * @author Rosty Kerei
+ */
 public class PermutationCheckerArray implements PermutationChecker {
 
+    @Override
     public boolean isPermutation(String a, String b) {
         int l = a.length();
 

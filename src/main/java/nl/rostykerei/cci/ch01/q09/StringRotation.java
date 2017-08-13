@@ -1,7 +1,9 @@
 package nl.rostykerei.cci.ch01.q09;
 
 /**
- * Question 1.9 - String Rotation
+ * Question 1.9 - String Rotation.
+ *
+ * @author Rosty Kerei
  */
 public class StringRotation {
 

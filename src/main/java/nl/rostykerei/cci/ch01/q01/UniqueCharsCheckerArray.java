@@ -1,7 +1,13 @@
 package nl.rostykerei.cci.ch01.q01;
 
+/**
+ * Implementation of {@link UniqueCharsChecker} using an array.
+ *
+ * @author Rosty Kerei
+ */
 public class UniqueCharsCheckerArray implements UniqueCharsChecker {
 
+    @Override
     public boolean isUniqueCharsOnly(String input) {
         int ARRAY_LENGTH = 255; // 255 for ASCII, Character.MAX_VALUE for Unicode
 

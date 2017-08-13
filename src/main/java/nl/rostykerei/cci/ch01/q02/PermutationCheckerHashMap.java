@@ -3,8 +3,14 @@ package nl.rostykerei.cci.ch01.q02;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Implementation of {@link PermutationChecker} using an hash-map.
+ *
+ * @author Rosty Kerei
+ */
 public class PermutationCheckerHashMap implements PermutationChecker {
 
+    @Override
     public boolean isPermutation(String a, String b) {
         int l = a.length();
 
