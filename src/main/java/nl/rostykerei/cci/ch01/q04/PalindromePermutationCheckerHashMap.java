@@ -10,7 +10,7 @@ public class PalindromePermutationCheckerHashMap implements PalindromePermutatio
 
         for (Character c : input.toCharArray()) {
             Integer count = charCountMap.get(c);
-            charCountMap.put(c, count == null ? 1 : count+1);
+            charCountMap.put(c, count == null ? 1 : count + 1);
         }
 
         boolean oddFound = false;

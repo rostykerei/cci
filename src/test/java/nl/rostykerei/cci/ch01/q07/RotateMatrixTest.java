@@ -11,13 +11,13 @@ public class RotateMatrixTest {
     @Test
     public void rotate2() throws Exception {
         int[][] input = {
-                { 1, 2 },
-                { 3, 4 }
+                {1, 2},
+                {3, 4}
         };
 
         int[][] expected = {
-                { 3, 1 },
-                { 4, 2 }
+                {3, 1},
+                {4, 2}
         };
 
         int[][] output = RotateMatrix.rotate(input);
@@ -28,15 +28,15 @@ public class RotateMatrixTest {
     @Test
     public void rotate3() throws Exception {
         int[][] input = {
-            { 1, 2, 3},
-            { 4, 5, 6},
-            { 7, 8, 9}
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
         };
 
         int[][] expected = {
-                { 7, 4, 1},
-                { 8, 5, 2},
-                { 9, 6, 3}
+                {7, 4, 1},
+                {8, 5, 2},
+                {9, 6, 3}
         };
 
         int[][] output = RotateMatrix.rotate(input);

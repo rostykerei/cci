@@ -22,8 +22,7 @@ public class OneAwayChecker {
         if (str1.length() > str2.length()) {
             bigger = str1.toCharArray();
             smaller = str2.toCharArray();
-        }
-        else {
+        } else {
             bigger = str2.toCharArray();
             smaller = str1.toCharArray();
         }

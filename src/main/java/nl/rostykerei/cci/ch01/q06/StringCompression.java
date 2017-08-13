@@ -18,12 +18,11 @@ public class StringCompression {
         int count = 1;
 
         for (int i = 0; i < chars.length; i++) {
-            if (i == chars.length - 1 || chars[i] != chars[i+1]) {
+            if (i == chars.length - 1 || chars[i] != chars[i + 1]) {
                 output.append(chars[i]);
                 output.append(count);
                 count = 1;
-            }
-            else {
+            } else {
                 count++;
             }
         }
