@@ -3,7 +3,7 @@ package nl.rostykerei.cci.ch02.q02;
 import nl.rostykerei.cci.datastructure.LinkedListNode;
 
 /**
- * Question 2.2 - Return Kth to Last
+ * Question 2.2 - Return Kth to Last.
  *
  * @author Rosty Kerei;
  */
