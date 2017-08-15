@@ -1,13 +1,24 @@
 package nl.rostykerei.cci.ch02.q01;
 
 import nl.rostykerei.cci.datastructure.LinkedListNode;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
 
 import static org.junit.Assert.*;
 
-public class RemoveDupsTest {
+public abstract class RemoveDupsAbstractTest<T extends RemoveDups<Integer>> {
+
+    private T tester;
+
+    protected abstract T createTester();
+
+    @Before
+    public void setUp() {
+        tester = createTester();
+    }
+
     @Test
     public void removeDups() throws Exception {
 
@@ -21,7 +32,7 @@ public class RemoveDupsTest {
                 )
         );
 
-        RemoveDups.removeDups(linkedList);
+        tester.removeDups(linkedList);
 
         assertEquals(Arrays.asList(1,2,3,5), linkedList.toList());
     }
@@ -39,7 +50,7 @@ public class RemoveDupsTest {
                 )
         );
 
-        RemoveDups.removeDups(linkedList);
+        tester.removeDups(linkedList);
 
         assertEquals(Arrays.asList(1,2,3,4), linkedList.toList());
     }
