@@ -48,6 +48,10 @@ public class LinkedListNode<T> {
         return data;
     }
 
+    public void setData(T data) {
+        this.data = data;
+    }
+
     public List<T> toList() {
         List<T> result = new ArrayList<>();
         LinkedListNode<T> node = this;
