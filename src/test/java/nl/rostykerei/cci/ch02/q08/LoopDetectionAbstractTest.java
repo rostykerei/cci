@@ -1,12 +1,22 @@
 package nl.rostykerei.cci.ch02.q08;
 
 import nl.rostykerei.cci.datastructure.LinkedListNode;
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
-public class LoopDetectionTest {
+public abstract class LoopDetectionAbstractTest<T extends LoopDetection<String>> {
+
+    private T tester;
+
+    protected abstract T createTester();
+
+    @Before
+    public void setUp() {
+        tester = createTester();
+    }
 
     @Test
     public void detectLoop() throws Exception {
@@ -20,7 +30,7 @@ public class LoopDetectionTest {
         c.setNext(d);
         d.setNext(c);
 
-        assertEquals(c, LoopDetection.detectLoop(a));
+        assertEquals(c, tester.detectLoop(a));
     }
 
     @Test
@@ -32,7 +42,7 @@ public class LoopDetectionTest {
         a.setNext(b);
         b.setNext(c);
 
-        assertNull(LoopDetection.detectLoop(a));
+        assertNull(tester.detectLoop(a));
     }
 
 }
