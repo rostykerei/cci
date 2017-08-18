@@ -29,7 +29,7 @@ public class LinkedListNode<T> {
         }
 
         this.next = next;
-        return this;
+        return next;
     }
 
     public LinkedListNode<T> getPrevious() {
