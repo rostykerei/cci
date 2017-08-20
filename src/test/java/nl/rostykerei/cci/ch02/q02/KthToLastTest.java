@@ -3,7 +3,8 @@ package nl.rostykerei.cci.ch02.q02;
 import nl.rostykerei.cci.datastructure.LinkedListNode;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 public class KthToLastTest {
     @Test

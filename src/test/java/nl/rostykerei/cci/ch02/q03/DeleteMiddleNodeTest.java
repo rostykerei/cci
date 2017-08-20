@@ -5,7 +5,7 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class DeleteMiddleNodeTest {
 
@@ -28,7 +28,7 @@ public class DeleteMiddleNodeTest {
 
         DeleteMiddleNode.deleteMiddleNode(n3);
 
-        assertEquals(Arrays.asList(1,2,4,5), n1.toList());
+        assertEquals(Arrays.asList(1, 2, 4, 5), n1.toList());
     }
 
     @Test(expected = IllegalArgumentException.class)
