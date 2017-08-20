@@ -17,10 +17,10 @@ public class Intersection {
      * @return <code>true</code> is lists intersect, <code>false</code> otherwise
      */
     public static <T> boolean isIntersect(LinkedListNode<T> list1, LinkedListNode<T> list2) {
-        while(list1 != null) {
+        while (list1 != null) {
             LinkedListNode<T> l2 = list2;
 
-            while(l2 != null) {
+            while (l2 != null) {
 
                 if (list1 == l2) {
                     return true;

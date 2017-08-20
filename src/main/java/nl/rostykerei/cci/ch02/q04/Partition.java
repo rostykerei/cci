@@ -2,8 +2,20 @@ package nl.rostykerei.cci.ch02.q04;
 
 import nl.rostykerei.cci.datastructure.LinkedListNode;
 
+/**
+ * Question 2.4 - Partition.
+ *
+ * @author Rosty Kerei
+ */
 public class Partition {
 
+    /**
+     * Returns a list where beginning elements are less then x.
+     *
+     * @param input input list
+     * @param x     value to compare
+     * @return re-arranged, partitioned list
+     */
     public static <T extends Comparable<T>> LinkedListNode<T> partition(LinkedListNode<T> input, T x) {
 
         LinkedListNode<T> lowerHead = null;

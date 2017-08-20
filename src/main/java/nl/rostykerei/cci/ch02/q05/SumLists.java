@@ -38,7 +38,7 @@ public class SumLists {
         int result = 0;
         int base = 0;
 
-        while(list != null) {
+        while (list != null) {
             result += Math.pow(10, base) * list.getData();
 
             base++;
@@ -52,11 +52,11 @@ public class SumLists {
         int result = 0;
         int base = 0;
 
-        while(list.getNext() != null) {
+        while (list.getNext() != null) {
             list = list.getNext();
         }
 
-        while(list != null) {
+        while (list != null) {
             result += Math.pow(10, base) * list.getData();
 
             base++;

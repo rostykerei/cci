@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public abstract class RemoveDupsAbstractTest<T extends RemoveDups<Integer>> {
 
@@ -34,7 +34,7 @@ public abstract class RemoveDupsAbstractTest<T extends RemoveDups<Integer>> {
 
         tester.removeDups(linkedList);
 
-        assertEquals(Arrays.asList(1,2,3,5), linkedList.toList());
+        assertEquals(Arrays.asList(1, 2, 3, 5), linkedList.toList());
     }
 
     @Test
@@ -52,7 +52,7 @@ public abstract class RemoveDupsAbstractTest<T extends RemoveDups<Integer>> {
 
         tester.removeDups(linkedList);
 
-        assertEquals(Arrays.asList(1,2,3,4), linkedList.toList());
+        assertEquals(Arrays.asList(1, 2, 3, 4), linkedList.toList());
     }
 
 }
