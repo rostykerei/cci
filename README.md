@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/rostykerei/cci.svg?branch=master)](https://travis-ci.org/rostykerei/cci)
+[![Coverage Status](https://coveralls.io/repos/github/rostykerei/cci/badge.svg?branch=master)](https://coveralls.io/github/rostykerei/cci?branch=master)
 
 # Cracking the Coding Interview Solutions
 
