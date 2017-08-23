@@ -14,6 +14,7 @@ public class Partition {
      *
      * @param input input list
      * @param x     value to compare
+     * @param <T>   the class of the objects in the list
      * @return re-arranged, partitioned list
      */
     public static <T extends Comparable<T>> LinkedListNode<T> partition(LinkedListNode<T> input, T x) {

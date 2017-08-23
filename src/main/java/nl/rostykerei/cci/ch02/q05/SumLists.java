@@ -11,7 +11,7 @@ public class SumLists {
 
     /**
      * Adds two numbers represented as a list of reversed values.
-     * Example: (7 -> 1 -> 6) + (5 -> 9 -> 2) = 617 + 295 = 912.
+     * Example: (7, 1, 6) + (5, 9, 2) = 617 + 295 = 912.
      *
      * @param l1 number one
      * @param l2 number two
@@ -24,7 +24,7 @@ public class SumLists {
 
     /**
      * Adds two numbers represented as a list of values.
-     * Example: (6 -> 1 -> 7) + (2 -> 9 -> 5) = 617 + 295 = 912.
+     * Example: (6, 1, 7) + (2, 9, 5) = 617 + 295 = 912.
      *
      * @param l1 number one
      * @param l2 number two
