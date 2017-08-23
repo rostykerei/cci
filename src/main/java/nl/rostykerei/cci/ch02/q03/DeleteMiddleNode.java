@@ -13,6 +13,7 @@ public class DeleteMiddleNode {
      * Delete the node from list.
      *
      * @param node node to delete
+     * @param <T>  the class of the objects in the list
      */
     public static <T> void deleteMiddleNode(LinkedListNode<T> node) {
         LinkedListNode<T> next = node.getNext();

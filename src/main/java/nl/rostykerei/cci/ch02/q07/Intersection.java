@@ -14,6 +14,7 @@ public class Intersection {
      *
      * @param list1 first singly-linked list
      * @param list2 second singly-linked list
+     * @param <T>   the class of the objects in the list
      * @return <code>true</code> is lists intersect, <code>false</code> otherwise
      */
     public static <T> boolean isIntersect(LinkedListNode<T> list1, LinkedListNode<T> list2) {

@@ -14,6 +14,7 @@ public class KthToLast {
      *
      * @param list input list
      * @param k    index to the last
+     * @param <T>  the class of the objects in the list
      * @return k-th node to the last one
      */
     public static <T> LinkedListNode<T> kthToLast(LinkedListNode<T> list, int k) {
