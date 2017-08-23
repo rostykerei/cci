@@ -6,7 +6,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public abstract class UniqueCheckerAbstractTest<T extends UniqueCharsChecker> {
+public abstract class UniqueCheckerAbstractTest<T extends IsUnique> {
 
     private T checker;
 
