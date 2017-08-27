@@ -1,12 +1,13 @@
 package nl.rostykerei.cci.ch01.q08;
 
+import nl.rostykerei.cci.common.AbstractFactoryTest;
 import org.junit.Test;
 
 import java.util.Arrays;
 
 import static org.junit.Assert.assertTrue;
 
-public class ZeroMatrixTest {
+public abstract class ZeroMatrixAbstractTest extends AbstractFactoryTest<ZeroMatrix> {
 
     @Test
     public void zeroMatrix() throws Exception {
@@ -26,7 +27,7 @@ public class ZeroMatrixTest {
                 {0, 0, 0, 0, 0, 0, 0, 0, 0},
         };
 
-        ZeroMatrix.zeroMatrix(input);
+        testInstance.zeroMatrix(input);
 
         assertTrue(Arrays.deepEquals(expected, input));
     }

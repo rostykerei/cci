@@ -8,29 +8,22 @@ import java.util.Map;
  *
  * @author Rosty Kerei
  */
-public class CheckPermutationHashMap implements CheckPermutation {
+public final class CheckPermutationHashMap implements CheckPermutation {
 
     @Override
-    public boolean checkPermutation(String a, String b) {
+    public boolean checkPermutation(final String a, final String b) {
         int l = a.length();
 
         if (l == b.length()) {
-            Map<Character, Integer> charMapA = new HashMap<Character, Integer>();
-            Map<Character, Integer> charMapB = new HashMap<Character, Integer>();
+            Map<Character, Integer> charMapA = new HashMap<>();
+            Map<Character, Integer> charMapB = new HashMap<>();
 
             for (int i = 0; i < l; i++) {
-                Character charA = a.charAt(i);
-                Character charB = b.charAt(i);
-
-                Integer countCharA = charMapA.get(charA);
-                Integer countCharB = charMapB.get(charB);
-
-                charMapA.put(charA, countCharA == null ? 1 : countCharA + 1);
-                charMapB.put(charB, countCharB == null ? 1 : countCharB + 1);
+                charMapA.merge(a.charAt(i), 1, (x, y) -> x + 1);
+                charMapB.merge(b.charAt(i), 1, (x, y) -> x + 1);
             }
 
             return charMapA.equals(charMapB);
-
         } else {
             return false;
         }

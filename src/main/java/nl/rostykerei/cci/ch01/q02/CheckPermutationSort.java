@@ -7,14 +7,20 @@ import java.util.Arrays;
  *
  * @author Rosty Kerei
  */
-public class CheckPermutationSort implements CheckPermutation {
+public final class CheckPermutationSort implements CheckPermutation {
 
     @Override
-    public boolean checkPermutation(String a, String b) {
+    public boolean checkPermutation(final String a, final String b) {
         return a.length() == b.length() && sortString(a).equals(sortString(b));
     }
 
-    private String sortString(String s) {
+    /**
+     * Sorts given string.
+     *
+     * @param s string to sort
+     * @return sorted string
+     */
+    private String sortString(final String s) {
         char[] chars = s.toCharArray();
         Arrays.sort(chars);
         return new String(chars);

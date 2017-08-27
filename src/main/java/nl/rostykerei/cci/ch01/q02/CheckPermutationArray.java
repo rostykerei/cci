@@ -5,15 +5,20 @@ package nl.rostykerei.cci.ch01.q02;
  *
  * @author Rosty Kerei
  */
-public class CheckPermutationArray implements CheckPermutation {
+public final class CheckPermutationArray implements CheckPermutation {
+
+    /**
+     * 255 for ASCII, Character.MAX_VALUE for Unicode.
+     */
+    private static final int ARRAY_LENGTH = 255;
 
     @Override
-    public boolean checkPermutation(String a, String b) {
+    public boolean checkPermutation(final String a, final String b) {
         int l = a.length();
 
         if (l == b.length()) {
 
-            int[] charMap = new int[255]; // 255 for ASCII, Character.MAX_VALUE for Unicode
+            int[] charMap = new int[ARRAY_LENGTH];
 
             for (int i = 0; i < l; i++) {
                 charMap[a.charAt(i)]++;
