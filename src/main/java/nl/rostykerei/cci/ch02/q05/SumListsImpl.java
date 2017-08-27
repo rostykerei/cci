@@ -14,18 +14,6 @@ public final class SumListsImpl implements SumLists {
      */
     private static final int TEN_BASE = 10;
 
-    @Override
-    public int sumListsReverse(final LinkedListNode<Byte> l1,
-                               final LinkedListNode<Byte> l2) {
-        return listToNumberReverse(l1) + listToNumberReverse(l2);
-    }
-
-    @Override
-    public int sumListsForward(final LinkedListNode<Byte> l1,
-                               final LinkedListNode<Byte> l2) {
-        return listToNumberForward(l1) + listToNumberForward(l2);
-    }
-
     /**
      * Converts a list of integers (in reverse order) to number.
      *
@@ -70,6 +58,18 @@ public final class SumListsImpl implements SumLists {
         }
 
         return result;
+    }
+
+    @Override
+    public int sumListsReverse(final LinkedListNode<Byte> l1,
+                               final LinkedListNode<Byte> l2) {
+        return listToNumberReverse(l1) + listToNumberReverse(l2);
+    }
+
+    @Override
+    public int sumListsForward(final LinkedListNode<Byte> l1,
+                               final LinkedListNode<Byte> l2) {
+        return listToNumberForward(l1) + listToNumberForward(l2);
     }
 
 }

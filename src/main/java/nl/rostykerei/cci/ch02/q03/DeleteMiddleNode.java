@@ -5,8 +5,8 @@ import nl.rostykerei.cci.datastructure.LinkedListNode;
 /**
  * Question 2.3 - Delete Middle Node.
  *
- * @author Rosty Kerei
  * @param <T> the class of the objects in the list
+ * @author Rosty Kerei
  */
 public interface DeleteMiddleNode<T> {
 

@@ -1,7 +1,6 @@
 package nl.rostykerei.cci.ch01.q04;
 
 import nl.rostykerei.cci.common.AbstractFactoryTest;
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;

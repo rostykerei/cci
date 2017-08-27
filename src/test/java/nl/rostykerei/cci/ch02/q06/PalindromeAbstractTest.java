@@ -2,7 +2,6 @@ package nl.rostykerei.cci.ch02.q06;
 
 import nl.rostykerei.cci.common.AbstractFactoryTest;
 import nl.rostykerei.cci.datastructure.LinkedListNode;
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
