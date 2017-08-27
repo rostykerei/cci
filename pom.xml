@@ -27,7 +27,36 @@
         </developer>
     </developers>
 
+    <organization>
+        <name>Rosty Kerei</name>
+        <url>http://www.rostykerei.nl/</url>
+    </organization>
+
     <inceptionYear>2017</inceptionYear>
+
+    <scm>
+        <connection>scm:git:git://github.com/rostykerei/cci.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/rostykerei/cci.git</developerConnection>
+        <url>https://github.com/rostykerei/cci</url>
+    </scm>
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/rostykerei/cci/issues</url>
+    </issueManagement>
+
+    <ciManagement>
+        <system>Travis</system>
+        <url>https://travis-ci.org/rostykerei/cci</url>
+    </ciManagement>
+
+    <licenses>
+        <license>
+            <name>The MIT License (MIT)</name>
+            <url>http://opensource.org/licenses/MIT</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
