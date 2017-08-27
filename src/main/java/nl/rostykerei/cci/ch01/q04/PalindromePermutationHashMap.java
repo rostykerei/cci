@@ -16,7 +16,7 @@ public final class PalindromePermutationHashMap
         Map<Character, Integer> charCountMap = new HashMap<>();
 
         for (Character c : input.toCharArray()) {
-            charCountMap.merge(c, 1, (a, b) -> a + b);
+            charCountMap.merge(c, 1, (a, b) -> a + 1);
         }
 
         boolean oddFound = false;

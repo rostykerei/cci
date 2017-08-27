@@ -11,7 +11,8 @@ public interface StringCompression {
      * Compresses given string using the counts of repeated characters.
      *
      * @param input string to compress
-     * @return compressed string or original input if compressed is larger than original
+     * @return compressed string or original input if compressed is larger
+     * than original
      */
     String compress(String input);
 }

@@ -12,7 +12,7 @@ public final class IsUniqueHashSet implements IsUnique {
 
     @Override
     public boolean isUniqueCharsOnly(final String input) {
-        Set<Character> characterSet = new HashSet<Character>();
+        Set<Character> characterSet = new HashSet<>();
 
         for (int i = 0; i < input.length(); i++) {
             if (!characterSet.add(input.charAt(i))) {
