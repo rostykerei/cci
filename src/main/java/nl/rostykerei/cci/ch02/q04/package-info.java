@@ -1,5 +1,5 @@
 /**
- * Solutions to Question 2.3 - Partition.
+ * Solutions to Question 2.4 - Partition.
  *
  * @author Rosty Kerei
  */
