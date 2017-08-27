@@ -1,9 +1,9 @@
 package nl.rostykerei.cci.ch02.q08;
 
-public class LoopDetectionHashSetTest extends LoopDetectionAbstractTest<LoopDetectionHashSet<String>> {
+public class LoopDetectionHashSetTest extends LoopDetectionAbstractTest {
 
     @Override
-    protected LoopDetectionHashSet<String> createTester() {
+    protected LoopDetection<String> createTestInstance() {
         return new LoopDetectionHashSet<>();
     }
 }

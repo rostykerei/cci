@@ -6,53 +6,105 @@ import java.util.List;
 /**
  * Doubly linked list implementation.
  *
+ * @param <T> the class of the objects in the list
  * @author Rosty Kerei
  */
 public class LinkedListNode<T> {
 
+    /**
+     * Link to the previous node.
+     */
     private LinkedListNode<T> previous;
+
+    /**
+     * Link to the next node.
+     */
     private LinkedListNode<T> next;
 
+    /**
+     * Data holder.
+     */
     private T data;
 
-    public LinkedListNode(T data) {
-        this.data = data;
+    /**
+     * Node's constructor.
+     *
+     * @param dataValue data
+     */
+    public LinkedListNode(final T dataValue) {
+        this.data = dataValue;
     }
 
-    public LinkedListNode<T> getNext() {
+    /**
+     * Returns next node.
+     *
+     * @return next node
+     */
+    public final LinkedListNode<T> getNext() {
         return next;
     }
 
-    public LinkedListNode<T> setNext(LinkedListNode<T> next) {
-        if (next != null) {
-            next.previous = this;
+    /**
+     * Set next node.
+     *
+     * @param nextNode next node
+     * @return this node
+     */
+    public final LinkedListNode<T> setNext(final LinkedListNode<T> nextNode) {
+        if (nextNode != null) {
+            nextNode.previous = this;
         }
 
-        this.next = next;
+        this.next = nextNode;
         return this;
     }
 
-    public LinkedListNode<T> getPrevious() {
+    /**
+     * Returns previous node.
+     *
+     * @return previous node
+     */
+    public final LinkedListNode<T> getPrevious() {
         return previous;
     }
 
-    public void setPrevious(LinkedListNode<T> previous) {
-        if (previous != null) {
-            previous.next = this;
+    /**
+     * Sets previous node.
+     *
+     * @param previousValue previous node
+     */
+    public final void setPrevious(final LinkedListNode<T> previousValue) {
+        if (previousValue != null) {
+            previousValue.next = this;
         }
 
-        this.previous = previous;
+        this.previous = previousValue;
     }
 
-    public T getData() {
+    /**
+     * Returns data.
+     *
+     * @return data
+     */
+    public final T getData() {
         return data;
     }
 
-    public void setData(T data) {
-        this.data = data;
+    /**
+     * Sets data.
+     *
+     * @param dataValue data
+     */
+    public final void setData(final T dataValue) {
+        this.data = dataValue;
     }
 
-    public List<T> toList() {
+    /**
+     * Converts linked list to {@link List}.
+     *
+     * @return list
+     */
+    public final List<T> toList() {
         List<T> result = new ArrayList<>();
         LinkedListNode<T> node = this;
 

@@ -5,12 +5,13 @@ import nl.rostykerei.cci.datastructure.LinkedListNode;
 /**
  * Implementation of {@link RemoveDups} using a runner.
  *
+ * @param <T> the class of the objects in the list
  * @author Rosty Kerei
  */
-public class RemoveDupsRunner<T> implements RemoveDups<T> {
+public final class RemoveDupsRunner<T> implements RemoveDups<T> {
 
     @Override
-    public void removeDups(LinkedListNode<T> input) {
+    public void removeDups(final LinkedListNode<T> input) {
         LinkedListNode<T> node = input;
 
         while (node != null) {

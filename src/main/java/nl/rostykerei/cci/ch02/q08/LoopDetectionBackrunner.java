@@ -5,17 +5,20 @@ import nl.rostykerei.cci.datastructure.LinkedListNode;
 /**
  * Implementation of {@link LoopDetection} using a back runner loop.
  *
+ * @param <T> the class of the objects in the list
  * @author Rosty Kerei
  */
-public class LoopDetectionBackrunner<T> implements LoopDetection<T> {
+public final class LoopDetectionBackrunner<T> implements LoopDetection<T> {
 
     @Override
-    public LinkedListNode<T> detectLoop(LinkedListNode<T> list) {
-        while (list.getNext() != null) {
-            LinkedListNode<T> r = list.getPrevious();
+    public LinkedListNode<T> detectLoop(final LinkedListNode<T> list) {
+        LinkedListNode<T> head = list;
+
+        while (head.getNext() != null) {
+            LinkedListNode<T> r = head.getPrevious();
 
             while (r != null) {
-                if (r.equals(list)) {
+                if (r.equals(head)) {
                     return r;
                 }
 
@@ -23,7 +26,7 @@ public class LoopDetectionBackrunner<T> implements LoopDetection<T> {
             }
 
 
-            list = list.getNext();
+            head = head.getNext();
         }
 
         return null;

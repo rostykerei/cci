@@ -1,22 +1,13 @@
 package nl.rostykerei.cci.ch02.q08;
 
+import nl.rostykerei.cci.common.AbstractFactoryTest;
 import nl.rostykerei.cci.datastructure.LinkedListNode;
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
-public abstract class LoopDetectionAbstractTest<T extends LoopDetection<String>> {
-
-    private T tester;
-
-    protected abstract T createTester();
-
-    @Before
-    public void setUp() {
-        tester = createTester();
-    }
+public abstract class LoopDetectionAbstractTest extends AbstractFactoryTest<LoopDetection<String>> {
 
     @Test
     public void detectLoop() throws Exception {
@@ -30,7 +21,7 @@ public abstract class LoopDetectionAbstractTest<T extends LoopDetection<String>>
         c.setNext(d);
         d.setNext(c);
 
-        assertEquals(c, tester.detectLoop(a));
+        assertEquals(c, testInstance.detectLoop(a));
     }
 
     @Test
@@ -42,7 +33,7 @@ public abstract class LoopDetectionAbstractTest<T extends LoopDetection<String>>
         a.setNext(b);
         b.setNext(c);
 
-        assertNull(tester.detectLoop(a));
+        assertNull(testInstance.detectLoop(a));
     }
 
 }

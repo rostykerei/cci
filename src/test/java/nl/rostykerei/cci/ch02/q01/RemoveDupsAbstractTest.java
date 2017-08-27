@@ -1,23 +1,14 @@
 package nl.rostykerei.cci.ch02.q01;
 
+import nl.rostykerei.cci.common.AbstractFactoryTest;
 import nl.rostykerei.cci.datastructure.LinkedListNode;
-import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
 
 import static org.junit.Assert.assertEquals;
 
-public abstract class RemoveDupsAbstractTest<T extends RemoveDups<Integer>> {
-
-    private T tester;
-
-    protected abstract T createTester();
-
-    @Before
-    public void setUp() {
-        tester = createTester();
-    }
+public abstract class RemoveDupsAbstractTest extends AbstractFactoryTest<RemoveDups<Integer>> {
 
     @Test
     public void removeDups() throws Exception {
@@ -32,7 +23,7 @@ public abstract class RemoveDupsAbstractTest<T extends RemoveDups<Integer>> {
                 )
         );
 
-        tester.removeDups(linkedList);
+        testInstance.removeDups(linkedList);
 
         assertEquals(Arrays.asList(1, 2, 3, 5), linkedList.toList());
     }
@@ -50,7 +41,7 @@ public abstract class RemoveDupsAbstractTest<T extends RemoveDups<Integer>> {
                 )
         );
 
-        tester.removeDups(linkedList);
+        testInstance.removeDups(linkedList);
 
         assertEquals(Arrays.asList(1, 2, 3, 4), linkedList.toList());
     }
