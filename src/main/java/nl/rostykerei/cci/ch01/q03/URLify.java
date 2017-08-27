@@ -14,5 +14,5 @@ public interface URLify {
      * @param trueLength true length of the input string excluding right spaces
      * @return result string
      */
-     char[] replaceSpaces(char[] input, int trueLength);
+    char[] replaceSpaces(char[] input, int trueLength);
 }

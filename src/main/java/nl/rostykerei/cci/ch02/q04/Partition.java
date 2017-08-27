@@ -17,5 +17,5 @@ public interface Partition<T extends Comparable<T>> {
      * @param x     value to compare
      * @return re-arranged, partitioned list
      */
-     LinkedListNode<T> partition(LinkedListNode<T> input, T x);
+    LinkedListNode<T> partition(LinkedListNode<T> input, T x);
 }
