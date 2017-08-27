@@ -1,12 +1,13 @@
 package nl.rostykerei.cci.ch01.q07;
 
+import nl.rostykerei.cci.common.AbstractFactoryTest;
 import org.junit.Test;
 
 import java.util.Arrays;
 
 import static org.junit.Assert.assertTrue;
 
-public class RotateMatrixTest {
+public abstract class RotateMatrixAbstractTest extends AbstractFactoryTest<RotateMatrix> {
 
     @Test
     public void rotate2() throws Exception {
@@ -20,7 +21,7 @@ public class RotateMatrixTest {
                 {4, 2}
         };
 
-        int[][] output = RotateMatrix.rotate(input);
+        int[][] output = testInstance.rotate(input);
 
         assertTrue(Arrays.deepEquals(expected, output));
     }
@@ -39,7 +40,7 @@ public class RotateMatrixTest {
                 {9, 6, 3}
         };
 
-        int[][] output = RotateMatrix.rotate(input);
+        int[][] output = testInstance.rotate(input);
 
         assertTrue(Arrays.deepEquals(expected, output));
     }
