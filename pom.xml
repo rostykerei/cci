@@ -12,6 +12,8 @@
 
     <description>My solutions for "Cracking the Coding Interview" book</description>
 
+    <url>https://github.com/rostykerei/cci</url>
+
     <developers>
         <developer>
             <id>rosty</id>

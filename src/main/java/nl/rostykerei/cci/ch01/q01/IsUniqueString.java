@@ -10,16 +10,16 @@ public final class IsUniqueString implements IsUnique {
 
     @Override
     public boolean isUniqueCharsOnly(final String input) {
-        String checker = "";
+        StringBuilder checker = new StringBuilder();
 
         for (int i = 0; i < input.length(); i++) {
             char c = input.charAt(i);
 
-            if (checker.indexOf(c) > -1) {
+            if (checker.indexOf(String.valueOf(c)) > -1) {
                 return false;
             }
 
-            checker += c;
+            checker.append(c);
         }
 
         return true;

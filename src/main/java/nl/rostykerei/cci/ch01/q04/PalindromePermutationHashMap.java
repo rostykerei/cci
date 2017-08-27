@@ -20,9 +20,8 @@ public final class PalindromePermutationHashMap
         }
 
         boolean oddFound = false;
-
-        for (Character c : charCountMap.keySet()) {
-            if (charCountMap.get(c) % 2 != 0) {
+        for (Map.Entry<Character, Integer> e : charCountMap.entrySet()) {
+            if (charCountMap.get(e.getKey()) % 2 != 0) {
                 if (oddFound) {
                     return false;
                 }
