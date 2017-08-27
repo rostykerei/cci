@@ -8,20 +8,23 @@ import java.util.Set;
 /**
  * Implementation of {@link LoopDetection} using a hash-set.
  *
+ * @param <T> the class of the objects in the list
  * @author Rosty Kerei
  */
-public class LoopDetectionHashSet<T> implements LoopDetection<T> {
+public final class LoopDetectionHashSet<T> implements LoopDetection<T> {
 
     @Override
-    public LinkedListNode<T> detectLoop(LinkedListNode<T> list) {
+    public LinkedListNode<T> detectLoop(final LinkedListNode<T> list) {
         Set<LinkedListNode<T>> set = new HashSet<>();
 
-        while (list.getNext() != null) {
-            if (!set.add(list)) {
-                return list;
+        LinkedListNode<T> head = list;
+
+        while (head.getNext() != null) {
+            if (!set.add(head)) {
+                return head;
             }
 
-            list = list.getNext();
+            head = head.getNext();
         }
 
         return null;

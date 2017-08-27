@@ -1,12 +1,13 @@
 package nl.rostykerei.cci.ch02.q07;
 
+import nl.rostykerei.cci.common.AbstractFactoryTest;
 import nl.rostykerei.cci.datastructure.LinkedListNode;
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public class IntersectionTest {
+public abstract class IntersectionAbstractTest extends AbstractFactoryTest<Intersection<String>> {
 
     @Test
     public void isIntersectTrue() throws Exception {
@@ -27,7 +28,7 @@ public class IntersectionTest {
         y.setNext(z);
         z.setNext(c);
 
-        assertTrue(Intersection.isIntersect(a, x));
+        assertTrue(testInstance.isIntersect(a, x));
     }
 
     @Test
@@ -46,7 +47,7 @@ public class IntersectionTest {
         x.setNext(y);
         y.setNext(z);
 
-        assertFalse(Intersection.isIntersect(a, x));
+        assertFalse(testInstance.isIntersect(a, x));
     }
 
 

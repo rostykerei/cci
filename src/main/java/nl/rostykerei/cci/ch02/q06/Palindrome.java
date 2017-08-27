@@ -5,6 +5,7 @@ import nl.rostykerei.cci.datastructure.LinkedListNode;
 /**
  * Question 2.6 - Palindrome.
  *
+ * @param <T> the class of the objects in the list
  * @author Rosty Kerei
  */
 public interface Palindrome<T> {
