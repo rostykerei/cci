@@ -6,10 +6,10 @@ package nl.rostykerei.cci.ch01.q01;
  *
  * @author Rosty Kerei
  */
-public class IsUniqueString implements IsUnique {
+public final class IsUniqueString implements IsUnique {
 
     @Override
-    public boolean isUniqueCharsOnly(String input) {
+    public boolean isUniqueCharsOnly(final String input) {
         String checker = "";
 
         for (int i = 0; i < input.length(); i++) {

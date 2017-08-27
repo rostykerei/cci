@@ -1,8 +1,9 @@
 package nl.rostykerei.cci.ch01.q01;
 
-public class IsUniqueHashSetTest extends UniqueCheckerAbstractTest<IsUniqueHashSet> {
+public class IsUniqueHashSetTest extends UniqueCheckerAbstractTest {
 
-    protected IsUniqueHashSet createChecker() {
+    @Override
+    protected IsUnique createTestInstance() {
         return new IsUniqueHashSet();
     }
 }

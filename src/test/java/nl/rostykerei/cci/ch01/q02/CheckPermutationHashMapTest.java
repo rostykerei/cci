@@ -1,8 +1,8 @@
 package nl.rostykerei.cci.ch01.q02;
 
-public class CheckPermutationHashMapTest extends CheckPermutationAbstractTest<CheckPermutationHashMap> {
+public class CheckPermutationHashMapTest extends CheckPermutationAbstractTest {
 
-    protected CheckPermutationHashMap createChecker() {
+    protected CheckPermutation createTestInstance() {
         return new CheckPermutationHashMap();
     }
 }

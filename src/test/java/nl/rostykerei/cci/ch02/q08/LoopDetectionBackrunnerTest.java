@@ -1,9 +1,9 @@
 package nl.rostykerei.cci.ch02.q08;
 
-public class LoopDetectionBackrunnerTest extends LoopDetectionAbstractTest<LoopDetectionBackrunner<String>> {
+public class LoopDetectionBackrunnerTest extends LoopDetectionAbstractTest {
 
     @Override
-    protected LoopDetectionBackrunner<String> createTester() {
+    protected LoopDetection<String> createTestInstance() {
         return new LoopDetectionBackrunner<>();
     }
 }

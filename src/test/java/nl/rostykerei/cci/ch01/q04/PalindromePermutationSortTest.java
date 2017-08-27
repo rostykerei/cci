@@ -1,8 +1,9 @@
 package nl.rostykerei.cci.ch01.q04;
 
-public class PalindromePermutationSortTest extends PalindromePermutationAbstractTest<PalindromePermutationSort> {
+public class PalindromePermutationSortTest extends PalindromePermutationAbstractTest {
 
-    protected PalindromePermutationSort createChecker() {
+    @Override
+    protected PalindromePermutation createTestInstance() {
         return new PalindromePermutationSort();
     }
 }

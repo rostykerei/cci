@@ -1,9 +1,9 @@
 package nl.rostykerei.cci.ch02.q06;
 
-public class PalindromeRotateTest extends PalindromeAbstractTest<PalindromeRotate<String>> {
+public class PalindromeRotateTest extends PalindromeAbstractTest {
 
     @Override
-    protected PalindromeRotate<String> createChecker() {
+    protected Palindrome<String> createTestInstance() {
         return new PalindromeRotate<>();
     }
 }

@@ -8,14 +8,15 @@ import java.util.Map;
  *
  * @author Rosty Kerei
  */
-public class PalindromePermutationHashMap implements PalindromePermutation {
+public final class PalindromePermutationHashMap
+        implements PalindromePermutation {
 
-    public boolean isPalindromePermutation(String input) {
-        Map<Character, Integer> charCountMap = new HashMap<Character, Integer>();
+    @Override
+    public boolean isPalindromePermutation(final String input) {
+        Map<Character, Integer> charCountMap = new HashMap<>();
 
         for (Character c : input.toCharArray()) {
-            Integer count = charCountMap.get(c);
-            charCountMap.put(c, count == null ? 1 : count + 1);
+            charCountMap.merge(c, 1, (a, b) -> a + b);
         }
 
         boolean oddFound = false;

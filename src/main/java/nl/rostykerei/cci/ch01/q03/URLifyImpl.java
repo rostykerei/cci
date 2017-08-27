@@ -5,10 +5,20 @@ package nl.rostykerei.cci.ch01.q03;
  *
  * @author Rosty Kerei
  */
-public class URLifyImpl implements URLify {
+public final class URLifyImpl implements URLify {
+
+    /**
+     * Space to replace.
+     */
+    private static final char SPACE = ' ';
+
+    /**
+     * Symbols to replace with.
+     */
+    private static final char[] REPLACEMENT = {'%', '2', '0'};
 
     @Override
-    public char[] replaceSpaces(char[] input, int trueLength) {
+    public char[] replaceSpaces(final char[] input, final int trueLength) {
         char[] output = new char[input.length];
 
         int k = 0;
@@ -17,11 +27,9 @@ public class URLifyImpl implements URLify {
                 break;
             }
 
-            if (input[i] == ' ') {
-                output[k] = '%';
-                output[k + 1] = '2';
-                output[k + 2] = '0';
-                k = k + 3;
+            if (input[i] == SPACE) {
+                System.arraycopy(REPLACEMENT, 0, output, k, REPLACEMENT.length);
+                k = k + REPLACEMENT.length;
             } else {
                 output[k] = input[i];
                 k++;
