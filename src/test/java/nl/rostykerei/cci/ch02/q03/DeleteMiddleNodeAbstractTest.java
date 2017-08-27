@@ -1,5 +1,6 @@
 package nl.rostykerei.cci.ch02.q03;
 
+import nl.rostykerei.cci.common.AbstractFactoryTest;
 import nl.rostykerei.cci.datastructure.LinkedListNode;
 import org.junit.Test;
 
@@ -7,7 +8,7 @@ import java.util.Arrays;
 
 import static org.junit.Assert.assertEquals;
 
-public class DeleteMiddleNodeTest {
+public abstract class DeleteMiddleNodeAbstractTest extends AbstractFactoryTest<DeleteMiddleNode<Integer>> {
 
     @Test
     public void deleteMiddleNode() throws Exception {
@@ -26,7 +27,7 @@ public class DeleteMiddleNodeTest {
 
         n1.setNext(n2);
 
-        DeleteMiddleNode.deleteMiddleNode(n3);
+        testInstance.deleteMiddleNode(n3);
 
         assertEquals(Arrays.asList(1, 2, 4, 5), n1.toList());
     }
@@ -37,6 +38,6 @@ public class DeleteMiddleNodeTest {
         LinkedListNode<Integer> n1 = new LinkedListNode<>(1);
         n1.setNext(n2);
 
-        DeleteMiddleNode.deleteMiddleNode(n2);
+        testInstance.deleteMiddleNode(n2);
     }
 }
