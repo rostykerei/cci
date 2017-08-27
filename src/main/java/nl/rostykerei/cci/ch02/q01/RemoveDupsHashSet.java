@@ -7,12 +7,13 @@ import java.util.HashSet;
 /**
  * Implementation of {@link RemoveDups} using a hash-set.
  *
+ * @param <T> the class of the objects in the list
  * @author Rosty Kerei
  */
-public class RemoveDupsHashSet<T> implements RemoveDups<T> {
+public final class RemoveDupsHashSet<T> implements RemoveDups<T> {
 
     @Override
-    public void removeDups(LinkedListNode<T> input) {
+    public void removeDups(final LinkedListNode<T> input) {
         HashSet<T> uniques = new HashSet<>();
 
         LinkedListNode<T> node = input;

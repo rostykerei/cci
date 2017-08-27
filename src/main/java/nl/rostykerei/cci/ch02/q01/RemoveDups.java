@@ -5,6 +5,7 @@ import nl.rostykerei.cci.datastructure.LinkedListNode;
 /**
  * Question 2.1 - Remove Dups.
  *
+ * @param <T> the class of the objects in the list
  * @author Rosty Kerei
  */
 public interface RemoveDups<T> {
