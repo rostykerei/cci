@@ -1,9 +1,9 @@
 package nl.rostykerei.cci.ch02.q01;
 
-public class RemoveDupsRunnerTest extends RemoveDupsAbstractTest<RemoveDupsRunner<Integer>> {
+public class RemoveDupsRunnerTest extends RemoveDupsAbstractTest {
 
     @Override
-    protected RemoveDupsRunner<Integer> createTester() {
+    protected RemoveDups<Integer> createTestInstance() {
         return new RemoveDupsRunner<>();
     }
 }

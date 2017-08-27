@@ -5,11 +5,15 @@ package nl.rostykerei.cci.ch01.q01;
  *
  * @author Rosty Kerei
  */
-public class IsUniqueArray implements IsUnique {
+public final class IsUniqueArray implements IsUnique {
+
+    /**
+     * 255 for ASCII, Character.MAX_VALUE for Unicode.
+     */
+    private static final int ARRAY_LENGTH = 255;
 
     @Override
-    public boolean isUniqueCharsOnly(String input) {
-        int ARRAY_LENGTH = 255; // 255 for ASCII, Character.MAX_VALUE for Unicode
+    public boolean isUniqueCharsOnly(final String input) {
 
         if (input.length() <= ARRAY_LENGTH) {
             boolean[] checker = new boolean[ARRAY_LENGTH + 1];

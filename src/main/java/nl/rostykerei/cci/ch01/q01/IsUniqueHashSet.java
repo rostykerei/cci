@@ -8,10 +8,10 @@ import java.util.Set;
  *
  * @author Rosty Kerei
  */
-public class IsUniqueHashSet implements IsUnique {
+public final class IsUniqueHashSet implements IsUnique {
 
     @Override
-    public boolean isUniqueCharsOnly(String input) {
+    public boolean isUniqueCharsOnly(final String input) {
         Set<Character> characterSet = new HashSet<Character>();
 
         for (int i = 0; i < input.length(); i++) {

@@ -7,9 +7,10 @@ import java.util.Arrays;
  *
  * @author Rosty Kerei
  */
-public class PalindromePermutationSort implements PalindromePermutation {
+public final class PalindromePermutationSort implements PalindromePermutation {
 
-    public boolean isPalindromePermutation(String input) {
+    @Override
+    public boolean isPalindromePermutation(final String input) {
         char[] chars = input.toCharArray();
         Arrays.sort(chars);
 

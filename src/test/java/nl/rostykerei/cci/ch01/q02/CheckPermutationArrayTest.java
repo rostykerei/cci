@@ -1,8 +1,8 @@
 package nl.rostykerei.cci.ch01.q02;
 
-public class CheckPermutationArrayTest extends CheckPermutationAbstractTest<CheckPermutationArray> {
+public class CheckPermutationArrayTest extends CheckPermutationAbstractTest {
 
-    protected CheckPermutationArray createChecker() {
+    protected CheckPermutation createTestInstance() {
         return new CheckPermutationArray();
     }
 }

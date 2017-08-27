@@ -1,8 +1,9 @@
 package nl.rostykerei.cci.ch01.q04;
 
-public class PalindromePermutationHashMapTest extends PalindromePermutationAbstractTest<PalindromePermutationHashMap> {
+public class PalindromePermutationHashMapTest extends PalindromePermutationAbstractTest {
 
-    protected PalindromePermutationHashMap createChecker() {
+    @Override
+    protected PalindromePermutation createTestInstance() {
         return new PalindromePermutationHashMap();
     }
 }

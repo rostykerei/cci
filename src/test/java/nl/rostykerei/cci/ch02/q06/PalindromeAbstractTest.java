@@ -1,5 +1,6 @@
 package nl.rostykerei.cci.ch02.q06;
 
+import nl.rostykerei.cci.common.AbstractFactoryTest;
 import nl.rostykerei.cci.datastructure.LinkedListNode;
 import org.junit.Before;
 import org.junit.Test;
@@ -7,16 +8,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-public abstract class PalindromeAbstractTest<T extends Palindrome<String>> {
-
-    private T checker;
-
-    protected abstract T createChecker();
-
-    @Before
-    public void setUp() {
-        checker = createChecker();
-    }
+public abstract class PalindromeAbstractTest extends AbstractFactoryTest<Palindrome<String>> {
 
     @Test
     public void testTrue() throws Exception {
@@ -30,7 +22,7 @@ public abstract class PalindromeAbstractTest<T extends Palindrome<String>> {
                 )
         );
 
-        assertTrue(checker.isPalindrome(linkedList1));
+        assertTrue(testInstance.isPalindrome(linkedList1));
 
         LinkedListNode<String> linkedList2 = new LinkedListNode<>("A").setNext(
                 new LinkedListNode<>("B").setNext(
@@ -40,15 +32,15 @@ public abstract class PalindromeAbstractTest<T extends Palindrome<String>> {
                 )
         );
 
-        assertTrue(checker.isPalindrome(linkedList2));
+        assertTrue(testInstance.isPalindrome(linkedList2));
 
         LinkedListNode<String> linkedList3 = new LinkedListNode<>("A").setNext(
                 new LinkedListNode<>("A")
         );
 
-        assertTrue(checker.isPalindrome(linkedList3));
+        assertTrue(testInstance.isPalindrome(linkedList3));
 
-        assertTrue(checker.isPalindrome(new LinkedListNode<>("A")));
+        assertTrue(testInstance.isPalindrome(new LinkedListNode<>("A")));
     }
 
     @Test
@@ -63,12 +55,12 @@ public abstract class PalindromeAbstractTest<T extends Palindrome<String>> {
                 )
         );
 
-        assertFalse(checker.isPalindrome(linkedList1));
+        assertFalse(testInstance.isPalindrome(linkedList1));
 
         LinkedListNode<String> linkedList2 = new LinkedListNode<>("A").setNext(
                 new LinkedListNode<>("B")
         );
 
-        assertFalse(checker.isPalindrome(linkedList2));
+        assertFalse(testInstance.isPalindrome(linkedList2));
     }
 }
