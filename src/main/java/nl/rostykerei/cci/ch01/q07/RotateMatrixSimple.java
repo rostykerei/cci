@@ -5,13 +5,12 @@ package nl.rostykerei.cci.ch01.q07;
  *
  * @author Rosty Kerei
  */
-public final class RotateMatrixImpl implements RotateMatrix {
+public final class RotateMatrixSimple implements RotateMatrix {
 
     @Override
     public int[][] rotate(final int[][] image) {
         final int n = image.length;
 
-        // its possible to do it in O(N) memory
         int[][] result = new int[n][n];
 
         for (int x = 0; x < n; x++) {
