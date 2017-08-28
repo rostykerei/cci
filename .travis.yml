@@ -1,4 +1,11 @@
-language: java
 dist: trusty
+
+addons:
+  sonarcloud:
+    organization: "rostykerei-github"
+
 jdk:
   - oraclejdk8
+
+script:
+  - sonar-scanner
