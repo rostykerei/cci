@@ -11,7 +11,7 @@ public interface Stack<T> {
     /**
      * Removes the top item from the stack.
      *
-     * @throws java.util.EmptyStackException if stack is empty
+     * @throws java.util.EmptyStackException if the stack is empty
      * @return top item
      */
     T pop();
@@ -26,15 +26,15 @@ public interface Stack<T> {
     /**
      * Returns the top item from the stack.
      *
-     * @throws java.util.EmptyStackException if stack is empty
+     * @throws java.util.EmptyStackException if the stack is empty
      * @return top item
      */
     T peek();
 
     /**
-     * Checks if stack is empty.
+     * Checks if the stack is empty.
      *
-     * @return true if stack if empty, false otherwise
+     * @return true if the stack if empty, false otherwise
      */
     boolean isEmpty();
 }
