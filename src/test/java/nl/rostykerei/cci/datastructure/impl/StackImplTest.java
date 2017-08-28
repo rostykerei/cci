@@ -48,6 +48,14 @@ public class StackImplTest {
         stack.push(1);
 
         assertFalse(stack.isEmpty());
+
+        stack.peek();
+
+        assertFalse(stack.isEmpty());
+
+        stack.pop();
+
+        assertTrue(stack.isEmpty());
     }
 
 }
