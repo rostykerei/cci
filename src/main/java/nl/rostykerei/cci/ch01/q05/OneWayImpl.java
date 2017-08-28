@@ -13,7 +13,8 @@ public final class OneWayImpl implements OneWay {
             return false;
         }
 
-        char[] bigger, smaller;
+        char[] bigger;
+        char[] smaller;
 
         if (str1.length() > str2.length()) {
             bigger = str1.toCharArray();
