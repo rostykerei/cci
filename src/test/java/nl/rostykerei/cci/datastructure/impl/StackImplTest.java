@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 public class StackImplTest {
 
     @Test
-    public void pop() throws Exception {
+    public void stackTest() throws Exception {
         Stack<Integer> stack = new StackImpl<>();
 
         stack.push(1);

@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 public class QueueImplTest {
 
     @Test
-    public void add() throws Exception {
+    public void queueTest() throws Exception {
         Queue<Integer> queue = new QueueImpl<>();
 
         queue.add(1);
@@ -34,7 +34,7 @@ public class QueueImplTest {
     }
 
     @Test(expected = NoSuchElementException.class)
-    public void peek() throws Exception {
+    public void peekEmpty() throws Exception {
         Queue<Integer> queue = new QueueImpl<>();
         queue.peek();
     }

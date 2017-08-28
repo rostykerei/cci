@@ -187,7 +187,6 @@
                 <configuration>
                     <targetJdk>${project.build.targetJdk}</targetJdk>
                     <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
-                    <skipEmptyReport>false</skipEmptyReport>
                 </configuration>
                 <executions>
                     <execution>
@@ -278,6 +277,9 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
+                <configuration>
+                    <skipEmptyReport>false</skipEmptyReport>
+                </configuration>
             </plugin>
 
             <plugin>
