@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/rostykerei/cci.svg?branch=master)](https://travis-ci.org/rostykerei/cci)
+[![Quality Gate](https://sonarcloud.io/api/badges/gate?key=nl.rostykerei:cci)](https://sonarcloud.io/dashboard/index/nl.rostykerei:cci)
 
 # Cracking the Coding Interview Solutions
 
