@@ -24,9 +24,9 @@ public interface Queue<T> {
     T remove();
 
     /**
-     * Returns the top of the queue.
+     * Returns the first item of the queue.
      *
-     * @return top item
+     * @return the first item
      */
     T peek();
 
