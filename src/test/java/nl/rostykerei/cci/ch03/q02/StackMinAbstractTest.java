@@ -7,7 +7,7 @@ import java.util.EmptyStackException;
 
 import static org.junit.Assert.*;
 
-public abstract class StackMinAbstractTest extends AbstractFactoryTest<StackMin<Integer>> {
+public abstract class StackMinAbstractTest extends AbstractFactoryTest<StackMin> {
 
     @Test
     public void testMin() throws Exception {

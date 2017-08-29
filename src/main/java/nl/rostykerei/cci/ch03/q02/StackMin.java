@@ -5,9 +5,9 @@ import nl.rostykerei.cci.datastructure.Stack;
 /**
  * Question 3.2 - Stack Min.
  *
- * @param <T> the class of the objects in the stack
+ * @author Rosty Kerei
  */
-public interface StackMin<T extends Number> extends Stack<T> {
+public interface StackMin extends Stack<Integer> {
 
     /**
      * Returns the minimum value within the stack.
@@ -15,6 +15,6 @@ public interface StackMin<T extends Number> extends Stack<T> {
      * @throws java.util.EmptyStackException if the stack is empty
      * @return minimum value within the stack
      */
-    Number min();
+    int min();
 
 }

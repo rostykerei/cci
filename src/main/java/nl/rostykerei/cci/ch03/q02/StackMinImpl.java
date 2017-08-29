@@ -1,5 +1,7 @@
 package nl.rostykerei.cci.ch03.q02;
 
+import nl.rostykerei.cci.datastructure.impl.StackImpl;
+
 import java.util.EmptyStackException;
 
 /**
@@ -7,65 +9,48 @@ import java.util.EmptyStackException;
  *
  * @author Rosty Kerei
  */
-public final class StackMinImpl implements StackMin<Integer> {
+public final class StackMinImpl extends StackImpl<Integer> implements StackMin {
 
     /**
-     * Stack node with data and most recent minimum.
+     * Node with a min value.
      */
-    private static class StackMinNode {
+    private class StackMinNode extends StackNode<Integer> {
 
         /**
-         * Data holder.
-         */
-        private int data;
-
-        /**
-         * Minimum.
+         * Min value holder.
          */
         private int min;
 
         /**
-         * Link to the next node.
-         */
-        private StackMinNode next;
-
-        /**
-         * Stack node constructor.
+         * Constructor.
          *
-         * @param value    data
-         * @param minValue most recent minimum
+         * @param value data value
+         * @param minValue min value
          */
         StackMinNode(final int value, final int minValue) {
-            this.data = value;
+            super(value);
             this.min = minValue;
         }
+
+        /**
+         * Gets min value.
+         *
+         * @return min value
+         */
+        int getMin() {
+            return min;
+        }
     }
 
     @Override
-    public Integer min() {
+    public int min() {
+        StackMinNode top = (StackMinNode) getTop();
+
         if (top == null) {
             throw new EmptyStackException();
         }
 
-        return top.min;
-    }
-
-    /**
-     * Top of the stack.
-     */
-    private StackMinNode top;
-
-    @Override
-    public Integer pop() {
-        if (top == null) {
-            throw new EmptyStackException();
-        }
-
-        int item = top.data;
-
-        top = top.next;
-
-        return item;
+        return top.getMin();
     }
 
     @Override
@@ -76,28 +61,17 @@ public final class StackMinImpl implements StackMin<Integer> {
 
         int min;
 
-        if (this.top == null) {
+        StackMinNode top = (StackMinNode) getTop();
+
+        if (top == null) {
             min = item;
         } else {
-            min = Math.min(item, this.top.min);
+            min = Math.min(item, top.getMin());
         }
 
         StackMinNode t = new StackMinNode(item, min);
-        t.next = top;
-        top = t;
-    }
+        t.setNext(top);
 
-    @Override
-    public Integer peek() {
-        if (top == null) {
-            throw new EmptyStackException();
-        }
-
-        return top.data;
-    }
-
-    @Override
-    public boolean isEmpty() {
-        return top == null;
+        setTop(t);
     }
 }

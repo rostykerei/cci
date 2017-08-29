@@ -9,14 +9,14 @@ import java.util.EmptyStackException;
  *
  * @param <T> the class of the objects in the stack
  */
-public final class StackImpl<T> implements Stack<T> {
+public class StackImpl<T> implements Stack<T> {
 
     /**
      * A node within the stack.
      *
      * @param <T> the class of the objects in the stack
      */
-    private static class StackNode<T> {
+    public static class StackNode<T> {
 
         /**
          * Data holder.
@@ -30,10 +30,20 @@ public final class StackImpl<T> implements Stack<T> {
 
         /**
          * Stack node constructor.
+         *
          * @param value data
          */
-        StackNode(final T value) {
+        public StackNode(final T value) {
             this.data = value;
+        }
+
+        /**
+         * Sets next node.
+         *
+         * @param node next node
+         */
+        public void setNext(final StackNode<T> node) {
+            this.next = node;
         }
     }
 
@@ -42,6 +52,9 @@ public final class StackImpl<T> implements Stack<T> {
      */
     private StackNode<T> top;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public T pop() {
         if (top == null) {
@@ -55,6 +68,9 @@ public final class StackImpl<T> implements Stack<T> {
         return item;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void push(final T item) {
         StackNode<T> t = new StackNode<>(item);
@@ -62,6 +78,9 @@ public final class StackImpl<T> implements Stack<T> {
         top = t;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public T peek() {
         if (top == null) {
@@ -71,8 +90,29 @@ public final class StackImpl<T> implements Stack<T> {
         return top.data;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public boolean isEmpty() {
         return top == null;
+    }
+
+    /**
+     * Gets top node.
+     *
+     * @return top node
+     */
+    protected StackNode<T> getTop() {
+        return top;
+    }
+
+    /**
+     * Sets top node.
+     *
+     * @param node top node
+     */
+    protected void setTop(final StackNode<T> node) {
+        this.top = node;
     }
 }
