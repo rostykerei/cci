@@ -1,7 +1,8 @@
 package nl.rostykerei.cci.ch02.q07;
 
 import nl.rostykerei.cci.common.AbstractFactoryTest;
-import nl.rostykerei.cci.datastructure.LinkedListNode;
+import nl.rostykerei.cci.datastructure.SinglyLinkedList;
+import nl.rostykerei.cci.datastructure.impl.SinglyLinkedListImpl;
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
@@ -11,14 +12,14 @@ public abstract class IntersectionAbstractTest extends AbstractFactoryTest<Inter
 
     @Test
     public void isIntersectTrue() throws Exception {
-        LinkedListNode<String> a = new LinkedListNode<>("a");
-        LinkedListNode<String> b = new LinkedListNode<>("b");
-        LinkedListNode<String> c = new LinkedListNode<>("c");
-        LinkedListNode<String> d = new LinkedListNode<>("d");
+        SinglyLinkedList<String> a = new SinglyLinkedListImpl<>("a");
+        SinglyLinkedList<String> b = new SinglyLinkedListImpl<>("b");
+        SinglyLinkedList<String> c = new SinglyLinkedListImpl<>("c");
+        SinglyLinkedList<String> d = new SinglyLinkedListImpl<>("d");
 
-        LinkedListNode<String> x = new LinkedListNode<>("x");
-        LinkedListNode<String> y = new LinkedListNode<>("y");
-        LinkedListNode<String> z = new LinkedListNode<>("z");
+        SinglyLinkedList<String> x = new SinglyLinkedListImpl<>("x");
+        SinglyLinkedList<String> y = new SinglyLinkedListImpl<>("y");
+        SinglyLinkedList<String> z = new SinglyLinkedListImpl<>("z");
 
         a.setNext(b);
         b.setNext(c);
@@ -33,13 +34,13 @@ public abstract class IntersectionAbstractTest extends AbstractFactoryTest<Inter
 
     @Test
     public void isIntersectFalse() throws Exception {
-        LinkedListNode<String> a = new LinkedListNode<>("a");
-        LinkedListNode<String> b = new LinkedListNode<>("b");
-        LinkedListNode<String> c = new LinkedListNode<>("c");
+        SinglyLinkedList<String> a = new SinglyLinkedListImpl<>("a");
+        SinglyLinkedList<String> b = new SinglyLinkedListImpl<>("b");
+        SinglyLinkedList<String> c = new SinglyLinkedListImpl<>("c");
 
-        LinkedListNode<String> x = new LinkedListNode<>("x");
-        LinkedListNode<String> y = new LinkedListNode<>("y");
-        LinkedListNode<String> z = new LinkedListNode<>("z");
+        SinglyLinkedList<String> x = new SinglyLinkedListImpl<>("x");
+        SinglyLinkedList<String> y = new SinglyLinkedListImpl<>("y");
+        SinglyLinkedList<String> z = new SinglyLinkedListImpl<>("z");
 
         a.setNext(b);
         b.setNext(c);

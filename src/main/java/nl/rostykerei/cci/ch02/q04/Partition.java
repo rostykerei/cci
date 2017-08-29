@@ -1,6 +1,6 @@
 package nl.rostykerei.cci.ch02.q04;
 
-import nl.rostykerei.cci.datastructure.LinkedListNode;
+import nl.rostykerei.cci.datastructure.SinglyLinkedList;
 
 /**
  * Question 2.4 - Partition.
@@ -17,5 +17,5 @@ public interface Partition<T extends Comparable<T>> {
      * @param x     value to compare
      * @return re-arranged, partitioned list
      */
-    LinkedListNode<T> partition(LinkedListNode<T> input, T x);
+    SinglyLinkedList<T> partition(SinglyLinkedList<T> input, T x);
 }

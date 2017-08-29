@@ -1,6 +1,6 @@
 package nl.rostykerei.cci.ch02.q08;
 
-import nl.rostykerei.cci.datastructure.LinkedListNode;
+import nl.rostykerei.cci.datastructure.DoublyLinkedList;
 
 /**
  * Question 2.8 - Loop Detection.
@@ -17,5 +17,5 @@ public interface LoopDetection<T> {
      * @param list linked list
      * @return node at the beginning of the loop or null if there is no loop
      */
-    LinkedListNode<T> detectLoop(LinkedListNode<T> list);
+    DoublyLinkedList<T> detectLoop(DoublyLinkedList<T> list);
 }

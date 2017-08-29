@@ -1,6 +1,6 @@
 package nl.rostykerei.cci.ch02.q07;
 
-import nl.rostykerei.cci.datastructure.LinkedListNode;
+import nl.rostykerei.cci.datastructure.SinglyLinkedList;
 
 /**
  * Implementation of {@link Intersection}.
@@ -11,13 +11,13 @@ import nl.rostykerei.cci.datastructure.LinkedListNode;
 public final class IntersectionImpl<T> implements Intersection<T> {
 
     @Override
-    public boolean isIntersect(final LinkedListNode<T> list1,
-                               final LinkedListNode<T> list2) {
+    public boolean isIntersect(final SinglyLinkedList<T> list1,
+                               final SinglyLinkedList<T> list2) {
 
-        LinkedListNode<T> l1 = list1;
+        SinglyLinkedList<T> l1 = list1;
 
         while (l1 != null) {
-            LinkedListNode<T> l2 = list2;
+            SinglyLinkedList<T> l2 = list2;
 
             while (l2 != null) {
 

@@ -1,6 +1,6 @@
 package nl.rostykerei.cci.ch02.q06;
 
-import nl.rostykerei.cci.datastructure.LinkedListNode;
+import nl.rostykerei.cci.datastructure.DoublyLinkedList;
 
 /**
  * Implementation of {@link Palindrome} by iterating the list from both ends.
@@ -13,10 +13,10 @@ import nl.rostykerei.cci.datastructure.LinkedListNode;
 public final class PalindromeEndToEnd<T> implements Palindrome<T> {
 
     @Override
-    public boolean isPalindrome(final LinkedListNode<T> input) {
+    public boolean isPalindrome(final DoublyLinkedList<T> input) {
 
-        LinkedListNode<T> head = input;
-        LinkedListNode<T> tail = getTail(head);
+        DoublyLinkedList<T> head = input;
+        DoublyLinkedList<T> tail = getTail(head);
 
         boolean isMiddle = false;
 
@@ -42,8 +42,8 @@ public final class PalindromeEndToEnd<T> implements Palindrome<T> {
      * @param head head node
      * @return tail node
      */
-    private LinkedListNode<T> getTail(final LinkedListNode<T> head) {
-        LinkedListNode<T> node = head;
+    private DoublyLinkedList<T> getTail(final DoublyLinkedList<T> head) {
+        DoublyLinkedList<T> node = head;
         while (node.getNext() != null) {
             node = node.getNext();
         }

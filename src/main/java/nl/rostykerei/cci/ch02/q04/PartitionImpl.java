@@ -1,6 +1,7 @@
 package nl.rostykerei.cci.ch02.q04;
 
-import nl.rostykerei.cci.datastructure.LinkedListNode;
+import nl.rostykerei.cci.datastructure.SinglyLinkedList;
+import nl.rostykerei.cci.datastructure.impl.SinglyLinkedListImpl;
 
 /**
  * Implementation of {@link Partition}.
@@ -12,19 +13,20 @@ public final class PartitionImpl<T extends Comparable<T>>
         implements Partition<T> {
 
     @Override
-    public LinkedListNode<T> partition(final LinkedListNode<T> input,
-                                       final T x) {
+    public SinglyLinkedList<T> partition(final SinglyLinkedList<T> input,
+                                         final T x) {
 
-        LinkedListNode<T> list = input;
+        SinglyLinkedList<T> list = input;
 
-        LinkedListNode<T> lowerHead = null;
-        LinkedListNode<T> lowerTail = null;
+        SinglyLinkedList<T> lowerHead = null;
+        SinglyLinkedList<T> lowerTail = null;
 
-        LinkedListNode<T> greaterHead = null;
-        LinkedListNode<T> greaterTail = null;
+        SinglyLinkedList<T> greaterHead = null;
+        SinglyLinkedList<T> greaterTail = null;
 
         while (list != null) {
-            LinkedListNode<T> node = new LinkedListNode<>(list.getData());
+            SinglyLinkedList<T> node =
+                    new SinglyLinkedListImpl<>(list.getData());
 
             if (node.getData().compareTo(x) < 0) {
                 if (lowerHead == null) {

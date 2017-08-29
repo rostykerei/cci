@@ -1,6 +1,7 @@
 package nl.rostykerei.cci.ch02.q06;
 
-import nl.rostykerei.cci.datastructure.LinkedListNode;
+import nl.rostykerei.cci.datastructure.DoublyLinkedList;
+import nl.rostykerei.cci.datastructure.impl.DoublyLinkedListImpl;
 
 /**
  * Implementation of {@link Palindrome} using a rotated copy of the list.
@@ -12,10 +13,10 @@ import nl.rostykerei.cci.datastructure.LinkedListNode;
 public final class PalindromeRotate<T> implements Palindrome<T> {
 
     @Override
-    public boolean isPalindrome(final LinkedListNode<T> input) {
+    public boolean isPalindrome(final DoublyLinkedList<T> input) {
 
-        LinkedListNode<T> head = input;
-        LinkedListNode<T> rotated = rotateList(head);
+        DoublyLinkedList<T> head = input;
+        DoublyLinkedList<T> rotated = rotateList(head);
 
         while (head != null) {
             if (!head.getData().equals(rotated.getData())) {
@@ -35,14 +36,14 @@ public final class PalindromeRotate<T> implements Palindrome<T> {
      * @param input head node
      * @return rotated list
      */
-    private LinkedListNode<T> rotateList(final LinkedListNode<T> input) {
-        LinkedListNode<T> head = input;
+    private DoublyLinkedList<T> rotateList(final DoublyLinkedList<T> input) {
+        DoublyLinkedList<T> head = input;
 
-        LinkedListNode<T> rotated = null;
-        LinkedListNode<T> prev = null;
+        DoublyLinkedList<T> rotated = null;
+        DoublyLinkedList<T> prev = null;
 
         while (head != null) {
-            rotated = new LinkedListNode<>(head.getData());
+            rotated = new DoublyLinkedListImpl<>(head.getData());
 
             if (prev != null) {
                 rotated.setNext(prev);

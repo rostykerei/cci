@@ -1,6 +1,6 @@
 package nl.rostykerei.cci.ch02.q05;
 
-import nl.rostykerei.cci.datastructure.LinkedListNode;
+import nl.rostykerei.cci.datastructure.DoublyLinkedList;
 
 /**
  * Question 2.5 - Sum Lists.
@@ -17,7 +17,7 @@ public interface SumLists {
      * @param l2 number two
      * @return sum
      */
-    int sumListsReverse(LinkedListNode<Byte> l1, LinkedListNode<Byte> l2);
+    int sumListsReverse(DoublyLinkedList<Byte> l1, DoublyLinkedList<Byte> l2);
 
     /**
      * Adds two numbers represented as a list of values.
@@ -27,5 +27,5 @@ public interface SumLists {
      * @param l2 number two
      * @return sum
      */
-    int sumListsForward(LinkedListNode<Byte> l1, LinkedListNode<Byte> l2);
+    int sumListsForward(DoublyLinkedList<Byte> l1, DoublyLinkedList<Byte> l2);
 }

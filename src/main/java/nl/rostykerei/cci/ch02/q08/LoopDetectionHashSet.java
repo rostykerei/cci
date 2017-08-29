@@ -1,6 +1,6 @@
 package nl.rostykerei.cci.ch02.q08;
 
-import nl.rostykerei.cci.datastructure.LinkedListNode;
+import nl.rostykerei.cci.datastructure.DoublyLinkedList;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -14,10 +14,10 @@ import java.util.Set;
 public final class LoopDetectionHashSet<T> implements LoopDetection<T> {
 
     @Override
-    public LinkedListNode<T> detectLoop(final LinkedListNode<T> list) {
-        Set<LinkedListNode<T>> set = new HashSet<>();
+    public DoublyLinkedList<T> detectLoop(final DoublyLinkedList<T> list) {
+        Set<DoublyLinkedList<T>> set = new HashSet<>();
 
-        LinkedListNode<T> head = list;
+        DoublyLinkedList<T> head = list;
 
         while (head.getNext() != null) {
             if (!set.add(head)) {

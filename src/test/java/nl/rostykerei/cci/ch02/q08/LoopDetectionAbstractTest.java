@@ -1,7 +1,8 @@
 package nl.rostykerei.cci.ch02.q08;
 
 import nl.rostykerei.cci.common.AbstractFactoryTest;
-import nl.rostykerei.cci.datastructure.LinkedListNode;
+import nl.rostykerei.cci.datastructure.DoublyLinkedList;
+import nl.rostykerei.cci.datastructure.impl.DoublyLinkedListImpl;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -11,10 +12,10 @@ public abstract class LoopDetectionAbstractTest extends AbstractFactoryTest<Loop
 
     @Test
     public void detectLoop() throws Exception {
-        LinkedListNode<String> a = new LinkedListNode<>("a");
-        LinkedListNode<String> b = new LinkedListNode<>("b");
-        LinkedListNode<String> c = new LinkedListNode<>("c");
-        LinkedListNode<String> d = new LinkedListNode<>("d");
+        DoublyLinkedList<String> a = new DoublyLinkedListImpl<>("a");
+        DoublyLinkedList<String> b = new DoublyLinkedListImpl<>("b");
+        DoublyLinkedList<String> c = new DoublyLinkedListImpl<>("c");
+        DoublyLinkedList<String> d = new DoublyLinkedListImpl<>("d");
 
         a.setNext(b);
         b.setNext(c);
@@ -26,9 +27,9 @@ public abstract class LoopDetectionAbstractTest extends AbstractFactoryTest<Loop
 
     @Test
     public void detectLoopNull() throws Exception {
-        LinkedListNode<String> a = new LinkedListNode<>("a");
-        LinkedListNode<String> b = new LinkedListNode<>("b");
-        LinkedListNode<String> c = new LinkedListNode<>("c");
+        DoublyLinkedList<String> a = new DoublyLinkedListImpl<>("a");
+        DoublyLinkedList<String> b = new DoublyLinkedListImpl<>("b");
+        DoublyLinkedList<String> c = new DoublyLinkedListImpl<>("c");
 
         a.setNext(b);
         b.setNext(c);

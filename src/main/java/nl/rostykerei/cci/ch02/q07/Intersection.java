@@ -1,6 +1,6 @@
 package nl.rostykerei.cci.ch02.q07;
 
-import nl.rostykerei.cci.datastructure.LinkedListNode;
+import nl.rostykerei.cci.datastructure.SinglyLinkedList;
 
 /**
  * Question 2.7 - Intersection.
@@ -17,6 +17,6 @@ public interface Intersection<T> {
      * @param list2 second singly-linked list
      * @return true is lists intersect, false otherwise
      */
-    boolean isIntersect(LinkedListNode<T> list1, LinkedListNode<T> list2);
+    boolean isIntersect(SinglyLinkedList<T> list1, SinglyLinkedList<T> list2);
 
 }

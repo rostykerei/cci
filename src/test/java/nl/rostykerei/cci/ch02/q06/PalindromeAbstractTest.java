@@ -1,7 +1,8 @@
 package nl.rostykerei.cci.ch02.q06;
 
 import nl.rostykerei.cci.common.AbstractFactoryTest;
-import nl.rostykerei.cci.datastructure.LinkedListNode;
+import nl.rostykerei.cci.datastructure.DoublyLinkedList;
+import nl.rostykerei.cci.datastructure.impl.DoublyLinkedListImpl;
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
@@ -11,11 +12,11 @@ public abstract class PalindromeAbstractTest extends AbstractFactoryTest<Palindr
 
     @Test
     public void testTrue() throws Exception {
-        LinkedListNode<String> linkedList1 = new LinkedListNode<>("A").setNext(
-                new LinkedListNode<>("B").setNext(
-                        new LinkedListNode<>("C").setNext(
-                                new LinkedListNode<>("B").setNext(
-                                        new LinkedListNode<>("A")
+        DoublyLinkedList<String> linkedList1 = new DoublyLinkedListImpl<>("A").setNext(
+                new DoublyLinkedListImpl<>("B").setNext(
+                        new DoublyLinkedListImpl<>("C").setNext(
+                                new DoublyLinkedListImpl<>("B").setNext(
+                                        new DoublyLinkedListImpl<>("A")
                                 )
                         )
                 )
@@ -23,32 +24,32 @@ public abstract class PalindromeAbstractTest extends AbstractFactoryTest<Palindr
 
         assertTrue(testInstance.isPalindrome(linkedList1));
 
-        LinkedListNode<String> linkedList2 = new LinkedListNode<>("A").setNext(
-                new LinkedListNode<>("B").setNext(
-                        new LinkedListNode<>("B").setNext(
-                                new LinkedListNode<>("A")
+        DoublyLinkedList<String> linkedList2 = new DoublyLinkedListImpl<>("A").setNext(
+                new DoublyLinkedListImpl<>("B").setNext(
+                        new DoublyLinkedListImpl<>("B").setNext(
+                                new DoublyLinkedListImpl<>("A")
                         )
                 )
         );
 
         assertTrue(testInstance.isPalindrome(linkedList2));
 
-        LinkedListNode<String> linkedList3 = new LinkedListNode<>("A").setNext(
-                new LinkedListNode<>("A")
+        DoublyLinkedList<String> linkedList3 = new DoublyLinkedListImpl<>("A").setNext(
+                new DoublyLinkedListImpl<>("A")
         );
 
         assertTrue(testInstance.isPalindrome(linkedList3));
 
-        assertTrue(testInstance.isPalindrome(new LinkedListNode<>("A")));
+        assertTrue(testInstance.isPalindrome(new DoublyLinkedListImpl<>("A")));
     }
 
     @Test
     public void testFalse() throws Exception {
-        LinkedListNode<String> linkedList1 = new LinkedListNode<>("A").setNext(
-                new LinkedListNode<>("B").setNext(
-                        new LinkedListNode<>("C").setNext(
-                                new LinkedListNode<>("X").setNext(
-                                        new LinkedListNode<>("A")
+        DoublyLinkedList<String> linkedList1 = new DoublyLinkedListImpl<>("A").setNext(
+                new DoublyLinkedListImpl<>("B").setNext(
+                        new DoublyLinkedListImpl<>("C").setNext(
+                                new DoublyLinkedListImpl<>("X").setNext(
+                                        new DoublyLinkedListImpl<>("A")
                                 )
                         )
                 )
@@ -56,8 +57,8 @@ public abstract class PalindromeAbstractTest extends AbstractFactoryTest<Palindr
 
         assertFalse(testInstance.isPalindrome(linkedList1));
 
-        LinkedListNode<String> linkedList2 = new LinkedListNode<>("A").setNext(
-                new LinkedListNode<>("B")
+        DoublyLinkedList<String> linkedList2 = new DoublyLinkedListImpl<>("A").setNext(
+                new DoublyLinkedListImpl<>("B")
         );
 
         assertFalse(testInstance.isPalindrome(linkedList2));

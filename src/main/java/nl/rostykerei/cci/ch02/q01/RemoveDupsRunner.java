@@ -1,6 +1,6 @@
 package nl.rostykerei.cci.ch02.q01;
 
-import nl.rostykerei.cci.datastructure.LinkedListNode;
+import nl.rostykerei.cci.datastructure.DoublyLinkedList;
 
 /**
  * Implementation of {@link RemoveDups} using a runner.
@@ -11,13 +11,13 @@ import nl.rostykerei.cci.datastructure.LinkedListNode;
 public final class RemoveDupsRunner<T> implements RemoveDups<T> {
 
     @Override
-    public void removeDups(final LinkedListNode<T> input) {
-        LinkedListNode<T> node = input;
+    public void removeDups(final DoublyLinkedList<T> input) {
+        DoublyLinkedList<T> node = input;
 
         while (node != null) {
             T value = node.getData();
 
-            LinkedListNode<T> runner = node.getNext();
+            DoublyLinkedList<T> runner = node.getNext();
 
             while (runner != null) {
                 if (runner.getData().equals(value)) {

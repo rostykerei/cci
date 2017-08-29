@@ -1,7 +1,8 @@
 package nl.rostykerei.cci.ch02.q01;
 
 import nl.rostykerei.cci.common.AbstractFactoryTest;
-import nl.rostykerei.cci.datastructure.LinkedListNode;
+import nl.rostykerei.cci.datastructure.DoublyLinkedList;
+import nl.rostykerei.cci.datastructure.impl.DoublyLinkedListImpl;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -13,11 +14,11 @@ public abstract class RemoveDupsAbstractTest extends AbstractFactoryTest<RemoveD
     @Test
     public void removeDups() throws Exception {
 
-        LinkedListNode<Integer> linkedList = new LinkedListNode<>(1).setNext(
-                new LinkedListNode<>(2).setNext(
-                        new LinkedListNode<>(3).setNext(
-                                new LinkedListNode<>(2).setNext(
-                                        new LinkedListNode<>(5)
+        DoublyLinkedList<Integer> linkedList = new DoublyLinkedListImpl<>(1).setNext(
+                new DoublyLinkedListImpl<>(2).setNext(
+                        new DoublyLinkedListImpl<>(3).setNext(
+                                new DoublyLinkedListImpl<>(2).setNext(
+                                        new DoublyLinkedListImpl<>(5)
                                 )
                         )
                 )
@@ -31,11 +32,11 @@ public abstract class RemoveDupsAbstractTest extends AbstractFactoryTest<RemoveD
     @Test
     public void removeDups2() throws Exception {
 
-        LinkedListNode<Integer> linkedList = new LinkedListNode<>(1).setNext(
-                new LinkedListNode<>(2).setNext(
-                        new LinkedListNode<>(3).setNext(
-                                new LinkedListNode<>(4).setNext(
-                                        new LinkedListNode<>(2)
+        DoublyLinkedList<Integer> linkedList = new DoublyLinkedListImpl<>(1).setNext(
+                new DoublyLinkedListImpl<>(2).setNext(
+                        new DoublyLinkedListImpl<>(3).setNext(
+                                new DoublyLinkedListImpl<>(4).setNext(
+                                        new DoublyLinkedListImpl<>(2)
                                 )
                         )
                 )

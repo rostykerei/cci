@@ -1,6 +1,6 @@
 package nl.rostykerei.cci.ch02.q01;
 
-import nl.rostykerei.cci.datastructure.LinkedListNode;
+import nl.rostykerei.cci.datastructure.DoublyLinkedList;
 
 /**
  * Question 2.1 - Remove Dups.
@@ -15,5 +15,5 @@ public interface RemoveDups<T> {
      *
      * @param input linked list
      */
-    void removeDups(LinkedListNode<T> input);
+    void removeDups(DoublyLinkedList<T> input);
 }

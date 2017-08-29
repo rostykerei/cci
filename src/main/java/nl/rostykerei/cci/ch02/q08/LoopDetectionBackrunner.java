@@ -1,6 +1,6 @@
 package nl.rostykerei.cci.ch02.q08;
 
-import nl.rostykerei.cci.datastructure.LinkedListNode;
+import nl.rostykerei.cci.datastructure.DoublyLinkedList;
 
 /**
  * Implementation of {@link LoopDetection} using a back runner loop.
@@ -11,11 +11,11 @@ import nl.rostykerei.cci.datastructure.LinkedListNode;
 public final class LoopDetectionBackrunner<T> implements LoopDetection<T> {
 
     @Override
-    public LinkedListNode<T> detectLoop(final LinkedListNode<T> list) {
-        LinkedListNode<T> head = list;
+    public DoublyLinkedList<T> detectLoop(final DoublyLinkedList<T> list) {
+        DoublyLinkedList<T> head = list;
 
         while (head.getNext() != null) {
-            LinkedListNode<T> r = head.getPrevious();
+            DoublyLinkedList<T> r = head.getPrevious();
 
             while (r != null) {
                 if (r.equals(head)) {

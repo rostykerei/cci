@@ -1,7 +1,8 @@
 package nl.rostykerei.cci.ch02.q03;
 
 import nl.rostykerei.cci.common.AbstractFactoryTest;
-import nl.rostykerei.cci.datastructure.LinkedListNode;
+import nl.rostykerei.cci.datastructure.SinglyLinkedList;
+import nl.rostykerei.cci.datastructure.impl.SinglyLinkedListImpl;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -12,18 +13,18 @@ public abstract class DeleteMiddleNodeAbstractTest extends AbstractFactoryTest<D
 
     @Test
     public void deleteMiddleNode() throws Exception {
-        LinkedListNode<Integer> n5 = new LinkedListNode<>(5);
+        SinglyLinkedList<Integer> n5 = new SinglyLinkedListImpl<>(5);
 
-        LinkedListNode<Integer> n4 = new LinkedListNode<>(4);
+        SinglyLinkedList<Integer> n4 = new SinglyLinkedListImpl<>(4);
         n4.setNext(n5);
 
-        LinkedListNode<Integer> n3 = new LinkedListNode<>(3);
+        SinglyLinkedList<Integer> n3 = new SinglyLinkedListImpl<>(3);
         n3.setNext(n4);
 
-        LinkedListNode<Integer> n2 = new LinkedListNode<>(2);
+        SinglyLinkedList<Integer> n2 = new SinglyLinkedListImpl<>(2);
         n2.setNext(n3);
 
-        LinkedListNode<Integer> n1 = new LinkedListNode<>(1);
+        SinglyLinkedList<Integer> n1 = new SinglyLinkedListImpl<>(1);
 
         n1.setNext(n2);
 
@@ -34,8 +35,8 @@ public abstract class DeleteMiddleNodeAbstractTest extends AbstractFactoryTest<D
 
     @Test(expected = IllegalArgumentException.class)
     public void testLastNode() throws Exception {
-        LinkedListNode<Integer> n2 = new LinkedListNode<>(2);
-        LinkedListNode<Integer> n1 = new LinkedListNode<>(1);
+        SinglyLinkedList<Integer> n2 = new SinglyLinkedListImpl<>(2);
+        SinglyLinkedList<Integer> n1 = new SinglyLinkedListImpl<>(1);
         n1.setNext(n2);
 
         testInstance.deleteMiddleNode(n2);

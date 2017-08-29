@@ -1,7 +1,8 @@
 package nl.rostykerei.cci.ch02.q05;
 
 import nl.rostykerei.cci.common.AbstractFactoryTest;
-import nl.rostykerei.cci.datastructure.LinkedListNode;
+import nl.rostykerei.cci.datastructure.DoublyLinkedList;
+import nl.rostykerei.cci.datastructure.impl.DoublyLinkedListImpl;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -11,15 +12,15 @@ public abstract class SumListsAbstractTest extends AbstractFactoryTest<SumLists>
     @Test
     public void sumListsReverse() throws Exception {
 
-        LinkedListNode<Byte> l617 = new LinkedListNode<>((byte) 7).setNext(
-                new LinkedListNode<>((byte) 1).setNext(
-                        new LinkedListNode<>((byte) 6)
+        DoublyLinkedList<Byte> l617 = new DoublyLinkedListImpl<>((byte) 7).setNext(
+                new DoublyLinkedListImpl<>((byte) 1).setNext(
+                        new DoublyLinkedListImpl<>((byte) 6)
                 )
         );
 
-        LinkedListNode<Byte> l295 = new LinkedListNode<Byte>((byte) 5).setNext(
-                new LinkedListNode<>((byte) 9).setNext(
-                        new LinkedListNode<>((byte) 2)
+        DoublyLinkedList<Byte> l295 = new DoublyLinkedListImpl<Byte>((byte) 5).setNext(
+                new DoublyLinkedListImpl<>((byte) 9).setNext(
+                        new DoublyLinkedListImpl<>((byte) 2)
                 )
         );
 
@@ -29,15 +30,15 @@ public abstract class SumListsAbstractTest extends AbstractFactoryTest<SumLists>
     @Test
     public void sumListsForward() throws Exception {
 
-        LinkedListNode<Byte> l617 = new LinkedListNode<>((byte) 6).setNext(
-                new LinkedListNode<>((byte) 1).setNext(
-                        new LinkedListNode<>((byte) 7)
+        DoublyLinkedList<Byte> l617 = new DoublyLinkedListImpl<>((byte) 6).setNext(
+                new DoublyLinkedListImpl<>((byte) 1).setNext(
+                        new DoublyLinkedListImpl<>((byte) 7)
                 )
         );
 
-        LinkedListNode<Byte> l295 = new LinkedListNode<>((byte) 2).setNext(
-                new LinkedListNode<>((byte) 9).setNext(
-                        new LinkedListNode<>((byte) 5)
+        DoublyLinkedList<Byte> l295 = new DoublyLinkedListImpl<>((byte) 2).setNext(
+                new DoublyLinkedListImpl<>((byte) 9).setNext(
+                        new DoublyLinkedListImpl<>((byte) 5)
                 )
         );
 

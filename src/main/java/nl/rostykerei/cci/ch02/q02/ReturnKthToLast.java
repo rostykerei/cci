@@ -1,6 +1,6 @@
 package nl.rostykerei.cci.ch02.q02;
 
-import nl.rostykerei.cci.datastructure.LinkedListNode;
+import nl.rostykerei.cci.datastructure.SinglyLinkedList;
 
 /**
  * Question 2.2 - Return Kth to Last.
@@ -17,5 +17,5 @@ public interface ReturnKthToLast<T> {
      * @param k    index to the last
      * @return k-th node to the last one
      */
-    LinkedListNode<T> kthToLast(LinkedListNode<T> list, int k);
+    SinglyLinkedList<T> kthToLast(SinglyLinkedList<T> list, int k);
 }

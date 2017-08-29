@@ -1,6 +1,6 @@
 package nl.rostykerei.cci.ch02.q03;
 
-import nl.rostykerei.cci.datastructure.LinkedListNode;
+import nl.rostykerei.cci.datastructure.SinglyLinkedList;
 
 /**
  * Question 2.3 - Delete Middle Node.
@@ -15,5 +15,5 @@ public interface DeleteMiddleNode<T> {
      *
      * @param node node to delete
      */
-    void deleteMiddleNode(LinkedListNode<T> node);
+    void deleteMiddleNode(SinglyLinkedList<T> node);
 }

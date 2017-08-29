@@ -1,6 +1,6 @@
 package nl.rostykerei.cci.ch02.q03;
 
-import nl.rostykerei.cci.datastructure.LinkedListNode;
+import nl.rostykerei.cci.datastructure.SinglyLinkedList;
 
 /**
  * Implementation of {@link DeleteMiddleNode}.
@@ -11,8 +11,8 @@ import nl.rostykerei.cci.datastructure.LinkedListNode;
 public final class DeleteMiddleNodeImpl<T> implements DeleteMiddleNode<T> {
 
     @Override
-    public void deleteMiddleNode(final LinkedListNode<T> node) {
-        LinkedListNode<T> next = node.getNext();
+    public void deleteMiddleNode(final SinglyLinkedList<T> node) {
+        SinglyLinkedList<T> next = node.getNext();
 
         if (next == null) {
             throw new IllegalArgumentException(

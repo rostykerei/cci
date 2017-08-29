@@ -1,7 +1,8 @@
 package nl.rostykerei.cci.ch02.q02;
 
 import nl.rostykerei.cci.common.AbstractFactoryTest;
-import nl.rostykerei.cci.datastructure.LinkedListNode;
+import nl.rostykerei.cci.datastructure.SinglyLinkedList;
+import nl.rostykerei.cci.datastructure.impl.SinglyLinkedListImpl;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -11,11 +12,11 @@ public abstract class ReturnKthToLastAbstractTest extends AbstractFactoryTest<Re
 
     @Test
     public void kthToLast() throws Exception {
-        LinkedListNode<Integer> linkedList = new LinkedListNode<>(1).setNext(
-                new LinkedListNode<>(2).setNext(
-                        new LinkedListNode<>(3).setNext(
-                                new LinkedListNode<>(4).setNext(
-                                        new LinkedListNode<>(5)
+        SinglyLinkedList<Integer> linkedList = new SinglyLinkedListImpl<>(1).setNext(
+                new SinglyLinkedListImpl<>(2).setNext(
+                        new SinglyLinkedListImpl<>(3).setNext(
+                                new SinglyLinkedListImpl<>(4).setNext(
+                                        new SinglyLinkedListImpl<>(5)
                                 )
                         )
                 )

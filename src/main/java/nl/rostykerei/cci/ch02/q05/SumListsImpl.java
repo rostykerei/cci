@@ -1,6 +1,6 @@
 package nl.rostykerei.cci.ch02.q05;
 
-import nl.rostykerei.cci.datastructure.LinkedListNode;
+import nl.rostykerei.cci.datastructure.DoublyLinkedList;
 
 /**
  * Implementation of {@link SumLists}.
@@ -20,11 +20,11 @@ public final class SumListsImpl implements SumLists {
      * @param input input list
      * @return integer
      */
-    private static int listToNumberReverse(final LinkedListNode<Byte> input) {
+    private static int listToNumberReverse(final DoublyLinkedList<Byte> input) {
         int result = 0;
         int exp = 0;
 
-        LinkedListNode<Byte> list = input;
+        DoublyLinkedList<Byte> list = input;
         while (list != null) {
             result += Math.pow(TEN_BASE, exp) * list.getData();
 
@@ -41,11 +41,11 @@ public final class SumListsImpl implements SumLists {
      * @param input input list
      * @return integer
      */
-    private static int listToNumberForward(final LinkedListNode<Byte> input) {
+    private static int listToNumberForward(final DoublyLinkedList<Byte> input) {
         int result = 0;
         int exp = 0;
 
-        LinkedListNode<Byte> list = input;
+        DoublyLinkedList<Byte> list = input;
         while (list.getNext() != null) {
             list = list.getNext();
         }
@@ -61,14 +61,14 @@ public final class SumListsImpl implements SumLists {
     }
 
     @Override
-    public int sumListsReverse(final LinkedListNode<Byte> l1,
-                               final LinkedListNode<Byte> l2) {
+    public int sumListsReverse(final DoublyLinkedList<Byte> l1,
+                               final DoublyLinkedList<Byte> l2) {
         return listToNumberReverse(l1) + listToNumberReverse(l2);
     }
 
     @Override
-    public int sumListsForward(final LinkedListNode<Byte> l1,
-                               final LinkedListNode<Byte> l2) {
+    public int sumListsForward(final DoublyLinkedList<Byte> l1,
+                               final DoublyLinkedList<Byte> l2) {
         return listToNumberForward(l1) + listToNumberForward(l2);
     }
 
