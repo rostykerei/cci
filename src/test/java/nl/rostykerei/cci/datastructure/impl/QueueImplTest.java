@@ -9,9 +9,13 @@ import static org.junit.Assert.*;
 
 public class QueueImplTest {
 
+    protected Queue<Integer> createQueue() {
+        return new QueueImpl<>();
+    }
+
     @Test
     public void queueTest() throws Exception {
-        Queue<Integer> queue = new QueueImpl<>();
+        Queue<Integer> queue = createQueue();
 
         queue.add(1);
         queue.add(2);
@@ -25,23 +29,27 @@ public class QueueImplTest {
 
         assertEquals(3, (int) queue.peek());
         assertEquals(3, (int) queue.remove());
+
+        queue.add(4);
+
+        assertEquals(4, (int) queue.remove());
     }
 
     @Test(expected = NoSuchElementException.class)
     public void removeEmpty() throws Exception {
-        Queue<Integer> queue = new QueueImpl<>();
+        Queue<Integer> queue = createQueue();
         queue.remove();
     }
 
     @Test(expected = NoSuchElementException.class)
     public void peekEmpty() throws Exception {
-        Queue<Integer> queue = new QueueImpl<>();
+        Queue<Integer> queue = createQueue();
         queue.peek();
     }
 
     @Test
     public void isEmpty() throws Exception {
-        Queue<Integer> queue = new QueueImpl<>();
+        Queue<Integer> queue = createQueue();
 
         assertTrue(queue.isEmpty());
 
