@@ -59,7 +59,7 @@ public final class SetOfStacksFull<T> implements SetOfStacks<T> {
 
     @Override
     public T popAt(final int stackNumber) {
-        if (stacks.size() <= 0) {
+        if (stacks.isEmpty()) {
             throw new EmptyStackException();
         }
 
@@ -85,7 +85,7 @@ public final class SetOfStacksFull<T> implements SetOfStacks<T> {
 
     @Override
     public void push(final T item) {
-        if (stacks.size() == 0) {
+        if (stacks.isEmpty()) {
             stacks.add(new StackWithSize<>());
         }
 
@@ -98,7 +98,7 @@ public final class SetOfStacksFull<T> implements SetOfStacks<T> {
 
     @Override
     public T peek() {
-        if (stacks.size() == 0) {
+        if (stacks.isEmpty()) {
             throw new EmptyStackException();
         }
 
@@ -107,7 +107,7 @@ public final class SetOfStacksFull<T> implements SetOfStacks<T> {
 
     @Override
     public boolean isEmpty() {
-        return stacks.size() == 0;
+        return stacks.isEmpty();
     }
 
     /**
