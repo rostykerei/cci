@@ -9,9 +9,13 @@ import static org.junit.Assert.*;
 
 public class StackImplTest {
 
+    protected Stack<Integer> createStack() {
+        return new StackImpl<>();
+    }
+
     @Test
     public void stackTest() throws Exception {
-        Stack<Integer> stack = new StackImpl<>();
+        Stack<Integer> stack = createStack();
 
         stack.push(1);
         stack.push(2);
@@ -29,19 +33,19 @@ public class StackImplTest {
 
     @Test(expected = EmptyStackException.class)
     public void popEmpty() throws Exception {
-        Stack<Integer> stack = new StackImpl<>();
+        Stack<Integer> stack = createStack();
         stack.pop();
     }
 
     @Test(expected = EmptyStackException.class)
     public void peekEmpty() throws Exception {
-        Stack<Integer> stack = new StackImpl<>();
+        Stack<Integer> stack = createStack();
         stack.peek();
     }
 
     @Test
     public void isEmpty() throws Exception {
-        Stack<Integer> stack = new StackImpl<>();
+        Stack<Integer> stack = createStack();
 
         assertTrue(stack.isEmpty());
 
