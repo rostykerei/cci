@@ -17,20 +17,8 @@ public final class SortStackImpl<T extends Comparable<? super T>>
         Stack<T> sorted = new StackImpl<>();
 
         while (!stack.isEmpty()) {
-            T min = null;
             Stack<T> temp = new StackImpl<>();
-
-            while (!stack.isEmpty()) {
-                T item = stack.pop();
-
-                if (min == null) {
-                    min = item;
-                } else if (item.compareTo(min) < 0) {
-                    min = item;
-                }
-
-                temp.push(item);
-            }
+            T min = findMin(stack, temp, null);
 
             sorted.push(min);
 
@@ -40,6 +28,32 @@ public final class SortStackImpl<T extends Comparable<? super T>>
         }
 
         swap(sorted, stack);
+    }
+
+    /**
+     * Recursively find a min value and pours out stack.
+     *
+     * @param stack input stack
+     * @param out out stack
+     * @param minValue min value, initial null
+     * @return min value
+     */
+    private T findMin(final Stack<T> stack, final Stack<T> out,
+                      final T minValue) {
+        if (stack.isEmpty()) {
+            return minValue;
+        }
+
+        T val = stack.pop();
+        out.push(val);
+
+        T min = minValue;
+
+        if (minValue == null || val.compareTo(minValue) < 1) {
+            min = val;
+        }
+
+        return findMin(stack, out, min);
     }
 
 
@@ -57,7 +71,7 @@ public final class SortStackImpl<T extends Comparable<? super T>>
         while (!stack.isEmpty()) {
             T item = stack.pop();
 
-            if (remove.equals(item) && !removed) {
+            if (item.equals(remove) && !removed) {
                 removed = true;
             } else {
                 result.push(item);
