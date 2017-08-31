@@ -34,7 +34,7 @@ public abstract class AnimalShelterAbstractTest extends AbstractFactoryTest<Anim
 
     @Test
     public void testShelter2() throws Exception {
-        testInstance.enqueue(new Persian());
+        testInstance.enqueue(new Scottish());
         assertTrue(testInstance.dequeueAny() instanceof Scottish);
     }
 }
