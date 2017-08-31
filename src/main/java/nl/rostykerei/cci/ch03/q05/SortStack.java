@@ -8,7 +8,7 @@ import nl.rostykerei.cci.datastructure.Stack;
  * @param <T> the class of the objects in the stack
  * @author Rosty Kerei
  */
-public interface SortStack<T extends Comparable> {
+public interface SortStack<T extends Comparable<? super T>> {
 
     /**
      * Sorts given stack.
