@@ -6,6 +6,7 @@ import java.util.List;
  * Directed graph node.
  *
  * @param <T> the class of the objects in the node
+ * @author Rosty Kerei
  */
 public interface Node<T> {
 
