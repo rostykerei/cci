@@ -36,10 +36,8 @@ public final class RouteBetweenNodesDFS<T> implements RouteBetweenNodes<T> {
         seen.add(node);
 
         for (Node<T> n : node.getChildren()) {
-            if (!seen.contains(n)) {
-                if (dfs(n, finish, seen)) {
-                    return true;
-                }
+            if (!seen.contains(n) && dfs(n, finish, seen)) {
+                return true;
             }
         }
 
