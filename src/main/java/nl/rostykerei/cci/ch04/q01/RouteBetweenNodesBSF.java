@@ -1,7 +1,7 @@
 package nl.rostykerei.cci.ch04.q01;
 
-import nl.rostykerei.cci.datastructure.Node;
 import nl.rostykerei.cci.datastructure.Queue;
+import nl.rostykerei.cci.datastructure.TreeNode;
 import nl.rostykerei.cci.datastructure.impl.QueueImpl;
 
 import java.util.HashSet;
@@ -15,22 +15,23 @@ import java.util.HashSet;
 public final class RouteBetweenNodesBSF<T> implements RouteBetweenNodes<T> {
 
     @Override
-    public boolean isRoutePossible(final Node<T> start, final Node<T> finish) {
+    public boolean isRoutePossible(final TreeNode<T> start,
+                                   final TreeNode<T> finish) {
 
-        HashSet<Node<T>> seen = new HashSet<>();
+        HashSet<TreeNode<T>> seen = new HashSet<>();
         seen.add(start);
 
-        Queue<Node<T>> queue = new QueueImpl<>();
+        Queue<TreeNode<T>> queue = new QueueImpl<>();
         queue.add(start);
 
         while (!queue.isEmpty()) {
-            Node<T> currentNode = queue.remove();
+            TreeNode<T> currentNode = queue.remove();
 
             if (currentNode == finish) {
                 return true;
             }
 
-            for (Node<T> child : currentNode.getChildren()) {
+            for (TreeNode<T> child : currentNode.getChildren()) {
                 if (!seen.contains(child)) {
                     seen.add(child);
                     queue.add(child);

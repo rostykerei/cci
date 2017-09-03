@@ -8,21 +8,21 @@ import java.util.List;
  * @param <T> the class of the objects in the node
  * @author Rosty Kerei
  */
-public interface Node<T> {
+public interface TreeNode<T> {
 
     /**
      * Adds child node.
      *
      * @param child child node
      */
-    void addChild(Node<T> child);
+    void addChild(TreeNode<T> child);
 
     /**
      * Gets list of all children nodes.
      *
      * @return list of all children nodes
      */
-    List<Node<T>> getChildren();
+    List<TreeNode<T>> getChildren();
 
     /**
      * Gets node's data.

@@ -1,6 +1,6 @@
 package nl.rostykerei.cci.ch04.q01;
 
-import nl.rostykerei.cci.datastructure.Node;
+import nl.rostykerei.cci.datastructure.TreeNode;
 
 /**
  * Question 4.1 - Route Between Nodes.
@@ -17,6 +17,6 @@ public interface RouteBetweenNodes<T> {
      * @param finish finish node
      * @return true if route exists
      */
-    boolean isRoutePossible(Node<T> start, Node<T> finish);
+    boolean isRoutePossible(TreeNode<T> start, TreeNode<T> finish);
 
 }

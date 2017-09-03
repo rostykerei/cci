@@ -1,8 +1,8 @@
 package nl.rostykerei.cci.ch04.q01;
 
 import nl.rostykerei.cci.common.AbstractFactoryTest;
-import nl.rostykerei.cci.datastructure.Node;
-import nl.rostykerei.cci.datastructure.impl.NodeImpl;
+import nl.rostykerei.cci.datastructure.TreeNode;
+import nl.rostykerei.cci.datastructure.impl.TreeNodeImpl;
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
@@ -20,22 +20,22 @@ public abstract class RouteBetweenNodesAbstractTest extends AbstractFactoryTest<
      */
     @Test
     public void testPath() throws Exception {
-        Node<String> nodeA = new NodeImpl<>("A");
-        Node<String> nodeB = new NodeImpl<>("B");
-        Node<String> nodeC = new NodeImpl<>("C");
-        Node<String> nodeD = new NodeImpl<>("D");
-        Node<String> nodeE = new NodeImpl<>("E");
+        TreeNode<String> treeNodeA = new TreeNodeImpl<>("A");
+        TreeNode<String> treeNodeB = new TreeNodeImpl<>("B");
+        TreeNode<String> treeNodeC = new TreeNodeImpl<>("C");
+        TreeNode<String> treeNodeD = new TreeNodeImpl<>("D");
+        TreeNode<String> treeNodeE = new TreeNodeImpl<>("E");
 
-        nodeA.addChild(nodeB);
-        nodeA.addChild(nodeD);
+        treeNodeA.addChild(treeNodeB);
+        treeNodeA.addChild(treeNodeD);
 
-        nodeB.addChild(nodeC);
-        nodeB.addChild(nodeC);
+        treeNodeB.addChild(treeNodeC);
+        treeNodeB.addChild(treeNodeC);
 
-        nodeD.addChild(nodeC);
-        nodeD.addChild(nodeE);
+        treeNodeD.addChild(treeNodeC);
+        treeNodeD.addChild(treeNodeE);
 
-        assertTrue(testInstance.isRoutePossible(nodeA, nodeE));
+        assertTrue(testInstance.isRoutePossible(treeNodeA, treeNodeE));
     }
 
     /**
@@ -49,24 +49,24 @@ public abstract class RouteBetweenNodesAbstractTest extends AbstractFactoryTest<
      */
     @Test
     public void testPath2() throws Exception {
-        Node<String> nodeA = new NodeImpl<>("A");
-        Node<String> nodeB = new NodeImpl<>("B");
-        Node<String> nodeC = new NodeImpl<>("C");
-        Node<String> nodeD = new NodeImpl<>("D");
-        Node<String> nodeE = new NodeImpl<>("E");
-        Node<String> nodeF = new NodeImpl<>("F");
-        Node<String> nodeG = new NodeImpl<>("G");
+        TreeNode<String> treeNodeA = new TreeNodeImpl<>("A");
+        TreeNode<String> treeNodeB = new TreeNodeImpl<>("B");
+        TreeNode<String> treeNodeC = new TreeNodeImpl<>("C");
+        TreeNode<String> treeNodeD = new TreeNodeImpl<>("D");
+        TreeNode<String> treeNodeE = new TreeNodeImpl<>("E");
+        TreeNode<String> treeNodeF = new TreeNodeImpl<>("F");
+        TreeNode<String> treeNodeG = new TreeNodeImpl<>("G");
 
-        nodeA.addChild(nodeB);
-        nodeA.addChild(nodeG);
+        treeNodeA.addChild(treeNodeB);
+        treeNodeA.addChild(treeNodeG);
 
-        nodeB.addChild(nodeC);
-        nodeB.addChild(nodeD);
+        treeNodeB.addChild(treeNodeC);
+        treeNodeB.addChild(treeNodeD);
 
-        nodeD.addChild(nodeE);
-        nodeD.addChild(nodeF);
+        treeNodeD.addChild(treeNodeE);
+        treeNodeD.addChild(treeNodeF);
 
-        assertTrue(testInstance.isRoutePossible(nodeA, nodeG));
+        assertTrue(testInstance.isRoutePossible(treeNodeA, treeNodeG));
 
     }
 
@@ -79,39 +79,39 @@ public abstract class RouteBetweenNodesAbstractTest extends AbstractFactoryTest<
      */
     @Test
     public void testPath3() throws Exception {
-        Node<String> nodeA = new NodeImpl<>("A");
-        Node<String> nodeB = new NodeImpl<>("B");
-        Node<String> nodeC = new NodeImpl<>("C");
-        Node<String> nodeD = new NodeImpl<>("D");
-        Node<String> nodeE = new NodeImpl<>("E");
-        Node<String> nodeF = new NodeImpl<>("F");
-        Node<String> nodeG = new NodeImpl<>("G");
+        TreeNode<String> treeNodeA = new TreeNodeImpl<>("A");
+        TreeNode<String> treeNodeB = new TreeNodeImpl<>("B");
+        TreeNode<String> treeNodeC = new TreeNodeImpl<>("C");
+        TreeNode<String> treeNodeD = new TreeNodeImpl<>("D");
+        TreeNode<String> treeNodeE = new TreeNodeImpl<>("E");
+        TreeNode<String> treeNodeF = new TreeNodeImpl<>("F");
+        TreeNode<String> treeNodeG = new TreeNodeImpl<>("G");
 
-        nodeA.addChild(nodeB);
-        nodeA.addChild(nodeC);
-        nodeA.addChild(nodeD);
-        nodeA.addChild(nodeE);
-        nodeA.addChild(nodeF);
+        treeNodeA.addChild(treeNodeB);
+        treeNodeA.addChild(treeNodeC);
+        treeNodeA.addChild(treeNodeD);
+        treeNodeA.addChild(treeNodeE);
+        treeNodeA.addChild(treeNodeF);
 
-        nodeB.addChild(nodeG);
+        treeNodeB.addChild(treeNodeG);
 
-        assertTrue(testInstance.isRoutePossible(nodeA, nodeG));
+        assertTrue(testInstance.isRoutePossible(treeNodeA, treeNodeG));
     }
 
     @Test
     public void testFalse() throws Exception {
-        Node<String> nodeA = new NodeImpl<>("A");
-        Node<String> nodeB = new NodeImpl<>("B");
-        Node<String> nodeC = new NodeImpl<>("C");
-        Node<String> nodeD = new NodeImpl<>("D");
-        Node<String> nodeE = new NodeImpl<>("E");
+        TreeNode<String> treeNodeA = new TreeNodeImpl<>("A");
+        TreeNode<String> treeNodeB = new TreeNodeImpl<>("B");
+        TreeNode<String> treeNodeC = new TreeNodeImpl<>("C");
+        TreeNode<String> treeNodeD = new TreeNodeImpl<>("D");
+        TreeNode<String> treeNodeE = new TreeNodeImpl<>("E");
 
-        nodeA.addChild(nodeB);
-        nodeB.addChild(nodeC);
-        nodeB.addChild(nodeD);
-        nodeD.addChild(nodeC);
-        nodeE.addChild(nodeC);
+        treeNodeA.addChild(treeNodeB);
+        treeNodeB.addChild(treeNodeC);
+        treeNodeB.addChild(treeNodeD);
+        treeNodeD.addChild(treeNodeC);
+        treeNodeE.addChild(treeNodeC);
 
-        assertFalse(testInstance.isRoutePossible(nodeA, nodeE));
+        assertFalse(testInstance.isRoutePossible(treeNodeA, treeNodeE));
     }
 }

@@ -1,17 +1,17 @@
 package nl.rostykerei.cci.datastructure.impl;
 
-import nl.rostykerei.cci.datastructure.Node;
+import nl.rostykerei.cci.datastructure.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Implementation of {@link Node}.
+ * Implementation of {@link TreeNode}.
  *
  * @param <T> the class of the objects in the node
  * @author Rosty Kerei
  */
-public final class NodeImpl<T> implements Node<T> {
+public final class TreeNodeImpl<T> implements TreeNode<T> {
 
     /**
      * Data holder.
@@ -21,24 +21,24 @@ public final class NodeImpl<T> implements Node<T> {
     /**
      * List of all children nodes.
      */
-    private List<Node<T>> children = new ArrayList<>();
+    private List<TreeNode<T>> children = new ArrayList<>();
 
     /**
      * Constructor.
      *
      * @param dataValue node's data
      */
-    public NodeImpl(final T dataValue) {
+    public TreeNodeImpl(final T dataValue) {
         this.data = dataValue;
     }
 
     @Override
-    public void addChild(final Node<T> child) {
+    public void addChild(final TreeNode<T> child) {
         children.add(child);
     }
 
     @Override
-    public List<Node<T>> getChildren() {
+    public List<TreeNode<T>> getChildren() {
         return children;
     }
 
