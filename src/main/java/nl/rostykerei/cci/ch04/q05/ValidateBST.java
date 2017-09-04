@@ -16,6 +16,6 @@ public interface ValidateBST<T extends Comparable<T>> {
      * @param input tree to validate
      * @return true is the input is a valid BST, false otherwise
      */
-    boolean validate(BinaryTreeNode<T> input);
+    boolean isValidBST(BinaryTreeNode<T> input);
 
 }
