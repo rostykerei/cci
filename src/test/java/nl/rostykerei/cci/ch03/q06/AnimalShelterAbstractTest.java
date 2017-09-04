@@ -24,17 +24,17 @@ public abstract class AnimalShelterAbstractTest extends AbstractFactoryTest<Anim
         testInstance.enqueue(new Pug());
         testInstance.enqueue(new Scottish());
 
-        assertTrue(testInstance.dequeueAny() instanceof Labrador);
-        assertTrue(testInstance.dequeueDog() instanceof Bulldog);
-        assertTrue(testInstance.dequeueAny() instanceof Persian);
-        assertTrue(testInstance.dequeueCat() instanceof Siamese);
-        assertTrue(testInstance.dequeueCat() instanceof Scottish);
-        assertTrue(testInstance.dequeueAny() instanceof Pug);
+        assertTrue(testInstance.dequeAny() instanceof Labrador);
+        assertTrue(testInstance.dequeDog() instanceof Bulldog);
+        assertTrue(testInstance.dequeAny() instanceof Persian);
+        assertTrue(testInstance.dequeCat() instanceof Siamese);
+        assertTrue(testInstance.dequeCat() instanceof Scottish);
+        assertTrue(testInstance.dequeAny() instanceof Pug);
     }
 
     @Test
     public void testShelter2() throws Exception {
         testInstance.enqueue(new Scottish());
-        assertTrue(testInstance.dequeueAny() instanceof Scottish);
+        assertTrue(testInstance.dequeAny() instanceof Scottish);
     }
 }

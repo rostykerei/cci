@@ -22,7 +22,7 @@ public final class QueueImpl<T> implements Queue<T> {
         /**
          * Data holder.
          */
-        private T data;
+        private final T data;
 
         /**
          * Next node.

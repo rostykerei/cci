@@ -24,7 +24,7 @@ public final class BinaryTreeNodeImpl<T extends Comparable<T>>
     /**
      * Node's data.
      */
-    private T data;
+    private final T data;
 
     /**
      * Constructor.

@@ -16,12 +16,12 @@ public final class TreeNodeImpl<T> implements TreeNode<T> {
     /**
      * Data holder.
      */
-    private T data;
+    private final T data;
 
     /**
      * List of all children nodes.
      */
-    private List<TreeNode<T>> children = new ArrayList<>();
+    private final List<TreeNode<T>> children = new ArrayList<>();
 
     /**
      * Constructor.

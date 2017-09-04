@@ -18,7 +18,7 @@ public abstract class SumListsAbstractTest extends AbstractFactoryTest<SumLists>
                 )
         );
 
-        DoublyLinkedList<Byte> l295 = new DoublyLinkedListImpl<Byte>((byte) 5).setNext(
+        DoublyLinkedList<Byte> l295 = new DoublyLinkedListImpl<>((byte) 5).setNext(
                 new DoublyLinkedListImpl<>((byte) 9).setNext(
                         new DoublyLinkedListImpl<>((byte) 2)
                 )

@@ -41,12 +41,12 @@ public final class SetOfStacksFull<T> implements SetOfStacks<T> {
     /**
      * List of stacks.
      */
-    private ArrayList<StackWithSize<T>> stacks = new ArrayList<>();
+    private final ArrayList<StackWithSize<T>> stacks = new ArrayList<>();
 
     /**
      * Each stack capacity.
      */
-    private int capacity;
+    private final int capacity;
 
     /**
      * Constructor.

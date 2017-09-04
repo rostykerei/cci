@@ -14,17 +14,17 @@ public final class ThreeInOneImpl<T> implements ThreeInOne<T> {
     /**
      * Array to hold all elements of all stacks.
      */
-    private Object[] elements;
+    private final Object[] elements;
 
     /**
      * Index positions of all stacks.
      */
-    private int[] indexes;
+    private final int[] indexes;
 
     /**
      * Stack capacity.
      */
-    private int capacity;
+    private final int capacity;
 
     /**
      * Constructor.

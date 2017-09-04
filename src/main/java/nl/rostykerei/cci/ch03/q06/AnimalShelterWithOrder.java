@@ -17,12 +17,12 @@ public final class AnimalShelterWithOrder implements AnimalShelter {
         /**
          * Animal holder.
          */
-        private Animal animal;
+        private final Animal animal;
 
         /**
          * Order number.
          */
-        private int order;
+        private final int order;
 
         /**
          * Constructor.
@@ -62,12 +62,12 @@ public final class AnimalShelterWithOrder implements AnimalShelter {
     /**
      * Cats queue.
      */
-    private LinkedList<AnimalWithOrder> cats = new LinkedList<>();
+    private final LinkedList<AnimalWithOrder> cats = new LinkedList<>();
 
     /**
      * Dogs queue.
      */
-    private LinkedList<AnimalWithOrder> dogs = new LinkedList<>();
+    private final LinkedList<AnimalWithOrder> dogs = new LinkedList<>();
 
     @Override
     public void enqueue(final Animal animal) {
@@ -84,29 +84,29 @@ public final class AnimalShelterWithOrder implements AnimalShelter {
     }
 
     @Override
-    public Animal dequeueAny() {
+    public Animal dequeAny() {
         if (cats.isEmpty()) {
-            return dequeueDog();
+            return dequeDog();
         }
 
         if (dogs.isEmpty()) {
-            return dequeueCat();
+            return dequeCat();
         }
 
         if (cats.peekFirst().getOrder() < dogs.peekFirst().getOrder()) {
-            return dequeueCat();
+            return dequeCat();
         } else {
-            return dequeueDog();
+            return dequeDog();
         }
     }
 
     @Override
-    public Cat dequeueCat() {
+    public Cat dequeCat() {
         return (Cat) cats.removeFirst().getAnimal();
     }
 
     @Override
-    public Dog dequeueDog() {
+    public Dog dequeDog() {
         return (Dog) dogs.removeFirst().getAnimal();
     }
 }

@@ -15,24 +15,24 @@ public interface AnimalShelter {
     void enqueue(Animal animal);
 
     /**
-     * Dequeues the first animal in the queue.
+     * Deques the first animal in the queue.
      *
      * @return animal
      */
-    Animal dequeueAny();
+    Animal dequeAny();
 
     /**
-     * Dequeues the first cat in the queue.
+     * Deques the first cat in the queue.
      *
      * @return cat
      */
-    Cat dequeueCat();
+    Cat dequeCat();
 
     /**
-     * Dequeues the first dog in the queue.
+     * Deques the first dog in the queue.
      *
      * @return dog
      */
-    Dog dequeueDog();
+    Dog dequeDog();
 
 }

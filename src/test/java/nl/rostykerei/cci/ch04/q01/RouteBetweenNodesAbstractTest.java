@@ -79,13 +79,13 @@ public abstract class RouteBetweenNodesAbstractTest extends AbstractFactoryTest<
      */
     @Test
     public void testPath3() throws Exception {
-        TreeNode<String> treeNodeA = new TreeNodeImpl<>("A");
-        TreeNode<String> treeNodeB = new TreeNodeImpl<>("B");
-        TreeNode<String> treeNodeC = new TreeNodeImpl<>("C");
-        TreeNode<String> treeNodeD = new TreeNodeImpl<>("D");
-        TreeNode<String> treeNodeE = new TreeNodeImpl<>("E");
-        TreeNode<String> treeNodeF = new TreeNodeImpl<>("F");
-        TreeNode<String> treeNodeG = new TreeNodeImpl<>("G");
+        TreeNode<String> treeNodeA = new TreeNodeImpl<>("a");
+        TreeNode<String> treeNodeB = new TreeNodeImpl<>("b");
+        TreeNode<String> treeNodeC = new TreeNodeImpl<>("c");
+        TreeNode<String> treeNodeD = new TreeNodeImpl<>("d");
+        TreeNode<String> treeNodeE = new TreeNodeImpl<>("e");
+        TreeNode<String> treeNodeF = new TreeNodeImpl<>("f");
+        TreeNode<String> treeNodeG = new TreeNodeImpl<>("g");
 
         treeNodeA.addChild(treeNodeB);
         treeNodeA.addChild(treeNodeC);

@@ -12,17 +12,17 @@ public final class AnimalShelter3Queues implements AnimalShelter {
     /**
      * Common queue for both dogs and cats.
      */
-    private LinkedList<Animal> animals = new LinkedList<>();
+    private final LinkedList<Animal> animals = new LinkedList<>();
 
     /**
      * Cats queue.
      */
-    private LinkedList<Cat> cats = new LinkedList<>();
+    private final LinkedList<Cat> cats = new LinkedList<>();
 
     /**
      * Dogs queue.
      */
-    private LinkedList<Dog> dogs = new LinkedList<>();
+    private final LinkedList<Dog> dogs = new LinkedList<>();
 
     @Override
     public void enqueue(final Animal animal) {
@@ -37,7 +37,7 @@ public final class AnimalShelter3Queues implements AnimalShelter {
     }
 
     @Override
-    public Animal dequeueAny() {
+    public Animal dequeAny() {
         Animal animal = animals.pollFirst();
 
         if (animal instanceof Cat) {
@@ -50,7 +50,7 @@ public final class AnimalShelter3Queues implements AnimalShelter {
     }
 
     @Override
-    public Cat dequeueCat() {
+    public Cat dequeCat() {
         Cat cat = cats.pollFirst();
 
         animals.remove(cat);
@@ -59,7 +59,7 @@ public final class AnimalShelter3Queues implements AnimalShelter {
     }
 
     @Override
-    public Dog dequeueDog() {
+    public Dog dequeDog() {
         Dog dog = dogs.pollFirst();
 
         animals.remove(dog);

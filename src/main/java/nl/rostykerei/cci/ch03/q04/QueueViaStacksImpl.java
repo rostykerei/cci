@@ -18,12 +18,12 @@ public final class QueueViaStacksImpl<T> implements Queue<T> {
     /**
      * Forward stack.
      */
-    private Stack<T> forward = new StackImpl<>();
+    private final Stack<T> forward = new StackImpl<>();
 
     /**
      * Backward stack.
      */
-    private Stack<T> backward = new StackImpl<>();
+    private final Stack<T> backward = new StackImpl<>();
 
     @Override
     public void add(final T item) {

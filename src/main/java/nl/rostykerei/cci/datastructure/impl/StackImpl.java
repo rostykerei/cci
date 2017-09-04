@@ -21,7 +21,7 @@ public class StackImpl<T> implements Stack<T> {
         /**
          * Data holder.
          */
-        private T data;
+        private final T data;
 
         /**
          * Link to the next node.

@@ -19,7 +19,7 @@ public final class StackMinImpl extends StackImpl<Integer> implements StackMin {
         /**
          * Min value holder.
          */
-        private int min;
+        private final int min;
 
         /**
          * Constructor.

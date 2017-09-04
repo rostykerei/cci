@@ -29,7 +29,7 @@ public final class StackMinWrapperImpl implements StackMin {
     /**
      * Stack of wrappers.
      */
-    private Stack<NodeWrapper> stack = new StackImpl<>();
+    private final Stack<NodeWrapper> stack = new StackImpl<>();
 
     @Override
     public int min() {
