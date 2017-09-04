@@ -1,6 +1,10 @@
 package nl.rostykerei.cci.datastructure.impl;
 
 import nl.rostykerei.cci.datastructure.BinaryTreeNode;
+import nl.rostykerei.cci.datastructure.TreeNode;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Implementation of {@link BinaryTreeNode}.
@@ -9,7 +13,7 @@ import nl.rostykerei.cci.datastructure.BinaryTreeNode;
  * @author Rosty Kerei
  */
 public final class BinaryTreeNodeImpl<T extends Comparable<T>>
-        implements BinaryTreeNode<T> {
+        extends TreeNodeImpl<T> implements BinaryTreeNode<T> {
 
     /**
      * Left node.
@@ -20,11 +24,6 @@ public final class BinaryTreeNodeImpl<T extends Comparable<T>>
      * Right node.
      */
     private BinaryTreeNode<T> right;
-
-    /**
-     * Node's data.
-     */
-    private final T data;
 
     /**
      * Constructor.
@@ -45,9 +44,9 @@ public final class BinaryTreeNodeImpl<T extends Comparable<T>>
     public BinaryTreeNodeImpl(final BinaryTreeNode<T> leftNode,
                               final BinaryTreeNode<T> rightNode,
                               final T dataValue) {
+        super(dataValue);
         this.left = leftNode;
         this.right = rightNode;
-        this.data = dataValue;
     }
 
     @Override
@@ -71,7 +70,24 @@ public final class BinaryTreeNodeImpl<T extends Comparable<T>>
     }
 
     @Override
-    public T getData() {
-        return data;
+    public void addChild(final TreeNode<T> child) {
+        throw new UnsupportedOperationException(
+                "Use setLeft or setRight methods instead"
+        );
+    }
+
+    @Override
+    public List<TreeNode<T>> getChildren() {
+        ArrayList<TreeNode<T>> result = new ArrayList<>();
+
+        if (this.left != null) {
+            result.add(this.left);
+        }
+
+        if (this.right != null) {
+            result.add(right);
+        }
+
+        return result;
     }
 }

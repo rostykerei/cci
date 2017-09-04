@@ -11,7 +11,7 @@ import java.util.List;
  * @param <T> the class of the objects in the node
  * @author Rosty Kerei
  */
-public final class TreeNodeImpl<T> implements TreeNode<T> {
+public class TreeNodeImpl<T> implements TreeNode<T> {
 
     /**
      * Data holder.
@@ -32,16 +32,25 @@ public final class TreeNodeImpl<T> implements TreeNode<T> {
         this.data = dataValue;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void addChild(final TreeNode<T> child) {
         children.add(child);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<TreeNode<T>> getChildren() {
         return children;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public T getData() {
         return data;
