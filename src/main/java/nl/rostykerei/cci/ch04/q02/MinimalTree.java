@@ -1,6 +1,6 @@
 package nl.rostykerei.cci.ch04.q02;
 
-import nl.rostykerei.cci.datastructure.TreeNode;
+import nl.rostykerei.cci.datastructure.BinaryNode;
 
 /**
  * Question 4.2 - Minimal Tree.
@@ -16,6 +16,6 @@ public interface MinimalTree<T extends Comparable<T>> {
      * @param input array of sorted values
      * @return binary search tree with minimal height
      */
-    TreeNode<T> buildBST(T[] input);
+    BinaryNode<T> buildBST(T[] input);
 
 }
