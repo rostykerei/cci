@@ -6,6 +6,14 @@
 
 My solutions for "Cracking the Coding Interview" book
 
+## Build
+
+    mvn clean install
+    
+## Run tests
+
+    mvn test
+
 ## Author
 
 Rosty Kerei - www.rostykerei.nl - <rosty.kerei@gmail.com>
