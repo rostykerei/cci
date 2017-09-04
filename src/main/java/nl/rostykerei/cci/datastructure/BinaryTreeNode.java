@@ -6,35 +6,35 @@ package nl.rostykerei.cci.datastructure;
  * @param <T> the class of the objects in the node.
  * @author Rosty Kerei
  */
-public interface BinaryNode<T extends Comparable<T>> {
+public interface BinaryTreeNode<T extends Comparable<T>> {
 
     /**
      * Gets left node.
      *
      * @return left node
      */
-    BinaryNode<T> getLeft();
+    BinaryTreeNode<T> getLeft();
 
     /**
      * Sets left node.
      *
      * @param leftNode left node
      */
-    void setLeft(BinaryNode<T> leftNode);
+    void setLeft(BinaryTreeNode<T> leftNode);
 
     /**
      * Gets right node.
      *
      * @return right node
      */
-    BinaryNode<T> getRight();
+    BinaryTreeNode<T> getRight();
 
     /**
      * Sets right node.
      *
      * @param rightNode right node
      */
-    void setRight(BinaryNode<T> rightNode);
+    void setRight(BinaryTreeNode<T> rightNode);
 
     /**
      * Gets node's data.

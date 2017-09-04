@@ -1,25 +1,25 @@
 package nl.rostykerei.cci.datastructure.impl;
 
-import nl.rostykerei.cci.datastructure.BinaryNode;
+import nl.rostykerei.cci.datastructure.BinaryTreeNode;
 
 /**
- * Implementation of {@link BinaryNode}.
+ * Implementation of {@link BinaryTreeNode}.
  *
  * @param <T> the class of the objects in the node
  * @author Rosty Kerei
  */
-public final class BinaryNodeImpl<T extends Comparable<T>>
-        implements BinaryNode<T> {
+public final class BinaryTreeNodeImpl<T extends Comparable<T>>
+        implements BinaryTreeNode<T> {
 
     /**
      * Left node.
      */
-    private BinaryNode<T> left;
+    private BinaryTreeNode<T> left;
 
     /**
      * Right node.
      */
-    private BinaryNode<T> right;
+    private BinaryTreeNode<T> right;
 
     /**
      * Node's data.
@@ -31,7 +31,7 @@ public final class BinaryNodeImpl<T extends Comparable<T>>
      *
      * @param dataValue node's data
      */
-    public BinaryNodeImpl(final T dataValue) {
+    public BinaryTreeNodeImpl(final T dataValue) {
         this(null, null, dataValue);
     }
 
@@ -42,31 +42,31 @@ public final class BinaryNodeImpl<T extends Comparable<T>>
      * @param rightNode right node
      * @param dataValue node's data
      */
-    public BinaryNodeImpl(final BinaryNode<T> leftNode,
-                          final BinaryNode<T> rightNode,
-                          final T dataValue) {
+    public BinaryTreeNodeImpl(final BinaryTreeNode<T> leftNode,
+                              final BinaryTreeNode<T> rightNode,
+                              final T dataValue) {
         this.left = leftNode;
         this.right = rightNode;
         this.data = dataValue;
     }
 
     @Override
-    public BinaryNode<T> getLeft() {
+    public BinaryTreeNode<T> getLeft() {
         return left;
     }
 
     @Override
-    public void setLeft(final BinaryNode<T> leftNode) {
+    public void setLeft(final BinaryTreeNode<T> leftNode) {
         this.left = leftNode;
     }
 
     @Override
-    public BinaryNode<T> getRight() {
+    public BinaryTreeNode<T> getRight() {
         return right;
     }
 
     @Override
-    public void setRight(final BinaryNode<T> rightNode) {
+    public void setRight(final BinaryTreeNode<T> rightNode) {
         this.right = rightNode;
     }
 
