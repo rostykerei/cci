@@ -12,7 +12,7 @@ import java.util.List;
  * @param <T> the class of the objects in the tree
  * @author Rosty Kerei
  */
-public final class ListOfDepthsImplBFS<T extends Comparable<T>>
+public final class ListOfDepthsBFS<T extends Comparable<T>>
         implements ListOfDepths<T> {
 
     @Override
