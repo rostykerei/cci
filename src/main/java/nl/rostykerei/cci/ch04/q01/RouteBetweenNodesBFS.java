@@ -12,7 +12,7 @@ import java.util.HashSet;
  * @param <T> the class of the objects in the graph
  * @author Rosty Kerei
  */
-public final class RouteBetweenNodesBSF<T> implements RouteBetweenNodes<T> {
+public final class RouteBetweenNodesBFS<T> implements RouteBetweenNodes<T> {
 
     @Override
     public boolean isRoutePossible(final TreeNode<T> start,
