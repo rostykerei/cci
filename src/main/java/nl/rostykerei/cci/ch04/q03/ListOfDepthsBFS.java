@@ -24,7 +24,7 @@ public final class ListOfDepthsBFS<T extends Comparable<T>>
         LinkedList<BinaryTreeNode<T>> newLevel = new LinkedList<>();
         newLevel.add(input);
 
-        while (newLevel.size() > 0) {
+        while (!newLevel.isEmpty()) {
             result.add(newLevel);
 
             LinkedList<BinaryTreeNode<T>> previousLevel = newLevel;
