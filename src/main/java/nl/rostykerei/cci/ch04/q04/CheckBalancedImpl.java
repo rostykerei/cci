@@ -29,7 +29,7 @@ public final class CheckBalancedImpl<T extends Comparable<T>>
      * @throws HeightDifferenceException if left and right heights differ
      *                                   by more than one
      */
-    int verifyNodeHeight(final BinaryTreeNode<T> node)
+    private int verifyNodeHeight(final BinaryTreeNode<T> node)
             throws HeightDifferenceException {
         if (node == null) {
             return 0;
