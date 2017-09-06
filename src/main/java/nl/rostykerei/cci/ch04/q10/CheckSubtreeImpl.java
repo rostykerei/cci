@@ -1,11 +1,9 @@
 package nl.rostykerei.cci.ch04.q10;
 
 import nl.rostykerei.cci.datastructure.BinaryTreeNode;
-import nl.rostykerei.cci.datastructure.Queue;
-import nl.rostykerei.cci.datastructure.impl.QueueImpl;
 
 /**
- * Implementation of {@link CheckSubtree} using BFS and
+ * Implementation of {@link CheckSubtree} using DFS and
  * recursive tree comparision.
  *
  * @param <T> the class of the objects in the tree
@@ -17,27 +15,12 @@ public final class CheckSubtreeImpl<T extends Comparable<T>>
     @Override
     public boolean isSubtree(final BinaryTreeNode<T> tree,
                              final BinaryTreeNode<T> subtree) {
-        Queue<BinaryTreeNode<T>> queue = new QueueImpl<>();
-        queue.add(tree);
 
-        while (!queue.isEmpty()) {
-            BinaryTreeNode<T> currentNode = queue.remove();
+        return tree != null
+                && (treeEquals(tree, subtree)
+                || isSubtree(tree.getRight(), subtree)
+                || isSubtree(tree.getLeft(), subtree));
 
-            if (currentNode.getData().equals(subtree.getData())
-                    && treeEquals(currentNode, subtree)) {
-                return true;
-            }
-
-            if (currentNode.getLeft() != null) {
-                queue.add(currentNode.getLeft());
-            }
-
-            if (currentNode.getRight() != null) {
-                queue.add(currentNode.getRight());
-            }
-        }
-
-        return false;
     }
 
     /**
