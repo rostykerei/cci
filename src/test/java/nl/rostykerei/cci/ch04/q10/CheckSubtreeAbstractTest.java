@@ -1,5 +1,6 @@
 package nl.rostykerei.cci.ch04.q10;
 
+import nl.rostykerei.cci.ch04.q02.MinimalTreeImpl;
 import nl.rostykerei.cci.common.AbstractFactoryTest;
 import nl.rostykerei.cci.datastructure.BinaryTreeNode;
 import nl.rostykerei.cci.datastructure.impl.BinaryTreeNodeImpl;
@@ -35,6 +36,25 @@ public abstract class CheckSubtreeAbstractTest extends AbstractFactoryTest<Check
                 7);
 
         assertTrue(testInstance.isSubtree(tree1, tree2));
+    }
+
+
+    @Test
+    public void checkTrue2() throws Exception {
+        BinaryTreeNode<Integer> tree = new MinimalTreeImpl<Integer>().buildBST(
+                new Integer[] {1, 2, 3, 4, 5, 6, 7}
+        );
+
+        assertTrue(testInstance.isSubtree(tree,
+                new BinaryTreeNodeImpl<>(1)
+                ));
+
+        assertTrue(testInstance.isSubtree(tree,
+                new BinaryTreeNodeImpl<>(
+                        new BinaryTreeNodeImpl<>(1),
+                        new BinaryTreeNodeImpl<>(3),
+                        2)
+        ));
     }
 
     @Test
