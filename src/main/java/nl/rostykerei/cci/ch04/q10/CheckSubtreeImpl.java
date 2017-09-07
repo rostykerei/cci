@@ -18,8 +18,8 @@ public final class CheckSubtreeImpl<T extends Comparable<T>>
 
         return tree != null
                 && (treeEquals(tree, subtree)
-                || isSubtree(tree.getRight(), subtree)
-                || isSubtree(tree.getLeft(), subtree));
+                    || isSubtree(tree.getRight(), subtree)
+                    || isSubtree(tree.getLeft(), subtree));
 
     }
 
