@@ -45,8 +45,8 @@ public final class BinaryTreeNodeImpl<T extends Comparable<T>>
                               final BinaryTreeNode<T> rightNode,
                               final T dataValue) {
         super(dataValue);
-        this.left = leftNode;
-        this.right = rightNode;
+        this.setLeft(leftNode);
+        this.setRight(rightNode);
     }
 
     @Override
