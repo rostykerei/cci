@@ -14,8 +14,8 @@ public interface Successor<T extends Comparable<T>> {
      * Finds the next node (in-order successor) of a given node in
      * a binary search tree.
      *
-     * @param input
-     * @return
+     * @param input input node
+     * @return successor node
      */
     BinaryTreeNode<T> findNext(BinaryTreeNode<T> input);
 }
