@@ -57,6 +57,10 @@ public final class BinaryTreeNodeImpl<T extends Comparable<T>>
     @Override
     public void setLeft(final BinaryTreeNode<T> leftNode) {
         this.left = leftNode;
+
+        if (leftNode != null) {
+            leftNode.setParent(this);
+        }
     }
 
     @Override
@@ -67,6 +71,10 @@ public final class BinaryTreeNodeImpl<T extends Comparable<T>>
     @Override
     public void setRight(final BinaryTreeNode<T> rightNode) {
         this.right = rightNode;
+
+        if (rightNode != null) {
+            rightNode.setParent(this);
+        }
     }
 
     @Override

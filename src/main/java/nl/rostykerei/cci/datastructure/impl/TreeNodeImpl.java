@@ -14,6 +14,11 @@ import java.util.List;
 public class TreeNodeImpl<T> implements TreeNode<T> {
 
     /**
+     * Parent node.
+     */
+    private TreeNode<T> parent;
+
+    /**
      * Data holder.
      */
     private final T data;
@@ -37,7 +42,10 @@ public class TreeNodeImpl<T> implements TreeNode<T> {
      */
     @Override
     public void addChild(final TreeNode<T> child) {
-        children.add(child);
+        if (child != null) {
+            child.setParent(this);
+            children.add(child);
+        }
     }
 
     /**
@@ -46,6 +54,22 @@ public class TreeNodeImpl<T> implements TreeNode<T> {
     @Override
     public List<TreeNode<T>> getChildren() {
         return children;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void setParent(final TreeNode<T> parentNode) {
+        this.parent = parentNode;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public TreeNode<T> getParent() {
+        return this.parent;
     }
 
     /**

@@ -19,10 +19,13 @@ public class TreeNodeImplTest {
 
         treeNode1.addChild(treeNode2);
         treeNode1.addChild(treeNode3);
+        treeNode1.addChild(null);
 
         assertEquals(Arrays.asList(2, 3), treeNode1.getChildren().stream().map(TreeNode::getData).collect(Collectors.toList()));
         assertEquals(0, treeNode2.getChildren().size());
         assertEquals(0, treeNode3.getChildren().size());
+
+        assertEquals(treeNode1, treeNode2.getParent());
     }
 
     @Test

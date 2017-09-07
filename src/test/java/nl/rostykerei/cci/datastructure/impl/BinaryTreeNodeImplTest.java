@@ -19,6 +19,9 @@ public class BinaryTreeNodeImplTest {
         assertEquals(1, (int) root.getLeft().getData());
         assertEquals(3, (int) root.getRight().getData());
 
+        assertEquals(root, root.getLeft().getParent());
+        assertEquals(root, root.getRight().getParent());
+
         BinaryTreeNode<Integer> root2 = new BinaryTreeNodeImpl<>(left, right, 2);
 
         assertEquals(2, (int) root2.getData());
@@ -43,6 +46,10 @@ public class BinaryTreeNodeImplTest {
         root.setRight(null);
 
         assertEquals(1, root.getChildren().size());
+
+        root.setLeft(null);
+
+        assertEquals(0, root.getChildren().size());
     }
 
     @Test(expected = UnsupportedOperationException.class)
