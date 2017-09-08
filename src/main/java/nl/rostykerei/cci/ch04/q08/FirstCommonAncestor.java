@@ -10,6 +10,13 @@ import nl.rostykerei.cci.datastructure.BinaryTreeNode;
  */
 public interface FirstCommonAncestor<T extends Comparable<T>> {
 
+    /**
+     * Finds the first common ancestor of two nodes in a binary tree.
+     *
+     * @param node1 first node
+     * @param node2 second node
+     * @return common ancestor
+     */
     BinaryTreeNode<T> findFirstCommonAncestor(
             BinaryTreeNode<T> node1,
             BinaryTreeNode<T> node2
