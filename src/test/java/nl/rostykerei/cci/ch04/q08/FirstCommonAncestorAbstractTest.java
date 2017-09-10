@@ -42,6 +42,8 @@ public abstract class FirstCommonAncestorAbstractTest extends AbstractFactoryTes
         assertEquals(n8, testInstance.findFirstCommonAncestor(n9, n7));
         assertEquals(n8, testInstance.findFirstCommonAncestor(n7, n9));
         assertEquals(n5, testInstance.findFirstCommonAncestor(n4, n8));
+
+        assertEquals(n2, testInstance.findFirstCommonAncestor(n3, n4));
     }
 
     @Test
@@ -52,7 +54,21 @@ public abstract class FirstCommonAncestorAbstractTest extends AbstractFactoryTes
         n1.setLeft(n2);
 
         BinaryTreeNode<Integer> n3 = new BinaryTreeNodeImpl<>(3);
+        BinaryTreeNode<Integer> n4 = new BinaryTreeNodeImpl<>(4);
 
-        assertNull(testInstance.findFirstCommonAncestor(n2, n3));
+        n3.setRight(n4);
+
+        assertNull(testInstance.findFirstCommonAncestor(n2, n4));
+    }
+
+    @Test
+    public void testTop() throws Exception {
+        BinaryTreeNode<Integer> n1 = new BinaryTreeNodeImpl<>(1);
+        BinaryTreeNode<Integer> n2 = new BinaryTreeNodeImpl<>(2);
+
+        n1.setLeft(n2);
+
+        assertNull(testInstance.findFirstCommonAncestor(n1, n2));
+        assertNull(testInstance.findFirstCommonAncestor(n2, n1));
     }
 }

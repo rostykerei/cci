@@ -16,18 +16,25 @@ public final class FirstCommonAncestorOptimized<T extends Comparable<T>>
             final BinaryTreeNode<T> node1,
             final BinaryTreeNode<T> node2) {
 
-        int node1Depth = findDepth(node1);
-        int node2Depth = findDepth(node2);
+        BinaryTreeNode<T> p1 = (BinaryTreeNode<T>) node1.getParent();
+        BinaryTreeNode<T> p2 = (BinaryTreeNode<T>) node2.getParent();
+
+        if (p1 == null || p2 == null) {
+            return null;
+        }
+
+        int node1Depth = findDepth(p1);
+        int node2Depth = findDepth(p2);
 
         BinaryTreeNode<T> shortTree;
         BinaryTreeNode<T> longTree;
 
         if (node1Depth > node2Depth) {
-            shortTree = node2;
-            longTree = node1;
+            shortTree = p2;
+            longTree = p1;
         } else {
-            shortTree = node1;
-            longTree = node2;
+            shortTree = p1;
+            longTree = p2;
         }
 
         // Skip long levels
@@ -35,7 +42,7 @@ public final class FirstCommonAncestorOptimized<T extends Comparable<T>>
             longTree = (BinaryTreeNode<T>) longTree.getParent();
         }
 
-        while (shortTree != null && longTree != null) {
+        while (shortTree != null) {
             if (shortTree.equals(longTree)) {
                 return shortTree;
             }

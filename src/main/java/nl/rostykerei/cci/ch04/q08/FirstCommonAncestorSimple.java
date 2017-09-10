@@ -21,6 +21,10 @@ public final class FirstCommonAncestorSimple<T extends Comparable<T>>
         SinglyLinkedList<BinaryTreeNode<T>> path1 = pathToTop(node1);
         SinglyLinkedList<BinaryTreeNode<T>> path2 = pathToTop(node2);
 
+        if (path1 == null || path2 == null) {
+            return null;
+        }
+
         while (path1 != null) {
 
             SinglyLinkedList<BinaryTreeNode<T>> p2 = path2;
@@ -48,10 +52,14 @@ public final class FirstCommonAncestorSimple<T extends Comparable<T>>
     private SinglyLinkedList<BinaryTreeNode<T>> pathToTop(
             final BinaryTreeNode<T> node) {
 
-        SinglyLinkedList<BinaryTreeNode<T>> head =
-                new SinglyLinkedListImpl<>(node);
-
         BinaryTreeNode<T> n = (BinaryTreeNode<T>) node.getParent();
+
+        if (n == null) {
+            return null;
+        }
+
+        SinglyLinkedList<BinaryTreeNode<T>> head =
+                new SinglyLinkedListImpl<>(n);
 
         SinglyLinkedList<BinaryTreeNode<T>> tail = head;
 
