@@ -10,7 +10,7 @@ import nl.rostykerei.cci.datastructure.impl.SinglyLinkedListImpl;
  * @param <T> the class of the objects in the binary tree
  * @author Rosty Kerei
  */
-public final class FirstCommonAncestorImpl<T extends Comparable<T>>
+public final class FirstCommonAncestorSimple<T extends Comparable<T>>
         implements FirstCommonAncestor<T> {
 
     @Override
