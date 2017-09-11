@@ -3,7 +3,7 @@ package nl.rostykerei.cci.ch04.q08;
 import nl.rostykerei.cci.datastructure.BinaryTreeNode;
 
 /**
- * Simplest solution to {@link FirstCommonAncestor}.
+ * Optimized solution to {@link FirstCommonAncestor}.
  *
  * @param <T> the class of the objects in the binary tree
  * @author Rosty Kerei
