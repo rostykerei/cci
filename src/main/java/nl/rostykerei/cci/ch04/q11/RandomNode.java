@@ -15,5 +15,5 @@ public interface RandomNode<T extends Comparable<T>> extends BinaryTreeNode<T> {
      *
      * @return random node
      */
-    BinaryTreeNode<T> getRandomNode();
+    RandomNode<T> getRandomNode();
 }

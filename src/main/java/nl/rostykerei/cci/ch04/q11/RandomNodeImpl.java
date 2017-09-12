@@ -1,6 +1,5 @@
 package nl.rostykerei.cci.ch04.q11;
 
-import nl.rostykerei.cci.datastructure.BinaryTreeNode;
 import nl.rostykerei.cci.datastructure.impl.BinaryTreeNodeImpl;
 
 import java.util.Random;
@@ -29,7 +28,7 @@ public final class RandomNodeImpl<T extends Comparable<T>>
     }
 
     @Override
-    public BinaryTreeNode<T> getRandomNode() {
+    public RandomNode<T> getRandomNode() {
         int randMax = 1;
 
         if (this.getLeft() != null) {
