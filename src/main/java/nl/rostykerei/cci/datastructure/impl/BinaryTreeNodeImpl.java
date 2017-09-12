@@ -12,7 +12,7 @@ import java.util.List;
  * @param <T> the class of the objects in the node
  * @author Rosty Kerei
  */
-public final class BinaryTreeNodeImpl<T extends Comparable<T>>
+public class BinaryTreeNodeImpl<T extends Comparable<T>>
         extends TreeNodeImpl<T> implements BinaryTreeNode<T> {
 
     /**
@@ -49,11 +49,17 @@ public final class BinaryTreeNodeImpl<T extends Comparable<T>>
         this.setRight(rightNode);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public BinaryTreeNode<T> getLeft() {
         return left;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setLeft(final BinaryTreeNode<T> leftNode) {
         this.left = leftNode;
@@ -63,11 +69,17 @@ public final class BinaryTreeNodeImpl<T extends Comparable<T>>
         }
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public BinaryTreeNode<T> getRight() {
         return right;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void setRight(final BinaryTreeNode<T> rightNode) {
         this.right = rightNode;
@@ -77,6 +89,9 @@ public final class BinaryTreeNodeImpl<T extends Comparable<T>>
         }
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void addChild(final TreeNode<T> child) {
         throw new UnsupportedOperationException(
@@ -84,6 +99,9 @@ public final class BinaryTreeNodeImpl<T extends Comparable<T>>
         );
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<TreeNode<T>> getChildren() {
         ArrayList<TreeNode<T>> result = new ArrayList<>();
