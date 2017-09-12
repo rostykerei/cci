@@ -59,6 +59,10 @@ public abstract class FirstCommonAncestorAbstractTest extends AbstractFactoryTes
         n3.setRight(n4);
 
         assertNull(testInstance.findFirstCommonAncestor(n2, n4));
+
+        assertNull(testInstance.findFirstCommonAncestor(n1, null));
+        assertNull(testInstance.findFirstCommonAncestor(null, n1));
+        assertNull(testInstance.findFirstCommonAncestor(null, null));
     }
 
     @Test

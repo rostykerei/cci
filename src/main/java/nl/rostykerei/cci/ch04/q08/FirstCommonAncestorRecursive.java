@@ -16,6 +16,10 @@ public final class FirstCommonAncestorRecursive<T extends Comparable<T>>
             final BinaryTreeNode<T> node1,
             final BinaryTreeNode<T> node2) {
 
+        if (node1 == null || node2 == null) {
+            return null;
+        }
+
         if (contains(node1, node2)) {
             return (BinaryTreeNode<T>) node1.getParent();
         }

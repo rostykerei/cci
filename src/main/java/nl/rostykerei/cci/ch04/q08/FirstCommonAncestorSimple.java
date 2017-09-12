@@ -18,6 +18,10 @@ public final class FirstCommonAncestorSimple<T extends Comparable<T>>
             final BinaryTreeNode<T> node1,
             final BinaryTreeNode<T> node2) {
 
+        if (node1 == null || node2 == null) {
+            return null;
+        }
+
         SinglyLinkedList<BinaryTreeNode<T>> path1 = pathToTop(node1);
         SinglyLinkedList<BinaryTreeNode<T>> path2 = pathToTop(node2);
 

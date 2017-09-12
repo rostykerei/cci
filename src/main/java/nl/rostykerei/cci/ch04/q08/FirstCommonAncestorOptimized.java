@@ -16,6 +16,10 @@ public final class FirstCommonAncestorOptimized<T extends Comparable<T>>
             final BinaryTreeNode<T> node1,
             final BinaryTreeNode<T> node2) {
 
+        if (node1 == null || node2 == null) {
+            return null;
+        }
+
         BinaryTreeNode<T> p1 = (BinaryTreeNode<T>) node1.getParent();
         BinaryTreeNode<T> p2 = (BinaryTreeNode<T>) node2.getParent();
 
