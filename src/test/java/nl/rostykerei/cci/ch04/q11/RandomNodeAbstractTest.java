@@ -24,14 +24,23 @@ public abstract class RandomNodeAbstractTest {
         n4.setLeft(n2);
         n4.setRight(n6);
 
-        n6.setRight(n5);
+        n3.setRight(n5);
         n5.setRight(n7);
 
+        n3.setRight(null);
+
+        n3.setLeft(n5);
+        n3.setLeft(null);
+
+        n6.setRight(n5);
+
         boolean[] results = new boolean[7];
+
 
         for (int i = 0; i < 7 * 7 * 7; i++) {
             results[n4.getRandomNode().getData() - 1] = true;
         }
+
 
         for (int i = 0; i < 7; i++) {
             assertTrue(results[i]);
