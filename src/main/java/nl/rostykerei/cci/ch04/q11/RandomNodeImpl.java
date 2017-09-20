@@ -1,7 +1,9 @@
 package nl.rostykerei.cci.ch04.q11;
 
 import nl.rostykerei.cci.datastructure.BinaryTreeNode;
+import nl.rostykerei.cci.datastructure.Pair;
 import nl.rostykerei.cci.datastructure.impl.BinaryTreeNodeImpl;
+import nl.rostykerei.cci.datastructure.impl.PairImpl;
 
 import java.util.Random;
 
@@ -89,74 +91,34 @@ public final class RandomNodeImpl<T extends Comparable<T>>
      *
      * @param node root node
      * @param length desired length
-     * @return {@link Tuple} with node and its length.
+     * @return {@link Pair} of node and its length.
      */
-    private Tuple traverse(final RandomNode<T> node, final int length) {
+    private Pair<Integer, RandomNode<T>> traverse(
+            final RandomNode<T> node,
+            final int length) {
+
         if (node == null) {
-            return new Tuple(length, null);
+            return new PairImpl<>(length, null);
         }
 
         if (length == 0) {
-            return new Tuple(0, node);
+            return new PairImpl<>(0, node);
         }
 
-        Tuple left = traverse((RandomNode<T>) node.getLeft(), length - 1);
+        Pair<Integer, RandomNode<T>> left = traverse(
+                (RandomNode<T>) node.getLeft(),
+                length - 1);
 
-        if (left.getNode() != null) {
+        if (left.getSecond() != null) {
             return left;
         }
 
-        return traverse((RandomNode<T>) node.getRight(), left.getIndex());
+        return traverse((RandomNode<T>) node.getRight(), left.getFirst());
     }
 
     @Override
     public RandomNode<T> getRandomNode() {
         int rand = RANDOM.nextInt(this.size);
-        return traverse(this, rand).getNode();
-    }
-
-    /**
-     * A tuple to hold both Node and index values.
-     */
-    private class Tuple {
-
-        /**
-         * Index.
-         */
-        private final int index;
-
-        /**
-         * Node.
-         */
-        private final RandomNode<T> node;
-
-        /**
-         * Tuple's constructor.
-         *
-         * @param indexValue index
-         * @param nodeValue node
-         */
-        Tuple(final int indexValue, final RandomNode<T> nodeValue) {
-            this.index = indexValue;
-            this.node = nodeValue;
-        }
-
-        /**
-         * Index getter.
-         *
-         * @return index value
-         */
-        int getIndex() {
-            return index;
-        }
-
-        /**
-         * Node's getter.
-         *
-         * @return node
-         */
-        RandomNode<T> getNode() {
-            return node;
-        }
+        return traverse(this, rand).getSecond();
     }
 }
