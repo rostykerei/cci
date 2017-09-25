@@ -3,6 +3,7 @@ package nl.rostykerei.cci.ch04.q07;
 import nl.rostykerei.cci.datastructure.Pair;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * Question 4.7 - Build Order.
@@ -20,5 +21,5 @@ public interface BuildOrder<T> {
      *                     is dependent on the first project
      * @return list of projects in a build order
      */
-    List<T> buildOrder(List<T> projects, List<Pair<T, T>> dependencies);
+    List<T> buildOrder(Set<T> projects, Set<Pair<T, T>> dependencies);
 }
