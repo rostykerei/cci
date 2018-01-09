@@ -5,8 +5,16 @@ package nl.rostykerei.cci.ch08.q01;
  *
  * @author Rosty Kerei
  */
-public final class TripleStepImpl implements TripleStep {
+public class TripleStepImpl implements TripleStep {
 
+    /**
+     * Possible hops at a time.
+     */
+    private static final int[] HOPS = {1, 2, 3};
+
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public int countPossibleWays(final int stairs) {
         if (stairs < 0) {
