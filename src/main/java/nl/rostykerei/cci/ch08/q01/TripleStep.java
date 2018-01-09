@@ -8,6 +8,11 @@ package nl.rostykerei.cci.ch08.q01;
 public interface TripleStep {
 
     /**
+     * Possible hops at a time.
+     */
+    int[] HOPS = {1, 2, 3};
+
+    /**
      * Counts how many possible ways the child can run up the stairs.
      *
      * @param stairs number of stairs
