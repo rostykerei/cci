@@ -16,6 +16,13 @@ public abstract class MagicIndexAbstractTest extends AbstractFactoryTest<MagicIn
     }
 
     @Test
+    public void testFindMagicIndex2() {
+        int[] input = {-10, 0, 2, 5, 7, 10, 50, 100};
+
+        assertEquals(2, (int) testInstance.findMagicIndex(input));
+    }
+
+    @Test
     public void testFindMagicIndexNull() {
         int[] input = {-10, -5, 0, 1, 2, 3, 5};
 
