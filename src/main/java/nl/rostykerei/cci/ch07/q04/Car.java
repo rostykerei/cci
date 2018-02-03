@@ -17,7 +17,7 @@ public class Car implements Vehicle {
      */
     @Override
     public int getSize() {
-        return 1;
+        return SIZE;
     }
 
 }
