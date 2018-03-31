@@ -35,7 +35,7 @@ public class FlipBitImpl implements FlipBit {
         int x = input;
 
         while (x != 0) {
-            x = (x & (x << 1));
+            x &= x << 1;
             count++;
         }
 
