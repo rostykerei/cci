@@ -2,7 +2,13 @@ package nl.rostykerei.cci.ch04.q07;
 
 import nl.rostykerei.cci.datastructure.Pair;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 
 /**
  * Implementation of {@link BuildOrder} using a standard map.
