@@ -2,12 +2,7 @@ package nl.rostykerei.cci.ch04.q07;
 
 import nl.rostykerei.cci.datastructure.Pair;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Implementation of {@link BuildOrder} using a standard map.
@@ -43,7 +38,7 @@ public final class BuildOrderMap<T> implements BuildOrder<T> {
 
             for (T project : projects) {
                 if (dependencyMap.containsKey(project)
-                        && dependencyMap.get(project).size() == 0) {
+                        && dependencyMap.get(project).isEmpty()) {
 
                     buildOrder.add(project);
 
@@ -59,7 +54,7 @@ public final class BuildOrderMap<T> implements BuildOrder<T> {
             }
 
             if (!found) {
-                return null;
+                break;
             }
         }
 

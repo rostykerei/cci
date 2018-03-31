@@ -9,13 +9,12 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 public abstract class BuildOrderAbstractTest extends AbstractFactoryTest<BuildOrder<String>> {
 
     @Test
-    public void testOrder() throws Exception {
+    public void testOrder() {
         Set<String> projects = new HashSet<>();
         projects.add("A");
         projects.add("B");
@@ -38,7 +37,7 @@ public abstract class BuildOrderAbstractTest extends AbstractFactoryTest<BuildOr
     }
 
     @Test
-    public void testOrder2() throws Exception {
+    public void testOrder2() {
         Set<String> projects = new HashSet<>();
         projects.add("A");
         projects.add("B");
@@ -66,7 +65,7 @@ public abstract class BuildOrderAbstractTest extends AbstractFactoryTest<BuildOr
     }
 
     @Test
-    public void testCycle() throws Exception {
+    public void testCycle() {
         Set<String> projects = new HashSet<>();
         projects.add("A");
         projects.add("B");
@@ -77,6 +76,6 @@ public abstract class BuildOrderAbstractTest extends AbstractFactoryTest<BuildOr
         deps.add(new PairImpl<>("C", "B"));
         deps.add(new PairImpl<>("A", "C"));
 
-        assertNull(testInstance.buildOrder(projects, deps));
+        assertTrue(testInstance.buildOrder(projects, deps).isEmpty());
     }
 }
