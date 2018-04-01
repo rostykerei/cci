@@ -23,6 +23,9 @@ My solutions for "Cracking the Coding Interview" book
 
 Rosty Kerei - www.rostykerei.nl - <rosty.kerei@gmail.com>
 
+## Maven site
+
+https://rostykerei.github.io/cci/
 
 ## License
 
