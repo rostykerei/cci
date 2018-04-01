@@ -22,6 +22,11 @@ public final class RandomNodeImpl<T extends Comparable<T>>
     private static final Random RANDOM = new Random();
 
     /**
+     * Node's size.
+     */
+    private int size = 1;
+
+    /**
      * Node's constructor.
      *
      * @param dataValue node's value
@@ -29,11 +34,6 @@ public final class RandomNodeImpl<T extends Comparable<T>>
     public RandomNodeImpl(final T dataValue) {
         super(dataValue);
     }
-
-    /**
-     * Node's size.
-     */
-    private int size = 1;
 
     /**
      * Updates node's size.

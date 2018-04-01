@@ -11,6 +11,11 @@ import nl.rostykerei.cci.datastructure.impl.StackImpl;
 public final class StackMinWrapperImpl implements StackMin {
 
     /**
+     * Stack of wrappers.
+     */
+    private final Stack<NodeWrapper> stack = new StackImpl<>();
+
+    /**
      * Wraps integer node, adds min value.
      */
     private static class NodeWrapper {
@@ -26,10 +31,6 @@ public final class StackMinWrapperImpl implements StackMin {
         private int min;
     }
 
-    /**
-     * Stack of wrappers.
-     */
-    private final Stack<NodeWrapper> stack = new StackImpl<>();
 
     @Override
     public int min() {
@@ -43,6 +44,10 @@ public final class StackMinWrapperImpl implements StackMin {
 
     @Override
     public void push(final Integer item) {
+        if (item == null) {
+            throw new IllegalArgumentException();
+        }
+
         NodeWrapper node = new NodeWrapper();
         node.data = item;
 

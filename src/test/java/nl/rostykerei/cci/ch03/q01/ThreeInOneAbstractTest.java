@@ -5,15 +5,17 @@ import org.junit.Test;
 
 import java.util.EmptyStackException;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public abstract class ThreeInOneAbstractTest extends AbstractFactoryTest<ThreeInOne<Integer>> {
 
-    static final int NUMBER_OF_STACKS = 3;
-    static final int CAPACITY = 2;
+    protected static final int NUMBER_OF_STACKS = 3;
+    protected static final int CAPACITY = 2;
 
     @Test
-    public void testStack() throws Exception {
+    public void testStack() {
 
         assertTrue(testInstance.isEmpty(0));
 
@@ -49,29 +51,29 @@ public abstract class ThreeInOneAbstractTest extends AbstractFactoryTest<ThreeIn
     }
 
     @Test(expected = StackOverflowError.class)
-    public void testStackOverflow() throws Exception {
+    public void testStackOverflow() {
         testInstance.push(1, 0);
         testInstance.push(2, 0);
         testInstance.push(3, 0);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testWrongStackNumber() throws Exception {
+    public void testWrongStackNumber() {
         testInstance.push(1, 5);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testWrongStackNumber2() throws Exception {
+    public void testWrongStackNumber2() {
         testInstance.push(1, -2);
     }
 
     @Test(expected = EmptyStackException.class)
-    public void popEmpty() throws Exception {
+    public void popEmpty() {
         testInstance.pop(1);
     }
 
     @Test(expected = EmptyStackException.class)
-    public void peekEmpty() throws Exception {
+    public void peekEmpty() {
         testInstance.peek(1);
     }
 }

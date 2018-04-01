@@ -14,6 +14,16 @@ import java.util.EmptyStackException;
 public final class SetOfStacksFull<T> implements SetOfStacks<T> {
 
     /**
+     * List of stacks.
+     */
+    private final ArrayList<StackWithSize<T>> stacks = new ArrayList<>();
+
+    /**
+     * Each stack capacity.
+     */
+    private final int capacity;
+
+    /**
      * Extension of the {@link StackImpl} containing the size.
      *
      * @param <E> the class of the objects in the stack
@@ -37,16 +47,6 @@ public final class SetOfStacksFull<T> implements SetOfStacks<T> {
             super.push(item);
         }
     }
-
-    /**
-     * List of stacks.
-     */
-    private final ArrayList<StackWithSize<T>> stacks = new ArrayList<>();
-
-    /**
-     * Each stack capacity.
-     */
-    private final int capacity;
 
     /**
      * Constructor.

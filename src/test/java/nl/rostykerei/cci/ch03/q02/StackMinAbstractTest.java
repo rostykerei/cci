@@ -5,12 +5,14 @@ import org.junit.Test;
 
 import java.util.EmptyStackException;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public abstract class StackMinAbstractTest extends AbstractFactoryTest<StackMin> {
 
     @Test
-    public void testMin() throws Exception {
+    public void testMin() {
         testInstance.push(3);
         testInstance.push(2);
         testInstance.push(1);
@@ -23,7 +25,7 @@ public abstract class StackMinAbstractTest extends AbstractFactoryTest<StackMin>
     }
 
     @Test(expected = EmptyStackException.class)
-    public void minEmpty() throws Exception {
+    public void minEmpty() {
         testInstance.push(1);
         assertEquals(1, testInstance.min());
 
@@ -33,17 +35,17 @@ public abstract class StackMinAbstractTest extends AbstractFactoryTest<StackMin>
     }
 
     @Test(expected = EmptyStackException.class)
-    public void popEmpty() throws Exception {
+    public void popEmpty() {
         testInstance.pop();
     }
 
     @Test(expected = EmptyStackException.class)
-    public void peekEmpty() throws Exception {
+    public void peekEmpty() {
         testInstance.peek();
     }
 
     @Test
-    public void isEmpty() throws Exception {
+    public void isEmpty() {
         assertTrue(testInstance.isEmpty());
 
         testInstance.push(1);
@@ -59,8 +61,8 @@ public abstract class StackMinAbstractTest extends AbstractFactoryTest<StackMin>
         assertTrue(testInstance.isEmpty());
     }
 
-    @Test(expected = NullPointerException.class)
-    public void pushNull() throws Exception {
+    @Test(expected = IllegalArgumentException.class)
+    public void pushNull() {
         testInstance.push(null);
     }
 }

@@ -37,7 +37,7 @@ public final class StackMinImpl extends StackImpl<Integer> implements StackMin {
          *
          * @return min value
          */
-        int getMin() {
+        private int getMin() {
             return min;
         }
     }
@@ -56,7 +56,7 @@ public final class StackMinImpl extends StackImpl<Integer> implements StackMin {
     @Override
     public void push(final Integer item) {
         if (item == null) {
-            throw new NullPointerException();
+            throw new IllegalArgumentException();
         }
 
         int min;

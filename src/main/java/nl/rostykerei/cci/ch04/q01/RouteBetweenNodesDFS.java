@@ -30,7 +30,7 @@ public final class RouteBetweenNodesDFS<T> implements RouteBetweenNodes<T> {
     private boolean dfs(final TreeNode<T> node, final TreeNode<T> finish,
                         final Set<TreeNode> seen) {
 
-        if (node == finish) {
+        if (node.equals(finish)) {
             return true;
         }
 

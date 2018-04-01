@@ -61,7 +61,7 @@ public final class FirstCommonAncestorRecursive<T extends Comparable<T>>
             final BinaryTreeNode<T> root,
             final BinaryTreeNode<T> subtree) {
         return root != null
-                && (root == subtree
+                && (root.equals(subtree)
                 || contains(root.getLeft(), subtree)
                 || contains(root.getRight(), subtree));
     }

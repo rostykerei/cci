@@ -27,7 +27,7 @@ public final class RouteBetweenNodesBFS<T> implements RouteBetweenNodes<T> {
         while (!queue.isEmpty()) {
             TreeNode<T> currentNode = queue.remove();
 
-            if (currentNode == finish) {
+            if (currentNode.equals(finish)) {
                 return true;
             }
 

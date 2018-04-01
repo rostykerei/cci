@@ -13,6 +13,16 @@ import java.util.NoSuchElementException;
 public final class QueueImpl<T> implements Queue<T> {
 
     /**
+     * Link to the first node.
+     */
+    private QueueNode<T> first;
+
+    /**
+     * Link to the last node.
+     */
+    private QueueNode<T> last;
+
+    /**
      * A node within the queue.
      *
      * @param <T> the class of the objects in the queue
@@ -38,16 +48,6 @@ public final class QueueImpl<T> implements Queue<T> {
             this.data = value;
         }
     }
-
-    /**
-     * Link to the first node.
-     */
-    private QueueNode<T> first;
-
-    /**
-     * Link to the last node.
-     */
-    private QueueNode<T> last;
 
     @Override
     public void add(final T item) {

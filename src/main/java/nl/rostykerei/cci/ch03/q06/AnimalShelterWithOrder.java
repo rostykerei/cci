@@ -10,9 +10,24 @@ import java.util.LinkedList;
 public final class AnimalShelterWithOrder implements AnimalShelter {
 
     /**
+     * Common order number.
+     */
+    private int order = 0;
+
+    /**
+     * Cats queue.
+     */
+    private final LinkedList<AnimalWithOrder> cats = new LinkedList<>();
+
+    /**
+     * Dogs queue.
+     */
+    private final LinkedList<AnimalWithOrder> dogs = new LinkedList<>();
+
+    /**
      * Wrapper class with order number.
      */
-    static class AnimalWithOrder {
+    private static class AnimalWithOrder {
 
         /**
          * Animal holder.
@@ -40,7 +55,7 @@ public final class AnimalShelterWithOrder implements AnimalShelter {
          *
          * @return animal
          */
-        Animal getAnimal() {
+        private Animal getAnimal() {
             return animal;
         }
 
@@ -49,25 +64,10 @@ public final class AnimalShelterWithOrder implements AnimalShelter {
          *
          * @return order number
          */
-        int getOrder() {
+        private int getOrder() {
             return order;
         }
     }
-
-    /**
-     * Common order number.
-     */
-    private int order = 0;
-
-    /**
-     * Cats queue.
-     */
-    private final LinkedList<AnimalWithOrder> cats = new LinkedList<>();
-
-    /**
-     * Dogs queue.
-     */
-    private final LinkedList<AnimalWithOrder> dogs = new LinkedList<>();
 
     @Override
     public void enqueue(final Animal animal) {

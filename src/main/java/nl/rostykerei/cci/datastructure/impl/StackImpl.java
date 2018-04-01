@@ -12,6 +12,11 @@ import java.util.EmptyStackException;
 public class StackImpl<T> implements Stack<T> {
 
     /**
+     * Top of the stack.
+     */
+    private StackNode<T> top;
+
+    /**
      * A node within the stack.
      *
      * @param <T> the class of the objects in the stack
@@ -46,11 +51,6 @@ public class StackImpl<T> implements Stack<T> {
             this.next = node;
         }
     }
-
-    /**
-     * Top of the stack.
-     */
-    private StackNode<T> top;
 
     /**
      * {@inheritDoc}

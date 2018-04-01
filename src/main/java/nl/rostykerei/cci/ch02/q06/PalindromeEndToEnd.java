@@ -21,7 +21,7 @@ public final class PalindromeEndToEnd<T> implements Palindrome<T> {
         boolean isMiddle = false;
 
         while (!isMiddle) {
-            if (head == tail || head.getNext() == tail) {
+            if (head.equals(tail) || head.getNext().equals(tail)) {
                 isMiddle = true;
             }
 
