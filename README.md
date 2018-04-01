@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6d773564187e42049b96665c828bafc9)](https://app.codacy.com/app/rostykerei/cci?utm_source=github.com&utm_medium=referral&utm_content=rostykerei/cci&utm_campaign=badger)
 [![Build Status](https://travis-ci.org/rostykerei/cci.svg?branch=master)](https://travis-ci.org/rostykerei/cci)
 [![Quality Gate](https://sonarcloud.io/api/badges/gate?key=nl.rostykerei:cci&blinking=true)](https://sonarcloud.io/dashboard/index/nl.rostykerei:cci)
 [![Test Coverage](https://sonarcloud.io/api/badges/measure?key=nl.rostykerei:cci&metric=coverage&blinking=true)](https://sonarcloud.io/dashboard/index/nl.rostykerei:cci)
