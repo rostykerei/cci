@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CheckSubtreeImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Cracking the Coding Interview Solutions</a> &gt; <a href="index.source.html" class="el_package">nl.rostykerei.cci.ch04.q10</a> &gt; <span class="el_source">CheckSubtreeImpl.java</span></div><h1>CheckSubtreeImpl.java</h1><pre class="source lang-java linenums">package nl.rostykerei.cci.ch04.q10;
+
+import nl.rostykerei.cci.datastructure.BinaryTreeNode;
+
+/**
+ * Implementation of {@link CheckSubtree} using DFS and
+ * recursive tree comparision.
+ *
+ * @param &lt;T&gt; the class of the objects in the tree
+ * @author Rosty Kerei
+ */
+<span class="fc" id="L12">public final class CheckSubtreeImpl&lt;T extends Comparable&lt;T&gt;&gt;</span>
+        implements CheckSubtree&lt;T&gt; {
+
+    @Override
+    public boolean isSubtree(final BinaryTreeNode&lt;T&gt; tree,
+                             final BinaryTreeNode&lt;T&gt; subtree) {
+
+<span class="fc bfc" id="L19" title="All 2 branches covered.">        return tree != null</span>
+<span class="fc bfc" id="L20" title="All 2 branches covered.">                &amp;&amp; (treeEquals(tree, subtree)</span>
+<span class="fc bfc" id="L21" title="All 2 branches covered.">                    || isSubtree(tree.getRight(), subtree)</span>
+<span class="fc bfc" id="L22" title="All 2 branches covered.">                    || isSubtree(tree.getLeft(), subtree));</span>
+
+    }
+
+    /**
+     * Compares two binary trees by data value.
+     *
+     * @param t1 first tree
+     * @param t2 second tree
+     * @return true if trees equal by data value
+     */
+    public boolean treeEquals(final BinaryTreeNode&lt;T&gt; t1,
+                              final BinaryTreeNode&lt;T&gt; t2) {
+<span class="fc bfc" id="L35" title="All 6 branches covered.">        return t1 == t2</span>
+                || t1 != null
+                &amp;&amp; t2 != null
+<span class="fc bfc" id="L38" title="All 2 branches covered.">                &amp;&amp; t1.getData().equals(t2.getData())</span>
+<span class="fc bfc" id="L39" title="All 2 branches covered.">                &amp;&amp; treeEquals(t1.getLeft(), t2.getLeft())</span>
+<span class="fc bfc" id="L40" title="All 2 branches covered.">                &amp;&amp; treeEquals(t1.getRight(), t2.getRight());</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

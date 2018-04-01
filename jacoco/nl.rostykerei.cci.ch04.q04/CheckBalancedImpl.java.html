@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CheckBalancedImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Cracking the Coding Interview Solutions</a> &gt; <a href="index.source.html" class="el_package">nl.rostykerei.cci.ch04.q04</a> &gt; <span class="el_source">CheckBalancedImpl.java</span></div><h1>CheckBalancedImpl.java</h1><pre class="source lang-java linenums">package nl.rostykerei.cci.ch04.q04;
+
+import nl.rostykerei.cci.datastructure.BinaryTreeNode;
+
+/**
+ * Recursive implementation of {@link CheckBalanced}.
+ *
+ * @param &lt;T&gt; the class of the objects in the tree
+ * @author Rosty Kerei
+ */
+<span class="fc" id="L11">public final class CheckBalancedImpl&lt;T extends Comparable&lt;T&gt;&gt;</span>
+        implements CheckBalanced&lt;T&gt; {
+
+    @Override
+    public boolean checkBalanced(final BinaryTreeNode&lt;T&gt; input) {
+        try {
+<span class="fc" id="L17">            verifyNodeHeight(input);</span>
+<span class="fc" id="L18">            return true;</span>
+<span class="fc" id="L19">        } catch (HeightDifferenceException e) {</span>
+<span class="fc" id="L20">            return false;</span>
+        }
+    }
+
+    /**
+     * Recursively calculates node's height.
+     *
+     * @param node input node
+     * @return node height
+     * @throws HeightDifferenceException if left and right heights differ
+     *                                   by more than one
+     */
+    private int verifyNodeHeight(final BinaryTreeNode&lt;T&gt; node)
+            throws HeightDifferenceException {
+<span class="fc bfc" id="L34" title="All 2 branches covered.">        if (node == null) {</span>
+<span class="fc" id="L35">            return 0;</span>
+        }
+
+<span class="fc" id="L38">        int leftHeight = verifyNodeHeight(node.getLeft());</span>
+<span class="fc" id="L39">        int rightHeight = verifyNodeHeight(node.getRight());</span>
+
+<span class="fc bfc" id="L41" title="All 2 branches covered.">        if (Math.abs(leftHeight - rightHeight) &gt; 1) {</span>
+<span class="fc" id="L42">            throw new HeightDifferenceException();</span>
+        }
+
+<span class="fc" id="L45">        return Math.max(leftHeight, rightHeight) + 1;</span>
+    }
+
+    /**
+     * Height difference exception.
+     */
+<span class="fc" id="L51">    static class HeightDifferenceException extends Exception {</span>
+
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

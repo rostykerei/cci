@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PalindromeRotate.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Cracking the Coding Interview Solutions</a> &gt; <a href="index.source.html" class="el_package">nl.rostykerei.cci.ch02.q06</a> &gt; <span class="el_source">PalindromeRotate.java</span></div><h1>PalindromeRotate.java</h1><pre class="source lang-java linenums">package nl.rostykerei.cci.ch02.q06;
+
+import nl.rostykerei.cci.datastructure.DoublyLinkedList;
+import nl.rostykerei.cci.datastructure.impl.DoublyLinkedListImpl;
+
+/**
+ * Implementation of {@link Palindrome} using a rotated copy of the list.
+ * Takes O(N) extra memory but can be used for singly linked lists.
+ *
+ * @param &lt;T&gt; the class of the objects in the list
+ * @author Rosty Kerei
+ */
+<span class="fc" id="L13">public final class PalindromeRotate&lt;T&gt; implements Palindrome&lt;T&gt; {</span>
+
+    @Override
+    public boolean isPalindrome(final DoublyLinkedList&lt;T&gt; input) {
+
+<span class="fc" id="L18">        DoublyLinkedList&lt;T&gt; head = input;</span>
+<span class="fc" id="L19">        DoublyLinkedList&lt;T&gt; rotated = rotateList(head);</span>
+
+<span class="fc bfc" id="L21" title="All 2 branches covered.">        while (head != null) {</span>
+<span class="fc bfc" id="L22" title="All 2 branches covered.">            if (!head.getData().equals(rotated.getData())) {</span>
+<span class="fc" id="L23">                return false;</span>
+            }
+
+<span class="fc" id="L26">            head = head.getNext();</span>
+<span class="fc" id="L27">            rotated = rotated.getNext();</span>
+        }
+
+<span class="fc" id="L30">        return true;</span>
+    }
+
+    /**
+     * Rotates list.
+     *
+     * @param input head node
+     * @return rotated list
+     */
+    private DoublyLinkedList&lt;T&gt; rotateList(final DoublyLinkedList&lt;T&gt; input) {
+<span class="fc" id="L40">        DoublyLinkedList&lt;T&gt; head = input;</span>
+
+<span class="fc" id="L42">        DoublyLinkedList&lt;T&gt; rotated = null;</span>
+<span class="fc" id="L43">        DoublyLinkedList&lt;T&gt; prev = null;</span>
+
+<span class="fc bfc" id="L45" title="All 2 branches covered.">        while (head != null) {</span>
+<span class="fc" id="L46">            rotated = new DoublyLinkedListImpl&lt;&gt;(head.getData());</span>
+
+<span class="fc bfc" id="L48" title="All 2 branches covered.">            if (prev != null) {</span>
+<span class="fc" id="L49">                rotated.setNext(prev);</span>
+            }
+
+<span class="fc" id="L52">            prev = rotated;</span>
+
+<span class="fc" id="L54">            head = head.getNext();</span>
+        }
+
+<span class="fc" id="L57">        return rotated;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

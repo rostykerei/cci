@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>QueueImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Cracking the Coding Interview Solutions</a> &gt; <a href="index.source.html" class="el_package">nl.rostykerei.cci.datastructure.impl</a> &gt; <span class="el_source">QueueImpl.java</span></div><h1>QueueImpl.java</h1><pre class="source lang-java linenums">package nl.rostykerei.cci.datastructure.impl;
+
+import nl.rostykerei.cci.datastructure.Queue;
+
+import java.util.NoSuchElementException;
+
+/**
+ * Implementation of {@link Queue}.
+ *
+ * @param &lt;T&gt; the class of the objects in the queue
+ * @author Rosty Kerei
+ */
+<span class="fc" id="L13">public final class QueueImpl&lt;T&gt; implements Queue&lt;T&gt; {</span>
+
+    /**
+     * Link to the first node.
+     */
+    private QueueNode&lt;T&gt; first;
+
+    /**
+     * Link to the last node.
+     */
+    private QueueNode&lt;T&gt; last;
+
+    /**
+     * A node within the queue.
+     *
+     * @param &lt;T&gt; the class of the objects in the queue
+     */
+    private static class QueueNode&lt;T&gt; {
+
+        /**
+         * Data holder.
+         */
+        private final T data;
+
+        /**
+         * Next node.
+         */
+        private QueueNode&lt;T&gt; next;
+
+        /**
+         * Node constructor.
+         *
+         * @param value data value
+         */
+<span class="fc" id="L47">        QueueNode(final T value) {</span>
+<span class="fc" id="L48">            this.data = value;</span>
+<span class="fc" id="L49">        }</span>
+    }
+
+    @Override
+    public void add(final T item) {
+<span class="fc" id="L54">        QueueNode&lt;T&gt; t = new QueueNode&lt;&gt;(item);</span>
+
+<span class="fc bfc" id="L56" title="All 2 branches covered.">        if (last != null) {</span>
+<span class="fc" id="L57">            last.next = t;</span>
+        }
+
+<span class="fc" id="L60">        last = t;</span>
+
+<span class="fc bfc" id="L62" title="All 2 branches covered.">        if (first == null) {</span>
+<span class="fc" id="L63">            first = last;</span>
+        }
+
+<span class="fc" id="L66">    }</span>
+
+    @Override
+    public T remove() {
+<span class="fc bfc" id="L70" title="All 2 branches covered.">        if (first == null) {</span>
+<span class="fc" id="L71">            throw new NoSuchElementException();</span>
+        }
+
+<span class="fc" id="L74">        T data = first.data;</span>
+
+<span class="fc" id="L76">        first = first.next;</span>
+
+<span class="fc bfc" id="L78" title="All 2 branches covered.">        if (first == null) {</span>
+<span class="fc" id="L79">            last = null;</span>
+        }
+
+<span class="fc" id="L82">        return data;</span>
+    }
+
+    @Override
+    public T peek() {
+<span class="fc bfc" id="L87" title="All 2 branches covered.">        if (first == null) {</span>
+<span class="fc" id="L88">            throw new NoSuchElementException();</span>
+        }
+
+<span class="fc" id="L91">        return first.data;</span>
+    }
+
+    @Override
+    public boolean isEmpty() {
+<span class="fc bfc" id="L96" title="All 2 branches covered.">        return first == null;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

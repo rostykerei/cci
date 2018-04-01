@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>IsUniqueArray.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Cracking the Coding Interview Solutions</a> &gt; <a href="index.source.html" class="el_package">nl.rostykerei.cci.ch01.q01</a> &gt; <span class="el_source">IsUniqueArray.java</span></div><h1>IsUniqueArray.java</h1><pre class="source lang-java linenums">package nl.rostykerei.cci.ch01.q01;
+
+/**
+ * Implementation of {@link IsUnique} using an array.
+ *
+ * @author Rosty Kerei
+ */
+<span class="fc" id="L8">public final class IsUniqueArray implements IsUnique {</span>
+
+    /**
+     * 255 for ASCII, Character.MAX_VALUE for Unicode.
+     */
+    private static final int ARRAY_LENGTH = 255;
+
+    @Override
+    public boolean isUniqueCharsOnly(final String input) {
+
+<span class="fc bfc" id="L18" title="All 2 branches covered.">        if (input.length() &lt;= ARRAY_LENGTH) {</span>
+<span class="fc" id="L19">            boolean[] checker = new boolean[ARRAY_LENGTH + 1];</span>
+
+<span class="fc bfc" id="L21" title="All 2 branches covered.">            for (int i = 0; i &lt; input.length(); i++) {</span>
+<span class="fc" id="L22">                char c = input.charAt(i);</span>
+
+<span class="fc bfc" id="L24" title="All 2 branches covered.">                if (checker[c]) {</span>
+<span class="fc" id="L25">                    return false;</span>
+                }
+
+<span class="fc" id="L28">                checker[c] = true;</span>
+            }
+
+<span class="fc" id="L31">            return true;</span>
+        } else {
+<span class="fc" id="L33">            return false;</span>
+        }
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SetOfStacksFull.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Cracking the Coding Interview Solutions</a> &gt; <a href="index.source.html" class="el_package">nl.rostykerei.cci.ch03.q03</a> &gt; <span class="el_source">SetOfStacksFull.java</span></div><h1>SetOfStacksFull.java</h1><pre class="source lang-java linenums">package nl.rostykerei.cci.ch03.q03;
+
+import nl.rostykerei.cci.datastructure.impl.StackImpl;
+
+import java.util.ArrayList;
+import java.util.EmptyStackException;
+
+/**
+ * Implementation of {@link SetOfStacks}.
+ *
+ * @param &lt;T&gt; the class of the objects in the stacks
+ * @author Rosty Kerei
+ */
+public final class SetOfStacksFull&lt;T&gt; implements SetOfStacks&lt;T&gt; {
+
+    /**
+     * List of stacks.
+     */
+<span class="fc" id="L19">    private final ArrayList&lt;StackWithSize&lt;T&gt;&gt; stacks = new ArrayList&lt;&gt;();</span>
+
+    /**
+     * Each stack capacity.
+     */
+    private final int capacity;
+
+    /**
+     * Extension of the {@link StackImpl} containing the size.
+     *
+     * @param &lt;E&gt; the class of the objects in the stack
+     */
+<span class="fc" id="L31">    private class StackWithSize&lt;E&gt; extends StackImpl&lt;E&gt; {</span>
+
+        /**
+         * Size of the stack.
+         */
+<span class="fc" id="L36">        private int size = 0;</span>
+
+        @Override
+        public E pop() {
+<span class="fc" id="L40">            size--;</span>
+<span class="fc" id="L41">            return super.pop();</span>
+        }
+
+        @Override
+        public void push(final E item) {
+<span class="fc" id="L46">            size++;</span>
+<span class="fc" id="L47">            super.push(item);</span>
+<span class="fc" id="L48">        }</span>
+    }
+
+    /**
+     * Constructor.
+     *
+     * @param capacityValue capacity of each stack
+     */
+<span class="fc" id="L56">    public SetOfStacksFull(final int capacityValue) {</span>
+<span class="fc" id="L57">        this.capacity = capacityValue;</span>
+<span class="fc" id="L58">    }</span>
+
+    @Override
+    public T popAt(final int stackNumber) {
+<span class="fc bfc" id="L62" title="All 2 branches covered.">        if (stacks.isEmpty()) {</span>
+<span class="fc" id="L63">            throw new EmptyStackException();</span>
+        }
+
+<span class="fc bfc" id="L66" title="All 2 branches covered.">        if (stacks.size() &lt;= stackNumber - 1) {</span>
+<span class="fc" id="L67">            throw new IllegalArgumentException(</span>
+                    &quot;Stack #&quot; + stackNumber + &quot; does not exists&quot;
+            );
+        }
+
+<span class="fc" id="L72">        T item = stacks.get(stackNumber).pop();</span>
+
+<span class="fc bfc" id="L74" title="All 2 branches covered.">        if (stacks.get(stackNumber).isEmpty()) {</span>
+<span class="fc" id="L75">            stacks.remove(stackNumber);</span>
+        }
+
+<span class="fc" id="L78">        return item;</span>
+    }
+
+    @Override
+    public T pop() {
+<span class="fc" id="L83">        return popAt(stacks.size() - 1);</span>
+    }
+
+    @Override
+    public void push(final T item) {
+<span class="fc bfc" id="L88" title="All 2 branches covered.">        if (stacks.isEmpty()) {</span>
+<span class="fc" id="L89">            stacks.add(new StackWithSize&lt;&gt;());</span>
+        }
+
+<span class="fc bfc" id="L92" title="All 2 branches covered.">        if (getLastStack().size == capacity) {</span>
+<span class="fc" id="L93">            stacks.add(new StackWithSize&lt;&gt;());</span>
+        }
+
+<span class="fc" id="L96">        getLastStack().push(item);</span>
+<span class="fc" id="L97">    }</span>
+
+    @Override
+    public T peek() {
+<span class="fc bfc" id="L101" title="All 2 branches covered.">        if (stacks.isEmpty()) {</span>
+<span class="fc" id="L102">            throw new EmptyStackException();</span>
+        }
+
+<span class="fc" id="L105">        return getLastStack().peek();</span>
+    }
+
+    @Override
+    public boolean isEmpty() {
+<span class="fc" id="L110">        return stacks.isEmpty();</span>
+    }
+
+    /**
+     * Retrieves the last stack.
+     *
+     * @return last stack
+     */
+    private StackWithSize&lt;T&gt; getLastStack() {
+<span class="fc" id="L119">        return stacks.get(stacks.size() - 1);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

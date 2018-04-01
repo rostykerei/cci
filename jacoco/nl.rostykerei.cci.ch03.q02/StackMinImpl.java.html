@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>StackMinImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Cracking the Coding Interview Solutions</a> &gt; <a href="index.source.html" class="el_package">nl.rostykerei.cci.ch03.q02</a> &gt; <span class="el_source">StackMinImpl.java</span></div><h1>StackMinImpl.java</h1><pre class="source lang-java linenums">package nl.rostykerei.cci.ch03.q02;
+
+import nl.rostykerei.cci.datastructure.impl.StackImpl;
+
+import java.util.EmptyStackException;
+
+/**
+ * Implementation of {@link StackMin}.
+ *
+ * @author Rosty Kerei
+ */
+<span class="fc" id="L12">public final class StackMinImpl extends StackImpl&lt;Integer&gt; implements StackMin {</span>
+
+    /**
+     * Node with a min value.
+     */
+    private class StackMinNode extends StackNode&lt;Integer&gt; {
+
+        /**
+         * Min value holder.
+         */
+        private final int min;
+
+        /**
+         * Constructor.
+         *
+         * @param value data value
+         * @param minValue min value
+         */
+<span class="fc" id="L30">        StackMinNode(final int value, final int minValue) {</span>
+<span class="fc" id="L31">            super(value);</span>
+<span class="fc" id="L32">            this.min = minValue;</span>
+<span class="fc" id="L33">        }</span>
+
+        /**
+         * Gets min value.
+         *
+         * @return min value
+         */
+        private int getMin() {
+<span class="fc" id="L41">            return min;</span>
+        }
+    }
+
+    @Override
+    public int min() {
+<span class="fc" id="L47">        StackMinNode top = (StackMinNode) getTop();</span>
+
+<span class="fc bfc" id="L49" title="All 2 branches covered.">        if (top == null) {</span>
+<span class="fc" id="L50">            throw new EmptyStackException();</span>
+        }
+
+<span class="fc" id="L53">        return top.getMin();</span>
+    }
+
+    @Override
+    public void push(final Integer item) {
+<span class="fc bfc" id="L58" title="All 2 branches covered.">        if (item == null) {</span>
+<span class="fc" id="L59">            throw new IllegalArgumentException();</span>
+        }
+
+        int min;
+
+<span class="fc" id="L64">        StackMinNode top = (StackMinNode) getTop();</span>
+
+<span class="fc bfc" id="L66" title="All 2 branches covered.">        if (top == null) {</span>
+<span class="fc" id="L67">            min = item;</span>
+        } else {
+<span class="fc" id="L69">            min = Math.min(item, top.getMin());</span>
+        }
+
+<span class="fc" id="L72">        StackMinNode t = new StackMinNode(item, min);</span>
+<span class="fc" id="L73">        t.setNext(top);</span>
+
+<span class="fc" id="L75">        setTop(t);</span>
+<span class="fc" id="L76">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

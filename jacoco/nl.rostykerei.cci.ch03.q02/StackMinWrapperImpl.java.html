@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>StackMinWrapperImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Cracking the Coding Interview Solutions</a> &gt; <a href="index.source.html" class="el_package">nl.rostykerei.cci.ch03.q02</a> &gt; <span class="el_source">StackMinWrapperImpl.java</span></div><h1>StackMinWrapperImpl.java</h1><pre class="source lang-java linenums">package nl.rostykerei.cci.ch03.q02;
+
+import nl.rostykerei.cci.datastructure.Stack;
+import nl.rostykerei.cci.datastructure.impl.StackImpl;
+
+/**
+ * Another implementation of {@link StackMin} using a node wrapper.
+ *
+ * @author Rosty Kerei
+ */
+<span class="fc" id="L11">public final class StackMinWrapperImpl implements StackMin {</span>
+
+    /**
+     * Stack of wrappers.
+     */
+<span class="fc" id="L16">    private final Stack&lt;NodeWrapper&gt; stack = new StackImpl&lt;&gt;();</span>
+
+    /**
+     * Wraps integer node, adds min value.
+     */
+<span class="fc" id="L21">    private static class NodeWrapper {</span>
+
+        /**
+         * Actual data.
+         */
+        private int data;
+
+        /**
+         * Most recent minimum.
+         */
+        private int min;
+    }
+
+
+    @Override
+    public int min() {
+<span class="fc" id="L37">        return stack.peek().min;</span>
+    }
+
+    @Override
+    public Integer pop() {
+<span class="fc" id="L42">        return stack.pop().data;</span>
+    }
+
+    @Override
+    public void push(final Integer item) {
+<span class="fc bfc" id="L47" title="All 2 branches covered.">        if (item == null) {</span>
+<span class="fc" id="L48">            throw new IllegalArgumentException();</span>
+        }
+
+<span class="fc" id="L51">        NodeWrapper node = new NodeWrapper();</span>
+<span class="fc" id="L52">        node.data = item;</span>
+
+<span class="fc bfc" id="L54" title="All 2 branches covered.">        if (isEmpty()) {</span>
+<span class="fc" id="L55">            node.min = item;</span>
+        } else {
+<span class="fc" id="L57">            node.min = Math.min(stack.peek().min, item);</span>
+        }
+
+<span class="fc" id="L60">        stack.push(node);</span>
+<span class="fc" id="L61">    }</span>
+
+    @Override
+    public Integer peek() {
+<span class="fc" id="L65">        return stack.peek().data;</span>
+    }
+
+    @Override
+    public boolean isEmpty() {
+<span class="fc" id="L70">        return stack.isEmpty();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

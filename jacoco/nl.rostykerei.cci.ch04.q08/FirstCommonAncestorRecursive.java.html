@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FirstCommonAncestorRecursive.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Cracking the Coding Interview Solutions</a> &gt; <a href="index.source.html" class="el_package">nl.rostykerei.cci.ch04.q08</a> &gt; <span class="el_source">FirstCommonAncestorRecursive.java</span></div><h1>FirstCommonAncestorRecursive.java</h1><pre class="source lang-java linenums">package nl.rostykerei.cci.ch04.q08;
+
+import nl.rostykerei.cci.datastructure.BinaryTreeNode;
+
+/**
+ * Recursive solution to {@link FirstCommonAncestor}.
+ *
+ * @param &lt;T&gt; the class of the objects in the binary tree
+ * @author Rosty Kerei
+ */
+<span class="fc" id="L11">public final class FirstCommonAncestorRecursive&lt;T extends Comparable&lt;T&gt;&gt;</span>
+        implements FirstCommonAncestor&lt;T&gt; {
+
+    @Override
+    public BinaryTreeNode&lt;T&gt; findFirstCommonAncestor(
+            final BinaryTreeNode&lt;T&gt; node1,
+            final BinaryTreeNode&lt;T&gt; node2) {
+
+<span class="fc bfc" id="L19" title="All 4 branches covered.">        if (node1 == null || node2 == null) {</span>
+<span class="fc" id="L20">            return null;</span>
+        }
+
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        if (contains(node1, node2)) {</span>
+<span class="fc" id="L24">            return (BinaryTreeNode&lt;T&gt;) node1.getParent();</span>
+        }
+
+<span class="fc bfc" id="L27" title="All 2 branches covered.">        if (contains(node2, node1)) {</span>
+<span class="fc" id="L28">            return (BinaryTreeNode&lt;T&gt;) node2.getParent();</span>
+        }
+
+<span class="fc" id="L31">        BinaryTreeNode&lt;T&gt; previous = node1;</span>
+<span class="fc" id="L32">        BinaryTreeNode&lt;T&gt; parent = (BinaryTreeNode&lt;T&gt;) node1.getParent();</span>
+
+<span class="fc bfc" id="L34" title="All 2 branches covered.">        while (parent != null) {</span>
+<span class="fc bfc" id="L35" title="All 2 branches covered.">            if (previous == parent.getLeft()</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">                    &amp;&amp; contains(parent.getRight(), node2)) {</span>
+<span class="fc" id="L37">                return parent;</span>
+            }
+
+<span class="fc bfc" id="L40" title="All 2 branches covered.">            if (previous == parent.getRight()</span>
+<span class="fc bfc" id="L41" title="All 2 branches covered.">                    &amp;&amp; contains(parent.getLeft(), node2)) {</span>
+<span class="fc" id="L42">                return parent;</span>
+            }
+
+<span class="fc" id="L45">            previous = parent;</span>
+<span class="fc" id="L46">            parent = (BinaryTreeNode&lt;T&gt;) parent.getParent();</span>
+        }
+
+<span class="fc" id="L49">        return null;</span>
+    }
+
+
+    /**
+     * Checks if root contains subtree.
+     *
+     * @param root    root node
+     * @param subtree node to search
+     * @return true if root node is a parent or equals to subtree
+     */
+    private boolean contains(
+            final BinaryTreeNode&lt;T&gt; root,
+            final BinaryTreeNode&lt;T&gt; subtree) {
+<span class="fc bfc" id="L63" title="All 2 branches covered.">        return root != null</span>
+<span class="fc bfc" id="L64" title="All 2 branches covered.">                &amp;&amp; (root.equals(subtree)</span>
+<span class="fc bfc" id="L65" title="All 2 branches covered.">                || contains(root.getLeft(), subtree)</span>
+<span class="fc bfc" id="L66" title="All 2 branches covered.">                || contains(root.getRight(), subtree));</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

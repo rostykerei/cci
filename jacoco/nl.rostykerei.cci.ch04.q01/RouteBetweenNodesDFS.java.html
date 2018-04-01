@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RouteBetweenNodesDFS.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Cracking the Coding Interview Solutions</a> &gt; <a href="index.source.html" class="el_package">nl.rostykerei.cci.ch04.q01</a> &gt; <span class="el_source">RouteBetweenNodesDFS.java</span></div><h1>RouteBetweenNodesDFS.java</h1><pre class="source lang-java linenums">package nl.rostykerei.cci.ch04.q01;
+
+import nl.rostykerei.cci.datastructure.TreeNode;
+
+import java.util.HashSet;
+import java.util.Set;
+
+/**
+ * Implementation of {@link RouteBetweenNodes} using depth-first search.
+ *
+ * @param &lt;T&gt; the class of the objects in the graph
+ * @author Rosty Kerei
+ */
+<span class="fc" id="L14">public final class RouteBetweenNodesDFS&lt;T&gt; implements RouteBetweenNodes&lt;T&gt; {</span>
+
+    @Override
+    public boolean isRoutePossible(final TreeNode&lt;T&gt; start,
+                                   final TreeNode&lt;T&gt; finish) {
+<span class="fc" id="L19">        return dfs(start, finish, new HashSet&lt;&gt;());</span>
+    }
+
+    /**
+     * Recursive depth-first search.
+     *
+     * @param node current node
+     * @param finish finish node
+     * @param seen set of seen nodes
+     * @return true if route can be found, false otherwise
+     */
+    private boolean dfs(final TreeNode&lt;T&gt; node, final TreeNode&lt;T&gt; finish,
+                        final Set&lt;TreeNode&gt; seen) {
+
+<span class="fc bfc" id="L33" title="All 2 branches covered.">        if (node.equals(finish)) {</span>
+<span class="fc" id="L34">            return true;</span>
+        }
+
+<span class="fc" id="L37">        seen.add(node);</span>
+
+<span class="fc bfc" id="L39" title="All 2 branches covered.">        for (TreeNode&lt;T&gt; child : node.getChildren()) {</span>
+<span class="fc bfc" id="L40" title="All 4 branches covered.">            if (!seen.contains(child) &amp;&amp; dfs(child, finish, seen)) {</span>
+<span class="fc" id="L41">                return true;</span>
+            }
+<span class="fc" id="L43">        }</span>
+
+<span class="fc" id="L45">        return false;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

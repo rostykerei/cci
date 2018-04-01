@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DoublyLinkedListImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Cracking the Coding Interview Solutions</a> &gt; <a href="index.source.html" class="el_package">nl.rostykerei.cci.datastructure.impl</a> &gt; <span class="el_source">DoublyLinkedListImpl.java</span></div><h1>DoublyLinkedListImpl.java</h1><pre class="source lang-java linenums">package nl.rostykerei.cci.datastructure.impl;
+
+import nl.rostykerei.cci.datastructure.DoublyLinkedList;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Doubly-linked list implementation.
+ *
+ * @param &lt;T&gt; the class of the objects in the list
+ * @author Rosty Kerei
+ */
+public final class DoublyLinkedListImpl&lt;T&gt;
+        extends AbstractLinkedList&lt;T&gt; implements DoublyLinkedList&lt;T&gt; {
+
+    /**
+     * Link to the previous node.
+     */
+    private DoublyLinkedList&lt;T&gt; previous;
+
+    /**
+     * Link to the next node.
+     */
+    private DoublyLinkedList&lt;T&gt; next;
+
+    /**
+     * Constructor.
+     *
+     * @param value node data value
+     */
+<span class="fc" id="L32">    public DoublyLinkedListImpl(final T value) {</span>
+<span class="fc" id="L33">        this.setData(value);</span>
+<span class="fc" id="L34">    }</span>
+
+    @Override
+    public DoublyLinkedList&lt;T&gt; setNext(final DoublyLinkedList&lt;T&gt; nextNode) {
+
+<span class="fc bfc" id="L39" title="All 4 branches covered.">        if (nextNode == null &amp;&amp; this.next != null) {</span>
+<span class="fc" id="L40">            DoublyLinkedList&lt;T&gt; n = this.next;</span>
+<span class="fc" id="L41">            this.next = null;</span>
+<span class="fc" id="L42">            n.setPrevious(null);</span>
+
+<span class="fc" id="L44">            return this;</span>
+        }
+
+<span class="fc" id="L47">        this.next = nextNode;</span>
+
+<span class="fc bfc" id="L49" title="All 4 branches covered.">        if (nextNode != null &amp;&amp; nextNode.getPrevious() != this) {</span>
+<span class="fc" id="L50">            nextNode.setPrevious(this);</span>
+        }
+
+<span class="fc" id="L53">        return this;</span>
+    }
+
+    @Override
+    public DoublyLinkedList&lt;T&gt; getNext() {
+<span class="fc" id="L58">        return this.next;</span>
+    }
+
+    @Override
+    public DoublyLinkedList&lt;T&gt; setPrevious(
+            final DoublyLinkedList&lt;T&gt; previousNode) {
+
+<span class="fc bfc" id="L65" title="All 4 branches covered.">        if (previousNode == null &amp;&amp; this.previous != null) {</span>
+<span class="fc" id="L66">            DoublyLinkedList&lt;T&gt; p = this.previous;</span>
+<span class="fc" id="L67">            this.previous = null;</span>
+<span class="fc" id="L68">            p.setNext(null);</span>
+
+<span class="fc" id="L70">            return this;</span>
+        }
+
+<span class="fc" id="L73">        this.previous = previousNode;</span>
+
+<span class="fc bfc" id="L75" title="All 4 branches covered.">        if (previousNode != null &amp;&amp; previousNode.getNext() != this) {</span>
+<span class="fc" id="L76">            previousNode.setNext(this);</span>
+        }
+
+<span class="fc" id="L79">        return this;</span>
+    }
+
+    @Override
+    public DoublyLinkedList&lt;T&gt; getPrevious() {
+<span class="fc" id="L84">        return this.previous;</span>
+    }
+
+    @Override
+    public boolean isFirst() {
+<span class="fc bfc" id="L89" title="All 2 branches covered.">        return this.previous == null;</span>
+    }
+
+    @Override
+    public boolean isLast() {
+<span class="fc bfc" id="L94" title="All 2 branches covered.">        return this.next == null;</span>
+    }
+
+    @Override
+    public List&lt;T&gt; toList() {
+<span class="fc" id="L99">        List&lt;T&gt; result = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L100">        DoublyLinkedList&lt;T&gt; node = this;</span>
+
+<span class="fc bfc" id="L102" title="All 2 branches covered.">        while (node != null) {</span>
+<span class="fc" id="L103">            result.add(node.getData());</span>
+<span class="fc" id="L104">            node = node.getNext();</span>
+        }
+
+<span class="fc" id="L107">        return result;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

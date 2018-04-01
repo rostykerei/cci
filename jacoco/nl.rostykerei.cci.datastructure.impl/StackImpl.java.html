@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>StackImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Cracking the Coding Interview Solutions</a> &gt; <a href="index.source.html" class="el_package">nl.rostykerei.cci.datastructure.impl</a> &gt; <span class="el_source">StackImpl.java</span></div><h1>StackImpl.java</h1><pre class="source lang-java linenums">package nl.rostykerei.cci.datastructure.impl;
+
+import nl.rostykerei.cci.datastructure.Stack;
+
+import java.util.EmptyStackException;
+
+/**
+ * Implementation of {@link Stack}.
+ *
+ * @param &lt;T&gt; the class of the objects in the stack
+ */
+<span class="fc" id="L12">public class StackImpl&lt;T&gt; implements Stack&lt;T&gt; {</span>
+
+    /**
+     * Top of the stack.
+     */
+    private StackNode&lt;T&gt; top;
+
+    /**
+     * A node within the stack.
+     *
+     * @param &lt;T&gt; the class of the objects in the stack
+     */
+    public static class StackNode&lt;T&gt; {
+
+        /**
+         * Data holder.
+         */
+        private final T data;
+
+        /**
+         * Link to the next node.
+         */
+        private StackNode&lt;T&gt; next;
+
+        /**
+         * Stack node constructor.
+         *
+         * @param value data
+         */
+<span class="fc" id="L41">        public StackNode(final T value) {</span>
+<span class="fc" id="L42">            this.data = value;</span>
+<span class="fc" id="L43">        }</span>
+
+        /**
+         * Sets next node.
+         *
+         * @param node next node
+         */
+        public void setNext(final StackNode&lt;T&gt; node) {
+<span class="fc" id="L51">            this.next = node;</span>
+<span class="fc" id="L52">        }</span>
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public T pop() {
+<span class="fc bfc" id="L60" title="All 2 branches covered.">        if (top == null) {</span>
+<span class="fc" id="L61">            throw new EmptyStackException();</span>
+        }
+
+<span class="fc" id="L64">        T item = top.data;</span>
+
+<span class="fc" id="L66">        top = top.next;</span>
+
+<span class="fc" id="L68">        return item;</span>
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void push(final T item) {
+<span class="fc" id="L76">        StackNode&lt;T&gt; t = new StackNode&lt;&gt;(item);</span>
+<span class="fc" id="L77">        t.next = top;</span>
+<span class="fc" id="L78">        top = t;</span>
+<span class="fc" id="L79">    }</span>
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public T peek() {
+<span class="fc bfc" id="L86" title="All 2 branches covered.">        if (top == null) {</span>
+<span class="fc" id="L87">            throw new EmptyStackException();</span>
+        }
+
+<span class="fc" id="L90">        return top.data;</span>
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public boolean isEmpty() {
+<span class="fc bfc" id="L98" title="All 2 branches covered.">        return top == null;</span>
+    }
+
+    /**
+     * Gets top node.
+     *
+     * @return top node
+     */
+    protected StackNode&lt;T&gt; getTop() {
+<span class="fc" id="L107">        return top;</span>
+    }
+
+    /**
+     * Sets top node.
+     *
+     * @param node top node
+     */
+    protected void setTop(final StackNode&lt;T&gt; node) {
+<span class="fc" id="L116">        this.top = node;</span>
+<span class="fc" id="L117">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

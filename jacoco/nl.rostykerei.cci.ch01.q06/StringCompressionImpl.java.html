@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>StringCompressionImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Cracking the Coding Interview Solutions</a> &gt; <a href="index.source.html" class="el_package">nl.rostykerei.cci.ch01.q06</a> &gt; <span class="el_source">StringCompressionImpl.java</span></div><h1>StringCompressionImpl.java</h1><pre class="source lang-java linenums">package nl.rostykerei.cci.ch01.q06;
+
+/**
+ * Implementation of {@link StringCompression}.
+ *
+ * @author Rosty Kerei
+ */
+<span class="fc" id="L8">public final class StringCompressionImpl implements StringCompression {</span>
+
+    @Override
+    public String compress(final String input) {
+<span class="fc" id="L12">        StringBuilder output = new StringBuilder();</span>
+<span class="fc" id="L13">        char[] chars = input.toCharArray();</span>
+
+<span class="fc" id="L15">        int count = 1;</span>
+
+<span class="fc bfc" id="L17" title="All 2 branches covered.">        for (int i = 0; i &lt; chars.length; i++) {</span>
+<span class="fc bfc" id="L18" title="All 4 branches covered.">            if (i == chars.length - 1 || chars[i] != chars[i + 1]) {</span>
+<span class="fc" id="L19">                output.append(chars[i]);</span>
+<span class="fc" id="L20">                output.append(count);</span>
+<span class="fc" id="L21">                count = 1;</span>
+            } else {
+<span class="fc" id="L23">                count++;</span>
+            }
+        }
+
+<span class="fc bfc" id="L27" title="All 2 branches covered.">        if (output.length() &gt; input.length()) {</span>
+<span class="fc" id="L28">            return input;</span>
+        } else {
+<span class="fc" id="L30">            return output.toString();</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

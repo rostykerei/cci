@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ValidateBSTImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Cracking the Coding Interview Solutions</a> &gt; <a href="index.source.html" class="el_package">nl.rostykerei.cci.ch04.q05</a> &gt; <span class="el_source">ValidateBSTImpl.java</span></div><h1>ValidateBSTImpl.java</h1><pre class="source lang-java linenums">package nl.rostykerei.cci.ch04.q05;
+
+import nl.rostykerei.cci.datastructure.BinaryTreeNode;
+
+/**
+ * Implementation of {@link ValidateBST}.
+ *
+ * @param &lt;T&gt; the class of the objects in the tree
+ */
+<span class="fc" id="L10">public final class ValidateBSTImpl&lt;T extends Comparable&lt;T&gt;&gt;</span>
+        implements ValidateBST&lt;T&gt; {
+
+    @Override
+    public boolean isValidBST(final BinaryTreeNode&lt;T&gt; input) {
+<span class="fc" id="L15">        return validateBSTNode(input, null, null);</span>
+    }
+
+    /**
+     * Recursively validate BST nodes.
+     *
+     * @param node root node
+     * @param min allowed minimum or null
+     * @param max allowed maximum or null
+     * @return true if the node is a valid BST
+     */
+    private boolean validateBSTNode(final BinaryTreeNode&lt;T&gt; node,
+                                    final T min, final T max) {
+<span class="fc bfc" id="L28" title="All 4 branches covered.">        return node == null</span>
+<span class="fc bfc" id="L29" title="All 4 branches covered.">                || (min == null || node.getData().compareTo(min) &gt;= 0)</span>
+<span class="fc bfc" id="L30" title="All 2 branches covered.">                &amp;&amp; (max == null || node.getData().compareTo(max) &lt;= 0)</span>
+<span class="fc bfc" id="L31" title="All 2 branches covered.">                &amp;&amp; validateBSTNode(node.getLeft(), min, node.getData())</span>
+<span class="fc bfc" id="L32" title="All 2 branches covered.">                &amp;&amp; validateBSTNode(node.getRight(), node.getData(), max);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

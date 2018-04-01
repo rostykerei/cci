@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PathsWithSumImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Cracking the Coding Interview Solutions</a> &gt; <a href="index.source.html" class="el_package">nl.rostykerei.cci.ch04.q12</a> &gt; <span class="el_source">PathsWithSumImpl.java</span></div><h1>PathsWithSumImpl.java</h1><pre class="source lang-java linenums">package nl.rostykerei.cci.ch04.q12;
+
+import nl.rostykerei.cci.datastructure.BinaryTreeNode;
+
+/**
+ * Implementation of {@link PathsWithSum} by recursive functions.
+ *
+ * @author Rosty Kerei
+ */
+<span class="fc" id="L10">public final class PathsWithSumImpl implements PathsWithSum {</span>
+
+    @Override
+    public int pathsWithSum(final BinaryTreeNode&lt;Integer&gt; tree,
+                            final int sum) {
+<span class="fc bfc" id="L15" title="All 2 branches covered.">        if (tree == null) {</span>
+<span class="fc" id="L16">            return 0;</span>
+        }
+
+<span class="fc" id="L19">        return calcPathsWithSum(tree, sum, 0)</span>
+<span class="fc" id="L20">                + pathsWithSum(tree.getLeft(), sum)</span>
+<span class="fc" id="L21">                + pathsWithSum(tree.getRight(), sum);</span>
+    }
+
+    /**
+     * Recursively calculates the number of path with the given sum.
+     *
+     * @param root root node
+     * @param targetSum target sum
+     * @param pathSum current path sum
+     * @return number of paths with the given sum
+     */
+    private int calcPathsWithSum(
+            final BinaryTreeNode&lt;Integer&gt; root,
+            final int targetSum,
+            final int pathSum) {
+
+<span class="fc bfc" id="L37" title="All 2 branches covered.">        if (root == null) {</span>
+<span class="fc" id="L38">            return 0;</span>
+        }
+
+<span class="fc" id="L41">        int currentSum = pathSum + root.getData();</span>
+
+<span class="fc" id="L43">        int paths = calcPathsWithSum(root.getLeft(), targetSum, currentSum)</span>
+<span class="fc" id="L44">                + calcPathsWithSum(root.getRight(), targetSum, currentSum);</span>
+
+<span class="fc bfc" id="L46" title="All 2 branches covered.">        if (currentSum == targetSum) {</span>
+<span class="fc" id="L47">            return paths + 1;</span>
+        }
+
+<span class="fc" id="L50">        return paths;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

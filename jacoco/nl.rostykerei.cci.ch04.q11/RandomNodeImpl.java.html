@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RandomNodeImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Cracking the Coding Interview Solutions</a> &gt; <a href="index.source.html" class="el_package">nl.rostykerei.cci.ch04.q11</a> &gt; <span class="el_source">RandomNodeImpl.java</span></div><h1>RandomNodeImpl.java</h1><pre class="source lang-java linenums">package nl.rostykerei.cci.ch04.q11;
+
+import nl.rostykerei.cci.datastructure.BinaryTreeNode;
+import nl.rostykerei.cci.datastructure.Pair;
+import nl.rostykerei.cci.datastructure.impl.BinaryTreeNodeImpl;
+import nl.rostykerei.cci.datastructure.impl.PairImpl;
+
+import java.util.Random;
+
+/**
+ * Implementation of {@link RandomNode}.
+ *
+ * @param &lt;T&gt; the class of the objects in the tree
+ * @author Rosty Kerei
+ */
+public final class RandomNodeImpl&lt;T extends Comparable&lt;T&gt;&gt;
+        extends BinaryTreeNodeImpl&lt;T&gt; implements RandomNode&lt;T&gt; {
+
+    /**
+     * Randomise.
+     */
+<span class="fc" id="L22">    private static final Random RANDOM = new Random();</span>
+
+    /**
+     * Node's size.
+     */
+<span class="fc" id="L27">    private int size = 1;</span>
+
+    /**
+     * Node's constructor.
+     *
+     * @param dataValue node's value
+     */
+    public RandomNodeImpl(final T dataValue) {
+<span class="fc" id="L35">        super(dataValue);</span>
+<span class="fc" id="L36">    }</span>
+
+    /**
+     * Updates node's size.
+     *
+     * @param delta size delta
+     */
+    private void updateSize(final int delta) {
+<span class="fc" id="L44">        size += delta;</span>
+
+<span class="fc bfc" id="L46" title="All 2 branches covered.">        if (this.getParent() != null) {</span>
+<span class="fc" id="L47">            ((RandomNodeImpl) this.getParent()).updateSize(delta);</span>
+        }
+<span class="fc" id="L49">    }</span>
+
+    @Override
+    public void setLeft(final BinaryTreeNode&lt;T&gt; leftNode) {
+<span class="fc" id="L53">        int dSize = 0;</span>
+
+<span class="fc bfc" id="L55" title="All 2 branches covered.">        if (getLeft() != null) {</span>
+<span class="fc" id="L56">            dSize -= ((RandomNodeImpl) getLeft()).size;</span>
+        }
+
+<span class="fc" id="L59">        super.setLeft(leftNode);</span>
+
+<span class="fc bfc" id="L61" title="All 2 branches covered.">        if (leftNode != null) {</span>
+<span class="fc" id="L62">            dSize += ((RandomNodeImpl) leftNode).size;</span>
+        }
+
+<span class="fc bfc" id="L65" title="All 2 branches covered.">        if (dSize != 0) {</span>
+<span class="fc" id="L66">            updateSize(dSize);</span>
+        }
+<span class="fc" id="L68">    }</span>
+
+    @Override
+    public void setRight(final BinaryTreeNode&lt;T&gt; rightNode) {
+<span class="fc" id="L72">        int dSize = 0;</span>
+
+<span class="fc bfc" id="L74" title="All 2 branches covered.">        if (getRight() != null) {</span>
+<span class="fc" id="L75">            dSize -= ((RandomNodeImpl) getRight()).size;</span>
+        }
+
+<span class="fc" id="L78">        super.setRight(rightNode);</span>
+
+<span class="fc bfc" id="L80" title="All 2 branches covered.">        if (rightNode != null) {</span>
+<span class="fc" id="L81">            dSize += ((RandomNodeImpl) rightNode).size;</span>
+        }
+
+<span class="fc bfc" id="L84" title="All 2 branches covered.">        if (dSize != 0) {</span>
+<span class="fc" id="L85">            updateSize(dSize);</span>
+        }
+<span class="fc" id="L87">    }</span>
+
+    /**
+     * Traverse the node until limited length is reached.
+     *
+     * @param node root node
+     * @param length desired length
+     * @return {@link Pair} of node and its length.
+     */
+    private Pair&lt;Integer, RandomNode&lt;T&gt;&gt; traverse(
+            final RandomNode&lt;T&gt; node,
+            final int length) {
+
+<span class="fc bfc" id="L100" title="All 2 branches covered.">        if (node == null) {</span>
+<span class="fc" id="L101">            return new PairImpl&lt;&gt;(length, null);</span>
+        }
+
+<span class="fc bfc" id="L104" title="All 2 branches covered.">        if (length == 0) {</span>
+<span class="fc" id="L105">            return new PairImpl&lt;&gt;(0, node);</span>
+        }
+
+<span class="fc" id="L108">        Pair&lt;Integer, RandomNode&lt;T&gt;&gt; left = traverse(</span>
+<span class="fc" id="L109">                (RandomNode&lt;T&gt;) node.getLeft(),</span>
+                length - 1);
+
+<span class="fc bfc" id="L112" title="All 2 branches covered.">        if (left.getSecond() != null) {</span>
+<span class="fc" id="L113">            return left;</span>
+        }
+
+<span class="fc" id="L116">        return traverse((RandomNode&lt;T&gt;) node.getRight(), left.getFirst());</span>
+    }
+
+    @Override
+    public RandomNode&lt;T&gt; getRandomNode() {
+<span class="fc" id="L121">        int rand = RANDOM.nextInt(this.size);</span>
+<span class="fc" id="L122">        return traverse(this, rand).getSecond();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

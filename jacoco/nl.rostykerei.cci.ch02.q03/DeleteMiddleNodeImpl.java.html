@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DeleteMiddleNodeImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Cracking the Coding Interview Solutions</a> &gt; <a href="index.source.html" class="el_package">nl.rostykerei.cci.ch02.q03</a> &gt; <span class="el_source">DeleteMiddleNodeImpl.java</span></div><h1>DeleteMiddleNodeImpl.java</h1><pre class="source lang-java linenums">package nl.rostykerei.cci.ch02.q03;
+
+import nl.rostykerei.cci.datastructure.SinglyLinkedList;
+
+/**
+ * Implementation of {@link DeleteMiddleNode}.
+ *
+ * @param &lt;T&gt; the class of the objects in the list
+ * @author Rosty Kerei
+ */
+<span class="fc" id="L11">public final class DeleteMiddleNodeImpl&lt;T&gt; implements DeleteMiddleNode&lt;T&gt; {</span>
+
+    @Override
+    public void deleteMiddleNode(final SinglyLinkedList&lt;T&gt; node) {
+<span class="fc" id="L15">        SinglyLinkedList&lt;T&gt; next = node.getNext();</span>
+
+<span class="fc bfc" id="L17" title="All 2 branches covered.">        if (next == null) {</span>
+<span class="fc" id="L18">            throw new IllegalArgumentException(</span>
+                    &quot;The last node cannot be deleted&quot;
+            );
+        }
+
+<span class="fc" id="L23">        node.setData(next.getData());</span>
+<span class="fc" id="L24">        node.setNext(next.getNext());</span>
+<span class="fc" id="L25">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

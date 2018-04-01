@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SortStackImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Cracking the Coding Interview Solutions</a> &gt; <a href="index.source.html" class="el_package">nl.rostykerei.cci.ch03.q05</a> &gt; <span class="el_source">SortStackImpl.java</span></div><h1>SortStackImpl.java</h1><pre class="source lang-java linenums">package nl.rostykerei.cci.ch03.q05;
+
+import nl.rostykerei.cci.datastructure.Stack;
+import nl.rostykerei.cci.datastructure.impl.StackImpl;
+
+/**
+ * Implementation of {@link SortStack}.
+ *
+ * @param &lt;T&gt; the class of the objects in the stack
+ * @author Rosty Kerei
+ */
+<span class="fc" id="L12">public final class SortStackImpl&lt;T extends Comparable&lt;? super T&gt;&gt;</span>
+        implements SortStack&lt;T&gt; {
+
+    @Override
+    public void sort(final Stack&lt;T&gt; stack) {
+<span class="fc" id="L17">        Stack&lt;T&gt; sorted = new StackImpl&lt;&gt;();</span>
+
+<span class="fc bfc" id="L19" title="All 2 branches covered.">        while (!stack.isEmpty()) {</span>
+<span class="fc" id="L20">            Stack&lt;T&gt; temp = new StackImpl&lt;&gt;();</span>
+<span class="fc" id="L21">            T min = findMin(stack, temp, null);</span>
+
+<span class="fc" id="L23">            sorted.push(min);</span>
+
+<span class="fc" id="L25">            temp = removeItem(temp, min);</span>
+
+<span class="fc" id="L27">            swap(temp, stack);</span>
+<span class="fc" id="L28">        }</span>
+
+<span class="fc" id="L30">        swap(sorted, stack);</span>
+<span class="fc" id="L31">    }</span>
+
+    /**
+     * Recursively find a min value and pours out stack.
+     *
+     * @param stack input stack
+     * @param out out stack
+     * @param minValue min value, initial null
+     * @return min value
+     */
+    private T findMin(final Stack&lt;T&gt; stack, final Stack&lt;T&gt; out,
+                      final T minValue) {
+<span class="fc bfc" id="L43" title="All 2 branches covered.">        if (stack.isEmpty()) {</span>
+<span class="fc" id="L44">            return minValue;</span>
+        }
+
+<span class="fc" id="L47">        T val = stack.pop();</span>
+<span class="fc" id="L48">        out.push(val);</span>
+
+<span class="fc" id="L50">        T min = minValue;</span>
+
+<span class="fc bfc" id="L52" title="All 4 branches covered.">        if (minValue == null || val.compareTo(minValue) &lt; 1) {</span>
+<span class="fc" id="L53">            min = val;</span>
+        }
+
+<span class="fc" id="L56">        return findMin(stack, out, min);</span>
+    }
+
+
+    /**
+     * Removes the item from the stack.
+     *
+     * @param stack input stack
+     * @param remove node to remove
+     * @return new stack without removed node
+     */
+    private Stack&lt;T&gt; removeItem(final Stack&lt;T&gt; stack, final T remove) {
+<span class="fc" id="L68">        Stack&lt;T&gt; result = new StackImpl&lt;&gt;();</span>
+<span class="fc" id="L69">        boolean removed = false;</span>
+
+<span class="fc bfc" id="L71" title="All 2 branches covered.">        while (!stack.isEmpty()) {</span>
+<span class="fc" id="L72">            T item = stack.pop();</span>
+
+<span class="fc bfc" id="L74" title="All 4 branches covered.">            if (item.equals(remove) &amp;&amp; !removed) {</span>
+<span class="fc" id="L75">                removed = true;</span>
+            } else {
+<span class="fc" id="L77">                result.push(item);</span>
+            }
+<span class="fc" id="L79">        }</span>
+
+<span class="fc" id="L81">        return result;</span>
+    }
+
+    /**
+     * Moves stack upside down from in to out.
+     *
+     * @param in input stack
+     * @param out output stack
+     */
+    private void swap(final Stack&lt;T&gt; in, final Stack&lt;T&gt; out) {
+<span class="fc bfc" id="L91" title="All 2 branches covered.">        while (!in.isEmpty()) {</span>
+<span class="fc" id="L92">            out.push(in.pop());</span>
+        }
+<span class="fc" id="L94">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

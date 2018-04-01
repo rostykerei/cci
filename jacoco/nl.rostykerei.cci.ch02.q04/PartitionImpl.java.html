@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PartitionImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Cracking the Coding Interview Solutions</a> &gt; <a href="index.source.html" class="el_package">nl.rostykerei.cci.ch02.q04</a> &gt; <span class="el_source">PartitionImpl.java</span></div><h1>PartitionImpl.java</h1><pre class="source lang-java linenums">package nl.rostykerei.cci.ch02.q04;
+
+import nl.rostykerei.cci.datastructure.SinglyLinkedList;
+import nl.rostykerei.cci.datastructure.impl.SinglyLinkedListImpl;
+
+/**
+ * Implementation of {@link Partition}.
+ *
+ * @param &lt;T&gt; the class of the objects in the list
+ * @author Rosty Kerei
+ */
+<span class="fc" id="L12">public final class PartitionImpl&lt;T extends Comparable&lt;T&gt;&gt;</span>
+        implements Partition&lt;T&gt; {
+
+    @Override
+    public SinglyLinkedList&lt;T&gt; partition(final SinglyLinkedList&lt;T&gt; input,
+                                         final T x) {
+
+<span class="fc" id="L19">        SinglyLinkedList&lt;T&gt; list = input;</span>
+
+<span class="fc" id="L21">        SinglyLinkedList&lt;T&gt; lowerHead = null;</span>
+<span class="fc" id="L22">        SinglyLinkedList&lt;T&gt; lowerTail = null;</span>
+
+<span class="fc" id="L24">        SinglyLinkedList&lt;T&gt; greaterHead = null;</span>
+<span class="fc" id="L25">        SinglyLinkedList&lt;T&gt; greaterTail = null;</span>
+
+<span class="fc bfc" id="L27" title="All 2 branches covered.">        while (list != null) {</span>
+<span class="fc" id="L28">            SinglyLinkedList&lt;T&gt; node =</span>
+<span class="fc" id="L29">                    new SinglyLinkedListImpl&lt;&gt;(list.getData());</span>
+
+<span class="fc bfc" id="L31" title="All 2 branches covered.">            if (node.getData().compareTo(x) &lt; 0) {</span>
+<span class="fc bfc" id="L32" title="All 2 branches covered.">                if (lowerHead == null) {</span>
+<span class="fc" id="L33">                    lowerHead = node;</span>
+<span class="fc" id="L34">                    lowerTail = lowerHead;</span>
+                } else {
+<span class="fc" id="L36">                    lowerTail.setNext(node);</span>
+<span class="fc" id="L37">                    lowerTail = node;</span>
+                }
+            } else {
+<span class="fc bfc" id="L40" title="All 2 branches covered.">                if (greaterHead == null) {</span>
+<span class="fc" id="L41">                    greaterHead = node;</span>
+<span class="fc" id="L42">                    greaterTail = greaterHead;</span>
+                } else {
+<span class="fc" id="L44">                    greaterTail.setNext(node);</span>
+<span class="fc" id="L45">                    greaterTail = node;</span>
+                }
+            }
+
+<span class="fc" id="L49">            list = list.getNext();</span>
+<span class="fc" id="L50">        }</span>
+
+<span class="fc bfc" id="L52" title="All 2 branches covered.">        if (lowerHead == null) {</span>
+<span class="fc" id="L53">            return greaterHead;</span>
+        }
+
+<span class="fc bfc" id="L56" title="All 2 branches covered.">        if (greaterHead == null) {</span>
+<span class="fc" id="L57">            return lowerHead;</span>
+        }
+
+<span class="fc" id="L60">        lowerTail.setNext(greaterHead);</span>
+
+<span class="fc" id="L62">        return lowerHead;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

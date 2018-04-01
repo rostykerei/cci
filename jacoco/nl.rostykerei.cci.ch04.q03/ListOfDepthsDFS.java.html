@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ListOfDepthsDFS.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Cracking the Coding Interview Solutions</a> &gt; <a href="index.source.html" class="el_package">nl.rostykerei.cci.ch04.q03</a> &gt; <span class="el_source">ListOfDepthsDFS.java</span></div><h1>ListOfDepthsDFS.java</h1><pre class="source lang-java linenums">package nl.rostykerei.cci.ch04.q03;
+
+import nl.rostykerei.cci.datastructure.BinaryTreeNode;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+/**
+ * Implementation of {@link ListOfDepths} using depth-first search.
+ *
+ * @param &lt;T&gt; the class of the objects in the tree
+ * @author Rosty Kerei
+ */
+<span class="fc" id="L15">public final class ListOfDepthsDFS&lt;T extends Comparable&lt;T&gt;&gt;</span>
+        implements ListOfDepths&lt;T&gt; {
+
+    @Override
+    public List&lt;LinkedList&lt;BinaryTreeNode&lt;T&gt;&gt;&gt; getListOfDepth(
+            final BinaryTreeNode&lt;T&gt; input) {
+
+<span class="fc" id="L22">        List&lt;LinkedList&lt;BinaryTreeNode&lt;T&gt;&gt;&gt; result = new ArrayList&lt;&gt;();</span>
+
+<span class="fc" id="L24">        dfs(input, 0, result);</span>
+
+<span class="fc" id="L26">        return result;</span>
+    }
+
+    /**
+     * Recursive depth-first search.
+     *
+     * @param node current node
+     * @param level current level
+     * @param result resulting list of lists
+     */
+    private void dfs(final BinaryTreeNode&lt;T&gt; node,
+                     final int level,
+                     final List&lt;LinkedList&lt;BinaryTreeNode&lt;T&gt;&gt;&gt; result) {
+
+<span class="fc bfc" id="L40" title="All 2 branches covered.">        if (result.size() &lt; level + 1) {</span>
+<span class="fc" id="L41">            result.add(new LinkedList&lt;&gt;());</span>
+        }
+
+<span class="fc" id="L44">        result.get(level).add(node);</span>
+
+<span class="fc bfc" id="L46" title="All 2 branches covered.">        if (node.getLeft() != null) {</span>
+<span class="fc" id="L47">            dfs(node.getLeft(), level + 1, result);</span>
+        }
+
+<span class="fc bfc" id="L50" title="All 2 branches covered.">        if (node.getRight() != null) {</span>
+<span class="fc" id="L51">            dfs(node.getRight(), level + 1, result);</span>
+        }
+<span class="fc" id="L53">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

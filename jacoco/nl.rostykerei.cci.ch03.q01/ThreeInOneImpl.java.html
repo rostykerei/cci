@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ThreeInOneImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Cracking the Coding Interview Solutions</a> &gt; <a href="index.source.html" class="el_package">nl.rostykerei.cci.ch03.q01</a> &gt; <span class="el_source">ThreeInOneImpl.java</span></div><h1>ThreeInOneImpl.java</h1><pre class="source lang-java linenums">package nl.rostykerei.cci.ch03.q01;
+
+import java.util.Arrays;
+import java.util.EmptyStackException;
+
+/**
+ * Implementation of {@link ThreeInOne}.
+ *
+ * @param &lt;T&gt; the class of the objects in the stack
+ * @author Rosty Kerei
+ */
+public final class ThreeInOneImpl&lt;T&gt; implements ThreeInOne&lt;T&gt; {
+
+    /**
+     * Array to hold all elements of all stacks.
+     */
+    private final Object[] elements;
+
+    /**
+     * Index positions of all stacks.
+     */
+    private final int[] indexes;
+
+    /**
+     * Stack capacity.
+     */
+    private final int capacity;
+
+    /**
+     * Constructor.
+     *
+     * @param numberOfStacks number of stacks to hold
+     * @param stackCapacity capacity of each of the stacks
+     */
+<span class="fc" id="L35">    public ThreeInOneImpl(final int numberOfStacks, final int stackCapacity) {</span>
+<span class="fc" id="L36">        this.elements = new Object[stackCapacity * numberOfStacks];</span>
+<span class="fc" id="L37">        this.indexes = new int[numberOfStacks];</span>
+<span class="fc" id="L38">        Arrays.fill(this.indexes, -1);</span>
+
+<span class="fc" id="L40">        this.capacity = stackCapacity;</span>
+<span class="fc" id="L41">    }</span>
+
+    @Override
+    public T pop(final int stackNumber) {
+<span class="fc" id="L45">        T element = peek(stackNumber);</span>
+<span class="fc" id="L46">        indexes[stackNumber]--;</span>
+
+<span class="fc" id="L48">        return element;</span>
+    }
+
+    @Override
+    public void push(final T item, final int stackNumber) {
+<span class="fc" id="L53">        checkStackNumber(stackNumber);</span>
+
+<span class="fc bfc" id="L55" title="All 2 branches covered.">        if (indexes[stackNumber] == capacity - 1) {</span>
+<span class="fc" id="L56">            throw new StackOverflowError(</span>
+                    &quot;Stack number &quot; + stackNumber + &quot; overflows&quot;);
+        }
+
+<span class="fc" id="L60">        elements[stackNumber * capacity + ++indexes[stackNumber]] = item;</span>
+<span class="fc" id="L61">    }</span>
+
+    @Override
+    @SuppressWarnings(&quot;unchecked&quot;)
+    public T peek(final int stackNumber) {
+<span class="fc bfc" id="L66" title="All 2 branches covered.">        if (isEmpty(stackNumber)) {</span>
+<span class="fc" id="L67">            throw new EmptyStackException();</span>
+        }
+
+<span class="fc" id="L70">        return (T) elements[stackNumber * capacity + indexes[stackNumber]];</span>
+    }
+
+    @Override
+    public boolean isEmpty(final int stackNumber) {
+<span class="fc" id="L75">        checkStackNumber(stackNumber);</span>
+
+<span class="fc bfc" id="L77" title="All 2 branches covered.">        return indexes[stackNumber] &lt; 0;</span>
+    }
+
+    /**
+     * Checks validity of the stack number.
+     *
+     * @param stackNumber stack number to validate
+     * @throws IllegalArgumentException on a wrong stack number
+     */
+    private void checkStackNumber(final int stackNumber) {
+<span class="fc bfc" id="L87" title="All 4 branches covered.">        if (stackNumber &lt; 0 || stackNumber &gt; this.indexes.length - 1) {</span>
+<span class="fc" id="L88">            throw new IllegalArgumentException(&quot;Incorrect stack number&quot;);</span>
+        }
+<span class="fc" id="L90">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

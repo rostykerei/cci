@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TreeNodeImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Cracking the Coding Interview Solutions</a> &gt; <a href="index.source.html" class="el_package">nl.rostykerei.cci.datastructure.impl</a> &gt; <span class="el_source">TreeNodeImpl.java</span></div><h1>TreeNodeImpl.java</h1><pre class="source lang-java linenums">package nl.rostykerei.cci.datastructure.impl;
+
+import nl.rostykerei.cci.datastructure.TreeNode;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Implementation of {@link TreeNode}.
+ *
+ * @param &lt;T&gt; the class of the objects in the node
+ * @author Rosty Kerei
+ */
+public class TreeNodeImpl&lt;T&gt; implements TreeNode&lt;T&gt; {
+
+    /**
+     * Parent node.
+     */
+    private TreeNode&lt;T&gt; parent;
+
+    /**
+     * Data holder.
+     */
+    private final T data;
+
+    /**
+     * List of all children nodes.
+     */
+<span class="fc" id="L29">    private final List&lt;TreeNode&lt;T&gt;&gt; children = new ArrayList&lt;&gt;();</span>
+
+    /**
+     * Constructor.
+     *
+     * @param dataValue node's data
+     */
+<span class="fc" id="L36">    public TreeNodeImpl(final T dataValue) {</span>
+<span class="fc" id="L37">        this.data = dataValue;</span>
+<span class="fc" id="L38">    }</span>
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void addChild(final TreeNode&lt;T&gt; child) {
+<span class="fc bfc" id="L45" title="All 2 branches covered.">        if (child != null) {</span>
+<span class="fc" id="L46">            child.setParent(this);</span>
+<span class="fc" id="L47">            children.add(child);</span>
+        }
+<span class="fc" id="L49">    }</span>
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public List&lt;TreeNode&lt;T&gt;&gt; getChildren() {
+<span class="fc" id="L56">        return children;</span>
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void setParent(final TreeNode&lt;T&gt; parentNode) {
+<span class="fc" id="L64">        this.parent = parentNode;</span>
+<span class="fc" id="L65">    }</span>
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public TreeNode&lt;T&gt; getParent() {
+<span class="fc" id="L72">        return this.parent;</span>
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public T getData() {
+<span class="fc" id="L80">        return data;</span>
+    }
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

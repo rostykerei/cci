@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SortStackImproved.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Cracking the Coding Interview Solutions</a> &gt; <a href="index.source.html" class="el_package">nl.rostykerei.cci.ch03.q05</a> &gt; <span class="el_source">SortStackImproved.java</span></div><h1>SortStackImproved.java</h1><pre class="source lang-java linenums">package nl.rostykerei.cci.ch03.q05;
+
+import nl.rostykerei.cci.datastructure.Stack;
+import nl.rostykerei.cci.datastructure.impl.StackImpl;
+
+/**
+ * Improved implementation of {@link SortStack}.
+ *
+ * @param &lt;T&gt; the class of the objects in the stack
+ * @author Rosty Kerei
+ */
+<span class="fc" id="L12">public final class SortStackImproved&lt;T extends Comparable&lt;? super T&gt;&gt;</span>
+        implements SortStack&lt;T&gt; {
+
+    @Override
+    public void sort(final Stack&lt;T&gt; stack) {
+<span class="fc" id="L17">        Stack&lt;T&gt; sorted = new StackImpl&lt;&gt;();</span>
+
+<span class="fc bfc" id="L19" title="All 2 branches covered.">        while (!stack.isEmpty()) {</span>
+<span class="fc" id="L20">            T node = stack.pop();</span>
+
+<span class="fc bfc" id="L22" title="All 4 branches covered.">            while (!sorted.isEmpty() &amp;&amp; sorted.peek().compareTo(node) &gt; 0) {</span>
+<span class="fc" id="L23">                stack.push(sorted.pop());</span>
+            }
+
+<span class="fc" id="L26">            sorted.push(node);</span>
+<span class="fc" id="L27">        }</span>
+
+<span class="fc bfc" id="L29" title="All 2 branches covered.">        while (!sorted.isEmpty()) {</span>
+<span class="fc" id="L30">            stack.push(sorted.pop());</span>
+        }
+<span class="fc" id="L32">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

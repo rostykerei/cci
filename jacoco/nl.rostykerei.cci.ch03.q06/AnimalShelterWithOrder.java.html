@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>AnimalShelterWithOrder.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Cracking the Coding Interview Solutions</a> &gt; <a href="index.source.html" class="el_package">nl.rostykerei.cci.ch03.q06</a> &gt; <span class="el_source">AnimalShelterWithOrder.java</span></div><h1>AnimalShelterWithOrder.java</h1><pre class="source lang-java linenums">package nl.rostykerei.cci.ch03.q06;
+
+import java.util.LinkedList;
+
+/**
+ * Implementation of {@link AnimalShelter} using a wrapper with order number.
+ *
+ * @author Rosty Kerei
+ */
+<span class="fc" id="L10">public final class AnimalShelterWithOrder implements AnimalShelter {</span>
+
+    /**
+     * Common order number.
+     */
+<span class="fc" id="L15">    private int order = 0;</span>
+
+    /**
+     * Cats queue.
+     */
+<span class="fc" id="L20">    private final LinkedList&lt;AnimalWithOrder&gt; cats = new LinkedList&lt;&gt;();</span>
+
+    /**
+     * Dogs queue.
+     */
+<span class="fc" id="L25">    private final LinkedList&lt;AnimalWithOrder&gt; dogs = new LinkedList&lt;&gt;();</span>
+
+    /**
+     * Wrapper class with order number.
+     */
+    private static class AnimalWithOrder {
+
+        /**
+         * Animal holder.
+         */
+        private final Animal animal;
+
+        /**
+         * Order number.
+         */
+        private final int order;
+
+        /**
+         * Constructor.
+         *
+         * @param animalValue animal
+         * @param orderNumber order number
+         */
+<span class="fc" id="L48">        AnimalWithOrder(final Animal animalValue, final int orderNumber) {</span>
+<span class="fc" id="L49">            this.animal = animalValue;</span>
+<span class="fc" id="L50">            this.order = orderNumber;</span>
+<span class="fc" id="L51">        }</span>
+
+        /**
+         * Returns animal.
+         *
+         * @return animal
+         */
+        private Animal getAnimal() {
+<span class="fc" id="L59">            return animal;</span>
+        }
+
+        /**
+         * Returns order number.
+         *
+         * @return order number
+         */
+        private int getOrder() {
+<span class="fc" id="L68">            return order;</span>
+        }
+    }
+
+    @Override
+    public void enqueue(final Animal animal) {
+<span class="fc" id="L74">        AnimalWithOrder animalWithOrder = new AnimalWithOrder(animal, order);</span>
+
+<span class="fc bfc" id="L76" title="All 2 branches covered.">        if (animal instanceof Cat) {</span>
+<span class="fc" id="L77">            cats.addLast(animalWithOrder);</span>
+
+        } else {
+<span class="fc" id="L80">            dogs.addLast(animalWithOrder);</span>
+        }
+
+<span class="fc" id="L83">        order++;</span>
+<span class="fc" id="L84">    }</span>
+
+    @Override
+    public Animal dequeAny() {
+<span class="fc bfc" id="L88" title="All 2 branches covered.">        if (cats.isEmpty()) {</span>
+<span class="fc" id="L89">            return dequeDog();</span>
+        }
+
+<span class="fc bfc" id="L92" title="All 2 branches covered.">        if (dogs.isEmpty()) {</span>
+<span class="fc" id="L93">            return dequeCat();</span>
+        }
+
+<span class="fc bfc" id="L96" title="All 2 branches covered.">        if (cats.peekFirst().getOrder() &lt; dogs.peekFirst().getOrder()) {</span>
+<span class="fc" id="L97">            return dequeCat();</span>
+        } else {
+<span class="fc" id="L99">            return dequeDog();</span>
+        }
+    }
+
+    @Override
+    public Cat dequeCat() {
+<span class="fc" id="L105">        return (Cat) cats.removeFirst().getAnimal();</span>
+    }
+
+    @Override
+    public Dog dequeDog() {
+<span class="fc" id="L110">        return (Dog) dogs.removeFirst().getAnimal();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>

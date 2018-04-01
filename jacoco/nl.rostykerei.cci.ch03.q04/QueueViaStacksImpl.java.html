@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>QueueViaStacksImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Cracking the Coding Interview Solutions</a> &gt; <a href="index.source.html" class="el_package">nl.rostykerei.cci.ch03.q04</a> &gt; <span class="el_source">QueueViaStacksImpl.java</span></div><h1>QueueViaStacksImpl.java</h1><pre class="source lang-java linenums">package nl.rostykerei.cci.ch03.q04;
+
+import nl.rostykerei.cci.datastructure.Queue;
+import nl.rostykerei.cci.datastructure.Stack;
+import nl.rostykerei.cci.datastructure.impl.StackImpl;
+
+import java.util.EmptyStackException;
+import java.util.NoSuchElementException;
+
+/**
+ * Question 3.4 - Queue Via Stacks.
+ *
+ * @param &lt;T&gt; the class of the objects in the stack
+ * @author Rosty Kerei
+ */
+<span class="fc" id="L16">public final class QueueViaStacksImpl&lt;T&gt; implements Queue&lt;T&gt; {</span>
+
+    /**
+     * Forward stack.
+     */
+<span class="fc" id="L21">    private final Stack&lt;T&gt; forward = new StackImpl&lt;&gt;();</span>
+
+    /**
+     * Backward stack.
+     */
+<span class="fc" id="L26">    private final Stack&lt;T&gt; backward = new StackImpl&lt;&gt;();</span>
+
+    @Override
+    public void add(final T item) {
+<span class="fc" id="L30">        forward.push(item);</span>
+<span class="fc" id="L31">    }</span>
+
+    @Override
+    public T remove() {
+<span class="fc" id="L35">        fillBackward();</span>
+
+        try {
+<span class="fc" id="L38">            return backward.pop();</span>
+<span class="fc" id="L39">        } catch (EmptyStackException e) {</span>
+<span class="fc" id="L40">            throw new NoSuchElementException();</span>
+        }
+    }
+
+    @Override
+    public T peek() {
+<span class="fc" id="L46">        fillBackward();</span>
+
+        try {
+<span class="fc" id="L49">            return backward.peek();</span>
+<span class="fc" id="L50">        } catch (EmptyStackException e) {</span>
+<span class="fc" id="L51">            throw new NoSuchElementException();</span>
+        }
+    }
+
+    @Override
+    public boolean isEmpty() {
+<span class="fc bfc" id="L57" title="All 4 branches covered.">        return forward.isEmpty() &amp;&amp; backward.isEmpty();</span>
+    }
+
+    /**
+     * Populates backward stack.
+     */
+    private void fillBackward() {
+<span class="fc bfc" id="L64" title="All 2 branches covered.">        while (!forward.isEmpty()) {</span>
+<span class="fc" id="L65">            backward.push(forward.pop());</span>
+        }
+<span class="fc" id="L67">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>
