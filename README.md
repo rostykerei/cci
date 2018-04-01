@@ -1,7 +1,11 @@
 [![Build Status](https://travis-ci.org/rostykerei/cci.svg?branch=master)](https://travis-ci.org/rostykerei/cci)
+[![Grade](https://api.codacy.com/project/badge/Grade/5dbde8eb4f194bdd9da40ee0a10681dc)](https://www.codacy.com/app/rostykerei/cci)
+[![Coverage](https://api.codacy.com/project/badge/Coverage/5dbde8eb4f194bdd9da40ee0a10681dc)](https://www.codacy.com/app/rostykerei/cci)
 [![Quality Gate](https://sonarcloud.io/api/badges/gate?key=nl.rostykerei:cci&blinking=true)](https://sonarcloud.io/dashboard/index/nl.rostykerei:cci)
-[![Test Coverage](https://sonarcloud.io/api/badges/measure?key=nl.rostykerei:cci&metric=coverage&blinking=true)](https://sonarcloud.io/dashboard/index/nl.rostykerei:cci)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5dbde8eb4f194bdd9da40ee0a10681dc)](https://www.codacy.com/app/rostykerei/cci)
+[![LoC](https://sonarcloud.io/api/badges/measure?key=nl.rostykerei:cci&metric=lines&blinking=true)](https://sonarcloud.io/dashboard/index/nl.rostykerei:cci)
+[![Bugs](https://sonarcloud.io/api/badges/measure?key=nl.rostykerei:cci&metric=bugs&blinking=true)](https://sonarcloud.io/dashboard/index/nl.rostykerei:cci)
+[![Vulnerabilities](https://sonarcloud.io/api/badges/measure?key=nl.rostykerei:cci&metric=vulnerabilities&blinking=true)](https://sonarcloud.io/dashboard/index/nl.rostykerei:cci)
+[![Code Smells](https://sonarcloud.io/api/badges/measure?key=nl.rostykerei:cci&metric=code_smells&blinking=true)](https://sonarcloud.io/dashboard/index/nl.rostykerei:cci)
 
 # Cracking the Coding Interview Solutions
 
