@@ -8,7 +8,7 @@ addons:
 jdk:
   - oraclejdk8
 script:
-  - mvn clean install sonar:sonar
+  - mvn clean site sonar:sonar codacy:coverage -DcoverageReportFile=target/site/jacoco/jacoco.xml
 cache:
   directories:
     - '$HOME/.m2/repository'

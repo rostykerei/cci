@@ -65,6 +65,7 @@
 
         <project.build.targetJdk>1.8</project.build.targetJdk>
 
+        <plugin.codacy.version>1.0.3</plugin.codacy.version>
         <plugin.checkstyle.version>2.17</plugin.checkstyle.version>
         <plugin.compiler.version>3.6.2</plugin.compiler.version>
         <plugin.findbugs.version>3.0.5</plugin.findbugs.version>
@@ -87,6 +88,11 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>com.gavinmogan</groupId>
+                <artifactId>codacy-maven-plugin</artifactId>
+                <version>${plugin.codacy.version}</version>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
