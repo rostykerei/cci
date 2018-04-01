@@ -21,7 +21,7 @@ public final class IntersectionImpl<T> implements Intersection<T> {
 
             while (l2 != null) {
 
-                if (l1 == l2) {
+                if (l1.equals(l2)) {
                     return true;
                 }
 
