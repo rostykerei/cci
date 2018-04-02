@@ -1,5 +1,6 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
 Cracking the Coding Interview Solutions,nl.rostykerei.cci.ch05.q06,ConversionImpl,0,8,0,0,0,2,0,2,0,2
+Cracking the Coding Interview Solutions,nl.rostykerei.cci.ch05.q06,ConversionIterationImpl,0,24,0,2,0,7,0,3,0,2
 Cracking the Coding Interview Solutions,nl.rostykerei.cci.ch05.q01,InsertionImpl,0,21,0,0,0,2,0,2,0,2
 Cracking the Coding Interview Solutions,nl.rostykerei.cci.ch05.q01,InsertionBitSetImpl,0,46,0,2,0,6,0,3,0,2
 Cracking the Coding Interview Solutions,nl.rostykerei.cci.ch05.q03,FlipBitImpl,0,40,0,4,0,11,0,5,0,3

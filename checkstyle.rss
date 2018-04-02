@@ -25,7 +25,7 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2017 - 2018 Rosty Kerei</copyright>
     <item>
-      <title>File: 172,
+      <title>File: 173,
              Errors: 0,
              Warnings: 0,
              Infos: 0
@@ -1195,6 +1195,20 @@ under the License.
                           <tr>
                 <td>
                   <a href="https://github.com/rostykerei/cci/checkstyle.html#nl.rostykerei.cci.ch02.q01.RemoveDupsRunner.java">nl/rostykerei/cci/ch02/q01/RemoveDupsRunner.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/rostykerei/cci/checkstyle.html#nl.rostykerei.cci.ch05.q06.ConversionIterationImpl.java">nl/rostykerei/cci/ch05/q06/ConversionIterationImpl.java</a>
                 </td>
                 <td>
                   0
