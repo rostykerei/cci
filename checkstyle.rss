@@ -25,7 +25,7 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2017 - 2018 Rosty Kerei</copyright>
     <item>
-      <title>File: 173,
+      <title>File: 176,
              Errors: 0,
              Warnings: 0,
              Infos: 0
@@ -537,6 +537,20 @@ under the License.
                           <tr>
                 <td>
                   <a href="https://github.com/rostykerei/cci/checkstyle.html#nl.rostykerei.cci.ch03.q06.AnimalShelterWithOrder.java">nl/rostykerei/cci/ch03/q06/AnimalShelterWithOrder.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/rostykerei/cci/checkstyle.html#nl.rostykerei.cci.ch05.q07.PairwiseSwap.java">nl/rostykerei/cci/ch05/q07/PairwiseSwap.java</a>
                 </td>
                 <td>
                   0
@@ -1334,6 +1348,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="https://github.com/rostykerei/cci/checkstyle.html#nl.rostykerei.cci.ch05.q07.package-info.java">nl/rostykerei/cci/ch05/q07/package-info.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="https://github.com/rostykerei/cci/checkstyle.html#nl.rostykerei.cci.ch07.q04.Truck.java">nl/rostykerei/cci/ch07/q04/Truck.java</a>
                 </td>
                 <td>
@@ -1475,6 +1503,20 @@ under the License.
                           <tr>
                 <td>
                   <a href="https://github.com/rostykerei/cci/checkstyle.html#nl.rostykerei.cci.ch04.q07.package-info.java">nl/rostykerei/cci/ch04/q07/package-info.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/rostykerei/cci/checkstyle.html#nl.rostykerei.cci.ch05.q07.PairwiseSwapImpl.java">nl/rostykerei/cci/ch05/q07/PairwiseSwapImpl.java</a>
                 </td>
                 <td>
                   0
