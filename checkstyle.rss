@@ -25,7 +25,7 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2017 - 2018 Rosty Kerei</copyright>
     <item>
-      <title>File: 169,
+      <title>File: 172,
              Errors: 0,
              Warnings: 0,
              Infos: 0
@@ -411,6 +411,20 @@ under the License.
                           <tr>
                 <td>
                   <a href="https://github.com/rostykerei/cci/checkstyle.html#nl.rostykerei.cci.ch03.q02.StackMin.java">nl/rostykerei/cci/ch03/q02/StackMin.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/rostykerei/cci/checkstyle.html#nl.rostykerei.cci.ch05.q06.ConversionImpl.java">nl/rostykerei/cci/ch05/q06/ConversionImpl.java</a>
                 </td>
                 <td>
                   0
@@ -1614,6 +1628,20 @@ under the License.
               </tr>
                           <tr>
                 <td>
+                  <a href="https://github.com/rostykerei/cci/checkstyle.html#nl.rostykerei.cci.ch05.q06.package-info.java">nl/rostykerei/cci/ch05/q06/package-info.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
                   <a href="https://github.com/rostykerei/cci/checkstyle.html#nl.rostykerei.cci.ch02.q06.PalindromeRotate.java">nl/rostykerei/cci/ch02/q06/PalindromeRotate.java</a>
                 </td>
                 <td>
@@ -1811,6 +1839,20 @@ under the License.
                           <tr>
                 <td>
                   <a href="https://github.com/rostykerei/cci/checkstyle.html#nl.rostykerei.cci.ch01.q08.ZeroMatrixImpl.java">nl/rostykerei/cci/ch01/q08/ZeroMatrixImpl.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="https://github.com/rostykerei/cci/checkstyle.html#nl.rostykerei.cci.ch05.q06.Conversion.java">nl/rostykerei/cci/ch05/q06/Conversion.java</a>
                 </td>
                 <td>
                   0
