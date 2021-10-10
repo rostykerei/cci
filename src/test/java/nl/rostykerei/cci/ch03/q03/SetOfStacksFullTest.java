@@ -13,7 +13,7 @@ public class SetOfStacksFullTest extends StackImplTest {
     }
 
     @Test
-    public void popAtTest() throws Exception {
+    public void popAtTest() {
         SetOfStacks<Integer> setOfStacks = createStack();
 
         setOfStacks.push(1);
@@ -33,7 +33,7 @@ public class SetOfStacksFullTest extends StackImplTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void popAtWrongTest() throws Exception {
+    public void popAtWrongTest() {
         SetOfStacks<Integer> setOfStacks = createStack();
         setOfStacks.push(1);
 

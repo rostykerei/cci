@@ -30,7 +30,7 @@ public final class ThreeInOneImpl<T> implements ThreeInOne<T> {
      * Constructor.
      *
      * @param numberOfStacks number of stacks to hold
-     * @param stackCapacity capacity of each of the stacks
+     * @param stackCapacity  capacity of each of the stacks
      */
     public ThreeInOneImpl(final int numberOfStacks, final int stackCapacity) {
         this.elements = new Object[stackCapacity * numberOfStacks];

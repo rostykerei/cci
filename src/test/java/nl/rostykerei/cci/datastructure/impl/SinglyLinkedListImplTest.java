@@ -5,12 +5,15 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 public class SinglyLinkedListImplTest {
 
     @Test
-    public void setNextTest() throws Exception {
+    public void setNextTest() {
         SinglyLinkedList<Integer> nodeA = new SinglyLinkedListImpl<>(1);
         SinglyLinkedList<Integer> nodeB = new SinglyLinkedListImpl<>(2);
 
@@ -24,7 +27,7 @@ public class SinglyLinkedListImplTest {
     }
 
     @Test
-    public void setDataTest() throws Exception {
+    public void setDataTest() {
         SinglyLinkedList<Integer> nodeA = new SinglyLinkedListImpl<>(1);
 
         assertEquals(1, (int) nodeA.getData());
@@ -35,7 +38,7 @@ public class SinglyLinkedListImplTest {
     }
 
     @Test
-    public void toList() throws Exception {
+    public void toList() {
         SinglyLinkedList<Integer> nodeA = new SinglyLinkedListImpl<>(1);
         SinglyLinkedList<Integer> nodeB = new SinglyLinkedListImpl<>(2);
         SinglyLinkedList<Integer> nodeC = new SinglyLinkedListImpl<>(3);

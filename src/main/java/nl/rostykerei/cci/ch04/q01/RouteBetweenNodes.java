@@ -13,7 +13,7 @@ public interface RouteBetweenNodes<T> {
     /**
      * Checks if route exists between two nodes in a directed graph.
      *
-     * @param start start node
+     * @param start  start node
      * @param finish finish node
      * @return true if route exists
      */

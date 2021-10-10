@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Implementation of {@link CheckPermutation} using an hash-map.
+ * Implementation of {@link CheckPermutation} using a hash-map.
  *
  * @author Rosty Kerei
  */

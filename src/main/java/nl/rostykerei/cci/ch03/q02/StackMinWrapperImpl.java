@@ -15,23 +15,6 @@ public final class StackMinWrapperImpl implements StackMin {
      */
     private final Stack<NodeWrapper> stack = new StackImpl<>();
 
-    /**
-     * Wraps integer node, adds min value.
-     */
-    private static class NodeWrapper {
-
-        /**
-         * Actual data.
-         */
-        private int data;
-
-        /**
-         * Most recent minimum.
-         */
-        private int min;
-    }
-
-
     @Override
     public int min() {
         return stack.peek().min;
@@ -68,5 +51,21 @@ public final class StackMinWrapperImpl implements StackMin {
     @Override
     public boolean isEmpty() {
         return stack.isEmpty();
+    }
+
+    /**
+     * Wraps integer node, adds min value.
+     */
+    private static class NodeWrapper {
+
+        /**
+         * Actual data.
+         */
+        private int data;
+
+        /**
+         * Most recent minimum.
+         */
+        private int min;
     }
 }

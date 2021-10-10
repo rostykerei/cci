@@ -12,7 +12,7 @@ import static org.junit.Assert.assertTrue;
 public abstract class CheckSubtreeAbstractTest extends AbstractFactoryTest<CheckSubtree<Integer>> {
 
     @Test
-    public void checkTrue() throws Exception {
+    public void checkTrue() {
         BinaryTreeNode<Integer> tree1 = new BinaryTreeNodeImpl<>(
                 new BinaryTreeNodeImpl<>(
                         new BinaryTreeNodeImpl<>(1),
@@ -40,14 +40,14 @@ public abstract class CheckSubtreeAbstractTest extends AbstractFactoryTest<Check
 
 
     @Test
-    public void checkTrue2() throws Exception {
+    public void checkTrue2() {
         BinaryTreeNode<Integer> tree = new MinimalTreeImpl<Integer>().buildBST(
-                new Integer[] {1, 2, 3, 4, 5, 6, 7}
+                new Integer[]{1, 2, 3, 4, 5, 6, 7}
         );
 
         assertTrue(testInstance.isSubtree(tree,
                 new BinaryTreeNodeImpl<>(1)
-                ));
+        ));
 
         assertTrue(testInstance.isSubtree(tree,
                 new BinaryTreeNodeImpl<>(
@@ -58,7 +58,7 @@ public abstract class CheckSubtreeAbstractTest extends AbstractFactoryTest<Check
     }
 
     @Test
-    public void checkFalse1() throws Exception {
+    public void checkFalse1() {
         BinaryTreeNode<Integer> tree1 = new BinaryTreeNodeImpl<>(
                 new BinaryTreeNodeImpl<>(
                         new BinaryTreeNodeImpl<>(1),
@@ -79,7 +79,7 @@ public abstract class CheckSubtreeAbstractTest extends AbstractFactoryTest<Check
     }
 
     @Test
-    public void checkFalse2() throws Exception {
+    public void checkFalse2() {
         BinaryTreeNode<Integer> tree1 = new BinaryTreeNodeImpl<>(
                 new BinaryTreeNodeImpl<>(
                         new BinaryTreeNodeImpl<>(1),
@@ -100,7 +100,7 @@ public abstract class CheckSubtreeAbstractTest extends AbstractFactoryTest<Check
     }
 
     @Test
-    public void checkFalse3() throws Exception {
+    public void checkFalse3() {
         BinaryTreeNode<Integer> tree1 = new BinaryTreeNodeImpl<>(
                 new BinaryTreeNodeImpl<>(
                         new BinaryTreeNodeImpl<>(1),
@@ -121,7 +121,7 @@ public abstract class CheckSubtreeAbstractTest extends AbstractFactoryTest<Check
     }
 
     @Test
-    public void checkFalse4() throws Exception {
+    public void checkFalse4() {
         BinaryTreeNode<Integer> tree1 = new BinaryTreeNodeImpl<>(
                 new BinaryTreeNodeImpl<>(
                         new BinaryTreeNodeImpl<>(1),

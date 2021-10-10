@@ -12,16 +12,16 @@ import static org.junit.Assert.assertTrue;
 public abstract class CheckBalancedAbstractTest extends AbstractFactoryTest<CheckBalanced<Integer>> {
 
     @Test
-    public void testBalanced() throws Exception {
+    public void testBalanced() {
         BinaryTreeNode<Integer> tree = new MinimalTreeImpl<Integer>().buildBST(
-                new Integer[] {1, 2, 3, 4, 5, 6, 7}
+                new Integer[]{1, 2, 3, 4, 5, 6, 7}
         );
 
         assertTrue(testInstance.checkBalanced(tree));
     }
 
     @Test
-    public void testUnbalanced() throws Exception {
+    public void testUnbalanced() {
         BinaryTreeNode<Integer> tree = new BinaryTreeNodeImpl<>(
                 new BinaryTreeNodeImpl<>(
                         new BinaryTreeNodeImpl<>(1),
@@ -43,7 +43,7 @@ public abstract class CheckBalancedAbstractTest extends AbstractFactoryTest<Chec
     }
 
     @Test
-    public void testUnbalanced2() throws Exception {
+    public void testUnbalanced2() {
         BinaryTreeNode<Integer> tree = new BinaryTreeNodeImpl<>(
                 new BinaryTreeNodeImpl<>(
                         new BinaryTreeNodeImpl<>(

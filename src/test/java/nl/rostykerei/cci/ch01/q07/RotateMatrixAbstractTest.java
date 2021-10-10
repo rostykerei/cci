@@ -10,7 +10,7 @@ import static org.junit.Assert.assertTrue;
 public abstract class RotateMatrixAbstractTest extends AbstractFactoryTest<RotateMatrix> {
 
     @Test
-    public void rotate1() throws Exception {
+    public void rotate1() {
         int[][] input = {{1}};
 
         int[][] expected = {{1}};
@@ -21,7 +21,7 @@ public abstract class RotateMatrixAbstractTest extends AbstractFactoryTest<Rotat
     }
 
     @Test
-    public void rotate2() throws Exception {
+    public void rotate2() {
         int[][] input = {
                 {1, 2},
                 {3, 4}
@@ -38,7 +38,7 @@ public abstract class RotateMatrixAbstractTest extends AbstractFactoryTest<Rotat
     }
 
     @Test
-    public void rotate3() throws Exception {
+    public void rotate3() {
         int[][] input = {
                 {1, 2, 3},
                 {4, 5, 6},
@@ -57,7 +57,7 @@ public abstract class RotateMatrixAbstractTest extends AbstractFactoryTest<Rotat
     }
 
     @Test
-    public void rotate4() throws Exception {
+    public void rotate4() {
         int[][] input = {
                 {1, 2, 3, 4},
                 {5, 6, 7, 8},

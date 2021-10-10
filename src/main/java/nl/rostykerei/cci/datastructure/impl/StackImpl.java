@@ -17,42 +17,6 @@ public class StackImpl<T> implements Stack<T> {
     private StackNode<T> top;
 
     /**
-     * A node within the stack.
-     *
-     * @param <T> the class of the objects in the stack
-     */
-    public static class StackNode<T> {
-
-        /**
-         * Data holder.
-         */
-        private final T data;
-
-        /**
-         * Link to the next node.
-         */
-        private StackNode<T> next;
-
-        /**
-         * Stack node constructor.
-         *
-         * @param value data
-         */
-        public StackNode(final T value) {
-            this.data = value;
-        }
-
-        /**
-         * Sets next node.
-         *
-         * @param node next node
-         */
-        public void setNext(final StackNode<T> node) {
-            this.next = node;
-        }
-    }
-
-    /**
      * {@inheritDoc}
      */
     @Override
@@ -114,5 +78,41 @@ public class StackImpl<T> implements Stack<T> {
      */
     protected void setTop(final StackNode<T> node) {
         this.top = node;
+    }
+
+    /**
+     * A node within the stack.
+     *
+     * @param <T> the class of the objects in the stack
+     */
+    public static class StackNode<T> {
+
+        /**
+         * Data holder.
+         */
+        private final T data;
+
+        /**
+         * Link to the next node.
+         */
+        private StackNode<T> next;
+
+        /**
+         * Stack node constructor.
+         *
+         * @param value data
+         */
+        public StackNode(final T value) {
+            this.data = value;
+        }
+
+        /**
+         * Sets next node.
+         *
+         * @param node next node
+         */
+        public void setNext(final StackNode<T> node) {
+            this.next = node;
+        }
     }
 }

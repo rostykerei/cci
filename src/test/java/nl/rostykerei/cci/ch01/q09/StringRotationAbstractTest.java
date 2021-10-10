@@ -8,7 +8,7 @@ import static org.junit.Assert.assertTrue;
 
 public abstract class StringRotationAbstractTest extends AbstractFactoryTest<StringRotation> {
     @Test
-    public void isStringRotation() throws Exception {
+    public void isStringRotation() {
         assertTrue(testInstance.isStringRotation("waterbottle", "erbottlewat"));
         assertFalse(testInstance.isStringRotation("waterbottle", "eybottlewxt"));
         assertTrue(testInstance.isStringRotation("waterbottle", "waterbottle"));

@@ -11,7 +11,7 @@ import static org.junit.Assert.assertTrue;
 public abstract class IntersectionAbstractTest extends AbstractFactoryTest<Intersection<String>> {
 
     @Test
-    public void isIntersectTrue() throws Exception {
+    public void isIntersectTrue() {
         SinglyLinkedList<String> a = new SinglyLinkedListImpl<>("a");
         SinglyLinkedList<String> b = new SinglyLinkedListImpl<>("b");
         SinglyLinkedList<String> c = new SinglyLinkedListImpl<>("c");
@@ -33,7 +33,7 @@ public abstract class IntersectionAbstractTest extends AbstractFactoryTest<Inter
     }
 
     @Test
-    public void isIntersectFalse() throws Exception {
+    public void isIntersectFalse() {
         SinglyLinkedList<String> a = new SinglyLinkedListImpl<>("a");
         SinglyLinkedList<String> b = new SinglyLinkedListImpl<>("b");
         SinglyLinkedList<String> c = new SinglyLinkedListImpl<>("c");

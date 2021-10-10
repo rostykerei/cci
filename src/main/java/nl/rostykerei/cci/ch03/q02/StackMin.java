@@ -12,8 +12,8 @@ public interface StackMin extends Stack<Integer> {
     /**
      * Returns the minimum value within the stack.
      *
-     * @throws java.util.EmptyStackException if the stack is empty
      * @return minimum value within the stack
+     * @throws java.util.EmptyStackException if the stack is empty
      */
     int min();
 

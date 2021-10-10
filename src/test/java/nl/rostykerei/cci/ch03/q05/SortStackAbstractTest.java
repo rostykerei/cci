@@ -10,7 +10,7 @@ import static junit.framework.TestCase.assertEquals;
 public abstract class SortStackAbstractTest extends AbstractFactoryTest<SortStack<Integer>> {
 
     @Test
-    public void testSort() throws Exception {
+    public void testSort() {
 
         Stack<Integer> stack = new StackImpl<>();
 
@@ -30,7 +30,7 @@ public abstract class SortStackAbstractTest extends AbstractFactoryTest<SortStac
     }
 
     @Test
-    public void testSort2() throws Exception {
+    public void testSort2() {
 
         Stack<Integer> stack = new StackImpl<>();
 

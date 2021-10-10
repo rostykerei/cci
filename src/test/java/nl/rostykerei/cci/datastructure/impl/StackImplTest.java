@@ -5,7 +5,9 @@ import org.junit.Test;
 
 import java.util.EmptyStackException;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class StackImplTest {
 
@@ -14,7 +16,7 @@ public class StackImplTest {
     }
 
     @Test
-    public void stackTest() throws Exception {
+    public void stackTest() {
         Stack<Integer> stack = createStack();
 
         stack.push(1);
@@ -32,19 +34,19 @@ public class StackImplTest {
     }
 
     @Test(expected = EmptyStackException.class)
-    public void popEmpty() throws Exception {
+    public void popEmpty() {
         Stack<Integer> stack = createStack();
         stack.pop();
     }
 
     @Test(expected = EmptyStackException.class)
-    public void peekEmpty() throws Exception {
+    public void peekEmpty() {
         Stack<Integer> stack = createStack();
         stack.peek();
     }
 
     @Test
-    public void isEmpty() throws Exception {
+    public void isEmpty() {
         Stack<Integer> stack = createStack();
 
         assertTrue(stack.isEmpty());

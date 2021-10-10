@@ -10,16 +10,16 @@ import static org.junit.Assert.assertNull;
 public abstract class MinimalTreeAbstractTest extends AbstractFactoryTest<MinimalTree<Integer>> {
 
     /**
-     *      4
-     *    /  \
-     *   2    6
-     *  / \  / \
+     * 4
+     * /  \
+     * 2    6
+     * / \  / \
      * 1  3 5  7
      */
     @Test
-    public void testBST() throws Exception {
+    public void testBST() {
         BinaryTreeNode<Integer> root = testInstance.buildBST(
-                new Integer[] {1, 2, 3, 4, 5, 6, 7}
+                new Integer[]{1, 2, 3, 4, 5, 6, 7}
         );
 
         assertEquals(4, (int) root.getData());
@@ -35,34 +35,34 @@ public abstract class MinimalTreeAbstractTest extends AbstractFactoryTest<Minima
 
 
     /**
-     *      6
-     *    /  \
-     *   2    10
-     *    \   / \
-     *    4  8  20
+     * 6
+     * /  \
+     * 2    10
+     * \   / \
+     * 4  8  20
      */
     @Test
-    public void testBST2() throws Exception {
+    public void testBST2() {
         BinaryTreeNode<Integer> root = testInstance.buildBST(
-                new Integer[] {2, 4, 6, 8, 10, 20}
+                new Integer[]{2, 4, 6, 8, 10, 20}
         );
 
         assertEquals(6, (int) root.getData());
     }
 
     @Test
-    public void testBST3() throws Exception {
+    public void testBST3() {
         BinaryTreeNode<Integer> root = testInstance.buildBST(
-                new Integer[] {1}
+                new Integer[]{1}
         );
 
         assertEquals(1, (int) root.getData());
     }
 
     @Test
-    public void testBST4() throws Exception {
+    public void testBST4() {
         BinaryTreeNode<Integer> root = testInstance.buildBST(
-                new Integer[] {1, 2, 3}
+                new Integer[]{1, 2, 3}
         );
 
         assertEquals(2, (int) root.getData());
@@ -71,9 +71,9 @@ public abstract class MinimalTreeAbstractTest extends AbstractFactoryTest<Minima
     }
 
     @Test
-    public void testBST5() throws Exception {
+    public void testBST5() {
         BinaryTreeNode<Integer> root = testInstance.buildBST(
-                new Integer[] {1, 2}
+                new Integer[]{1, 2}
         );
 
         assertEquals(1, (int) root.getData());

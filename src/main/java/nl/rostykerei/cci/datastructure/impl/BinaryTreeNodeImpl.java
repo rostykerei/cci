@@ -37,7 +37,7 @@ public class BinaryTreeNodeImpl<T extends Comparable<T>>
     /**
      * Constructor.
      *
-     * @param leftNode left node
+     * @param leftNode  left node
      * @param rightNode right node
      * @param dataValue node's data
      */

@@ -13,7 +13,7 @@ public class MultiLevelParkingLot implements ParkingLot {
     /**
      * List of parking levels.
      */
-    private List<ParkingLot> levels = new ArrayList<>();
+    private final List<ParkingLot> levels = new ArrayList<>();
 
     /**
      * Constructor.

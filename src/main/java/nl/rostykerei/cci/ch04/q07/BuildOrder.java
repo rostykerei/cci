@@ -16,7 +16,7 @@ public interface BuildOrder<T> {
     /**
      * Finds a build order that will allow the projects to be built.
      *
-     * @param projects list of projects
+     * @param projects     list of projects
      * @param dependencies list of dependencies, second project in the pair
      *                     is dependent on the first project
      * @return list of projects in a build order

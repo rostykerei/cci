@@ -9,7 +9,7 @@ import static org.junit.Assert.assertTrue;
 public abstract class PalindromePermutationAbstractTest extends AbstractFactoryTest<PalindromePermutation> {
 
     @Test
-    public void testTrue() throws Exception {
+    public void testTrue() {
         assertTrue(testInstance.isPalindromePermutation("abcxcba"));
         assertTrue(testInstance.isPalindromePermutation("tacocat"));
         assertTrue(testInstance.isPalindromePermutation("xxxyyyxxx"));
@@ -19,7 +19,7 @@ public abstract class PalindromePermutationAbstractTest extends AbstractFactoryT
     }
 
     @Test
-    public void testFalse() throws Exception {
+    public void testFalse() {
         assertFalse(testInstance.isPalindromePermutation("axxb"));
         assertFalse(testInstance.isPalindromePermutation("abcd"));
         assertFalse(testInstance.isPalindromePermutation("ab"));

@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 public abstract class PathsWithSumAbstractTest extends AbstractFactoryTest<PathsWithSum> {
 
     @Test
-    public void testSum() throws Exception {
+    public void testSum() {
         BinaryTreeNode<Integer> tree = new BinaryTreeNodeImpl<>(
                 new BinaryTreeNodeImpl<>(
                         new BinaryTreeNodeImpl<>(

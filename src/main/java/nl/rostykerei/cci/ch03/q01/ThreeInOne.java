@@ -12,19 +12,19 @@ public interface ThreeInOne<T> {
      * Removes the top item from the stack.
      *
      * @param stackNumber number of the stack
-     * @throws java.util.EmptyStackException if the stack is empty
-     * @throws IllegalArgumentException if the stack number is not correct
      * @return top item
+     * @throws java.util.EmptyStackException if the stack is empty
+     * @throws IllegalArgumentException      if the stack number is not correct
      */
     T pop(int stackNumber);
 
     /**
      * Adds an item to the top of the stack.
      *
-     * @param item item to add
+     * @param item        item to add
      * @param stackNumber number of the stack
      * @throws IllegalArgumentException if the stack number is not correct
-     * @throws StackOverflowError if the stack is full
+     * @throws StackOverflowError       if the stack is full
      */
     void push(T item, int stackNumber);
 
@@ -32,9 +32,9 @@ public interface ThreeInOne<T> {
      * Returns the top item from the stack.
      *
      * @param stackNumber number of the stack
-     * @throws java.util.EmptyStackException if the stack is empty
-     * @throws IllegalArgumentException if the stack number is not correct
      * @return top item
+     * @throws java.util.EmptyStackException if the stack is empty
+     * @throws IllegalArgumentException      if the stack number is not correct
      */
     T peek(int stackNumber);
 
@@ -42,8 +42,8 @@ public interface ThreeInOne<T> {
      * Checks if the stack is empty.
      *
      * @param stackNumber number of the stack
+     * @return true if the stack is empty, false otherwise
      * @throws IllegalArgumentException if the stack number is not correct
-     * @return true if the stack if empty, false otherwise
      */
     boolean isEmpty(int stackNumber);
 }

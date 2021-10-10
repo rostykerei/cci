@@ -24,31 +24,6 @@ public final class SetOfStacksFull<T> implements SetOfStacks<T> {
     private final int capacity;
 
     /**
-     * Extension of the {@link StackImpl} containing the size.
-     *
-     * @param <E> the class of the objects in the stack
-     */
-    private class StackWithSize<E> extends StackImpl<E> {
-
-        /**
-         * Size of the stack.
-         */
-        private int size = 0;
-
-        @Override
-        public E pop() {
-            size--;
-            return super.pop();
-        }
-
-        @Override
-        public void push(final E item) {
-            size++;
-            super.push(item);
-        }
-    }
-
-    /**
      * Constructor.
      *
      * @param capacityValue capacity of each stack
@@ -117,5 +92,30 @@ public final class SetOfStacksFull<T> implements SetOfStacks<T> {
      */
     private StackWithSize<T> getLastStack() {
         return stacks.get(stacks.size() - 1);
+    }
+
+    /**
+     * Extension of the {@link StackImpl} containing the size.
+     *
+     * @param <E> the class of the objects in the stack
+     */
+    private static class StackWithSize<E> extends StackImpl<E> {
+
+        /**
+         * Size of the stack.
+         */
+        private int size = 0;
+
+        @Override
+        public E pop() {
+            size--;
+            return super.pop();
+        }
+
+        @Override
+        public void push(final E item) {
+            size++;
+            super.push(item);
+        }
     }
 }

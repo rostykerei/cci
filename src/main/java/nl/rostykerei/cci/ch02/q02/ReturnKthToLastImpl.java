@@ -12,7 +12,7 @@ public final class ReturnKthToLastImpl<T> implements ReturnKthToLast<T> {
 
     @Override
     public SinglyLinkedList<T> kthToLast(final SinglyLinkedList<T> list,
-                                       final int k) {
+                                         final int k) {
 
         SinglyLinkedList<T> left = list;
         SinglyLinkedList<T> right = list;

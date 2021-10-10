@@ -29,8 +29,8 @@ public final class ListOfDepthsDFS<T extends Comparable<T>>
     /**
      * Recursive depth-first search.
      *
-     * @param node current node
-     * @param level current level
+     * @param node   current node
+     * @param level  current level
      * @param result resulting list of lists
      */
     private void dfs(final BinaryTreeNode<T> node,

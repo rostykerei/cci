@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Simple implementaion of {@link ParkingLot}.
+ * Simple implementation of {@link ParkingLot}.
  *
  * @author Rosty Kerei
  */
@@ -13,17 +13,15 @@ public class SimpleParkingLot implements ParkingLot {
     /**
      * Parking lot capacity.
      */
-    private int capacity;
-
+    private final int capacity;
+    /**
+     * Set of parked vehicles.
+     */
+    private final Set<Vehicle> parkedVehicles = new HashSet<>();
     /**
      * Number of occupied spots.
      */
     private int occupied = 0;
-
-    /**
-     * Set of parked vehicles.
-     */
-    private Set<Vehicle> parkedVehicles = new HashSet<>();
 
     /**
      * Constructor.

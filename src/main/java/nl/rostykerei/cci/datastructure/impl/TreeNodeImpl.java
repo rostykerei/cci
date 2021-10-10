@@ -14,19 +14,17 @@ import java.util.List;
 public class TreeNodeImpl<T> implements TreeNode<T> {
 
     /**
-     * Parent node.
-     */
-    private TreeNode<T> parent;
-
-    /**
      * Data holder.
      */
     private final T data;
-
     /**
      * List of all children nodes.
      */
     private final List<TreeNode<T>> children = new ArrayList<>();
+    /**
+     * Parent node.
+     */
+    private TreeNode<T> parent;
 
     /**
      * Constructor.
@@ -60,16 +58,16 @@ public class TreeNodeImpl<T> implements TreeNode<T> {
      * {@inheritDoc}
      */
     @Override
-    public void setParent(final TreeNode<T> parentNode) {
-        this.parent = parentNode;
+    public TreeNode<T> getParent() {
+        return this.parent;
     }
 
     /**
      * {@inheritDoc}
      */
     @Override
-    public TreeNode<T> getParent() {
-        return this.parent;
+    public void setParent(final TreeNode<T> parentNode) {
+        this.parent = parentNode;
     }
 
     /**

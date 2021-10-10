@@ -21,7 +21,7 @@ public final class BuildOrderMap<T> implements BuildOrder<T> {
     /**
      * Map of project dependencies.
      */
-    private Map<T, Set<T>> dependencyMap = new HashMap<>();
+    private final Map<T, Set<T>> dependencyMap = new HashMap<>();
 
     @Override
     public List<T> buildOrder(

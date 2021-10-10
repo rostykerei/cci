@@ -13,7 +13,7 @@ public interface CheckSubtree<T extends Comparable<T>> {
     /**
      * Checks if the subtree subtrees the tree. Compares by node values.
      *
-     * @param tree tree
+     * @param tree    tree
      * @param subtree subtree
      * @return true if subtree subtrees the tree
      */

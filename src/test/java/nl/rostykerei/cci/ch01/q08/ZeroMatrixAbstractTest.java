@@ -10,7 +10,7 @@ import static org.junit.Assert.assertTrue;
 public abstract class ZeroMatrixAbstractTest extends AbstractFactoryTest<ZeroMatrix> {
 
     @Test
-    public void zeroMatrix() throws Exception {
+    public void zeroMatrix() {
         int[][] input = {
                 {1, 2, 3, 4, 5, 6, 7, 8, 9},
                 {1, 2, 3, 4, 5, 6, 7, 8, 9},

@@ -11,7 +11,7 @@ import nl.rostykerei.cci.datastructure.SinglyLinkedList;
 public interface Partition<T extends Comparable<T>> {
 
     /**
-     * Returns a list where beginning elements are less then x.
+     * Returns a list where beginning elements are less than x.
      *
      * @param input input list
      * @param x     value to compare

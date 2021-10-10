@@ -1,7 +1,7 @@
 package nl.rostykerei.cci.ch08.q01;
 
 /**
- * Brute-force recursive implementataion of {@link TripleStep}.
+ * Brute-force recursive implementation of {@link TripleStep}.
  *
  * @author Rosty Kerei
  */

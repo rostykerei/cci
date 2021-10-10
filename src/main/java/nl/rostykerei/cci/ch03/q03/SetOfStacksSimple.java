@@ -17,22 +17,19 @@ public final class SetOfStacksSimple<T> implements SetOfStacks<T> {
     /**
      * Each stack capacity.
      */
-    private int capacity;
-
+    private final int capacity;
+    /**
+     * Stack of stacks.
+     */
+    private final Stack<Stack<T>> stackOfStacks;
     /**
      * Size of the top stack.
      */
     private int topSize = 0;
-
     /**
      * Reference to the top stack.
      */
     private Stack<T> top = null;
-
-    /**
-     * Stack of stacks.
-     */
-    private Stack<Stack<T>> stackOfStacks;
 
     /**
      * Constructor.

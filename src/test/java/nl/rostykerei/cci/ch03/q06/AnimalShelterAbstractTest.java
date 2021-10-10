@@ -7,16 +7,8 @@ import static org.junit.Assert.assertTrue;
 
 public abstract class AnimalShelterAbstractTest extends AbstractFactoryTest<AnimalShelter> {
 
-    private class Labrador implements Dog { }
-    private class Bulldog implements Dog { }
-    private class Pug implements Dog { }
-
-    private class Persian implements Cat { }
-    private class Siamese implements Cat { }
-    private class Scottish implements Cat { }
-
     @Test
-    public void testShelter() throws Exception {
+    public void testShelter() {
         testInstance.enqueue(new Labrador());
         testInstance.enqueue(new Persian());
         testInstance.enqueue(new Bulldog());
@@ -33,8 +25,26 @@ public abstract class AnimalShelterAbstractTest extends AbstractFactoryTest<Anim
     }
 
     @Test
-    public void testShelter2() throws Exception {
+    public void testShelter2() {
         testInstance.enqueue(new Scottish());
         assertTrue(testInstance.dequeAny() instanceof Scottish);
+    }
+
+    private static class Labrador implements Dog {
+    }
+
+    private static class Bulldog implements Dog {
+    }
+
+    private static class Pug implements Dog {
+    }
+
+    private static class Persian implements Cat {
+    }
+
+    private static class Siamese implements Cat {
+    }
+
+    private static class Scottish implements Cat {
     }
 }

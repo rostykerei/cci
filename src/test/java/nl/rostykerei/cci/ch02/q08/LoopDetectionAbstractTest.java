@@ -11,7 +11,7 @@ import static org.junit.Assert.assertNull;
 public abstract class LoopDetectionAbstractTest extends AbstractFactoryTest<LoopDetection<String>> {
 
     @Test
-    public void detectLoop() throws Exception {
+    public void detectLoop() {
         DoublyLinkedList<String> a = new DoublyLinkedListImpl<>("a");
         DoublyLinkedList<String> b = new DoublyLinkedListImpl<>("b");
         DoublyLinkedList<String> c = new DoublyLinkedListImpl<>("c");
@@ -26,7 +26,7 @@ public abstract class LoopDetectionAbstractTest extends AbstractFactoryTest<Loop
     }
 
     @Test
-    public void detectLoopNull() throws Exception {
+    public void detectLoopNull() {
         DoublyLinkedList<String> a = new DoublyLinkedListImpl<>("a");
         DoublyLinkedList<String> b = new DoublyLinkedListImpl<>("b");
         DoublyLinkedList<String> c = new DoublyLinkedListImpl<>("c");

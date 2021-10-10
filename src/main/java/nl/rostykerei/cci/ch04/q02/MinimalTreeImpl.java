@@ -21,7 +21,7 @@ public final class MinimalTreeImpl<T extends Comparable<T>>
      * Recursive function to build binary search tree node.
      *
      * @param input sorted array of values
-     * @param left left boundary
+     * @param left  left boundary
      * @param right right boundary
      * @return binary search tree node
      */

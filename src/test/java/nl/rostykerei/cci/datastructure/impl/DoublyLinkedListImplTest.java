@@ -5,12 +5,15 @@ import org.junit.Test;
 
 import java.util.Arrays;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 public class DoublyLinkedListImplTest {
 
     @Test
-    public void setNextTest() throws Exception {
+    public void setNextTest() {
         DoublyLinkedList<Integer> nodeA = new DoublyLinkedListImpl<>(1);
         DoublyLinkedList<Integer> nodeB = new DoublyLinkedListImpl<>(2);
 
@@ -35,7 +38,7 @@ public class DoublyLinkedListImplTest {
     }
 
     @Test
-    public void setNextTest2() throws Exception {
+    public void setNextTest2() {
         DoublyLinkedList<Integer> nodeA = new DoublyLinkedListImpl<>(1);
         DoublyLinkedList<Integer> nodeB = new DoublyLinkedListImpl<>(2);
 
@@ -55,7 +58,7 @@ public class DoublyLinkedListImplTest {
     }
 
     @Test
-    public void setPreviousTest() throws Exception {
+    public void setPreviousTest() {
         DoublyLinkedList<Integer> nodeA = new DoublyLinkedListImpl<>(1);
         DoublyLinkedList<Integer> nodeB = new DoublyLinkedListImpl<>(2);
 
@@ -70,7 +73,7 @@ public class DoublyLinkedListImplTest {
     }
 
     @Test
-    public void setDataTest() throws Exception {
+    public void setDataTest() {
         DoublyLinkedList<Integer> nodeA = new DoublyLinkedListImpl<>(1);
 
         assertEquals(1, (int) nodeA.getData());
@@ -81,7 +84,7 @@ public class DoublyLinkedListImplTest {
     }
 
     @Test
-    public void toList() throws Exception {
+    public void toList() {
         DoublyLinkedList<Integer> nodeA = new DoublyLinkedListImpl<>(1);
         DoublyLinkedList<Integer> nodeB = new DoublyLinkedListImpl<>(2);
         DoublyLinkedList<Integer> nodeC = new DoublyLinkedListImpl<>(3);

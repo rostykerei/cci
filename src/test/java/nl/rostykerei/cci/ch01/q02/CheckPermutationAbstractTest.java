@@ -9,7 +9,7 @@ import static org.junit.Assert.assertTrue;
 public abstract class CheckPermutationAbstractTest extends AbstractFactoryTest<CheckPermutation> {
 
     @Test
-    public void isTrue() throws Exception {
+    public void isTrue() {
         assertTrue(testInstance.checkPermutation("abcde", "dcbae"));
         assertTrue(testInstance.checkPermutation("aaabbbccc", "abcabcabc"));
         assertTrue(testInstance.checkPermutation("1", "1"));
@@ -17,7 +17,7 @@ public abstract class CheckPermutationAbstractTest extends AbstractFactoryTest<C
     }
 
     @Test
-    public void isFalse() throws Exception {
+    public void isFalse() {
         assertFalse(testInstance.checkPermutation("abc", "abd"));
         assertFalse(testInstance.checkPermutation("abcabc", "abcadb"));
         assertFalse(testInstance.checkPermutation("abcabc", "abc"));

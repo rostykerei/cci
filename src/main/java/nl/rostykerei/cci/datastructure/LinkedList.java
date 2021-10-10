@@ -11,18 +11,18 @@ import java.util.List;
 public interface LinkedList<T> {
 
     /**
-     * Sets data to the node.
-     *
-     * @param value data
-     */
-    void setData(T value);
-
-    /**
      * Gets data from the node.
      *
      * @return data
      */
     T getData();
+
+    /**
+     * Sets data to the node.
+     *
+     * @param value data
+     */
+    void setData(T value);
 
     /**
      * Converts linked list to a {@link List}.

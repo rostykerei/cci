@@ -12,7 +12,7 @@ import static org.junit.Assert.assertEquals;
 public abstract class RemoveDupsAbstractTest extends AbstractFactoryTest<RemoveDups<Integer>> {
 
     @Test
-    public void removeDups() throws Exception {
+    public void removeDups() {
 
         DoublyLinkedList<Integer> linkedList = new DoublyLinkedListImpl<>(1).setNext(
                 new DoublyLinkedListImpl<>(2).setNext(
@@ -30,7 +30,7 @@ public abstract class RemoveDupsAbstractTest extends AbstractFactoryTest<RemoveD
     }
 
     @Test
-    public void removeDups2() throws Exception {
+    public void removeDups2() {
 
         DoublyLinkedList<Integer> linkedList = new DoublyLinkedListImpl<>(1).setNext(
                 new DoublyLinkedListImpl<>(2).setNext(

@@ -8,10 +8,10 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
-public abstract class SuccessorAbstractTest extends AbstractFactoryTest<Successor<Integer>>{
+public abstract class SuccessorAbstractTest extends AbstractFactoryTest<Successor<Integer>> {
 
     @Test
-    public void test1() throws Exception {
+    public void test1() {
 
         BinaryTreeNode<Integer> n1 = new BinaryTreeNodeImpl<>(1);
         BinaryTreeNode<Integer> n2 = new BinaryTreeNodeImpl<>(2);

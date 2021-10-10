@@ -1,7 +1,7 @@
 package nl.rostykerei.cci.ch07.q04;
 
 /**
- * Truck implementaion of {@link Vehicle}.
+ * Truck implementation of {@link Vehicle}.
  *
  * @author Rosty Kerei
  */

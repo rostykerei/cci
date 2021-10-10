@@ -22,9 +22,9 @@ public final class RouteBetweenNodesDFS<T> implements RouteBetweenNodes<T> {
     /**
      * Recursive depth-first search.
      *
-     * @param node current node
+     * @param node   current node
      * @param finish finish node
-     * @param seen set of seen nodes
+     * @param seen   set of seen nodes
      * @return true if route can be found, false otherwise
      */
     private boolean dfs(final TreeNode<T> node, final TreeNode<T> finish,

@@ -10,19 +10,58 @@ import java.util.LinkedList;
 public final class AnimalShelterWithOrder implements AnimalShelter {
 
     /**
-     * Common order number.
-     */
-    private int order = 0;
-
-    /**
      * Cats queue.
      */
     private final LinkedList<AnimalWithOrder> cats = new LinkedList<>();
-
     /**
      * Dogs queue.
      */
     private final LinkedList<AnimalWithOrder> dogs = new LinkedList<>();
+    /**
+     * Common order number.
+     */
+    private int order = 0;
+
+    @Override
+    public void enqueue(final Animal animal) {
+        AnimalWithOrder animalWithOrder = new AnimalWithOrder(animal, order);
+
+        if (animal instanceof Cat) {
+            cats.addLast(animalWithOrder);
+
+        } else {
+            dogs.addLast(animalWithOrder);
+        }
+
+        order++;
+    }
+
+    @Override
+    public Animal dequeAny() {
+        if (cats.isEmpty()) {
+            return dequeDog();
+        }
+
+        if (dogs.isEmpty()) {
+            return dequeCat();
+        }
+
+        if (cats.peekFirst().getOrder() < dogs.peekFirst().getOrder()) {
+            return dequeCat();
+        } else {
+            return dequeDog();
+        }
+    }
+
+    @Override
+    public Cat dequeCat() {
+        return (Cat) cats.removeFirst().getAnimal();
+    }
+
+    @Override
+    public Dog dequeDog() {
+        return (Dog) dogs.removeFirst().getAnimal();
+    }
 
     /**
      * Wrapper class with order number.
@@ -67,46 +106,5 @@ public final class AnimalShelterWithOrder implements AnimalShelter {
         private int getOrder() {
             return order;
         }
-    }
-
-    @Override
-    public void enqueue(final Animal animal) {
-        AnimalWithOrder animalWithOrder = new AnimalWithOrder(animal, order);
-
-        if (animal instanceof Cat) {
-            cats.addLast(animalWithOrder);
-
-        } else {
-            dogs.addLast(animalWithOrder);
-        }
-
-        order++;
-    }
-
-    @Override
-    public Animal dequeAny() {
-        if (cats.isEmpty()) {
-            return dequeDog();
-        }
-
-        if (dogs.isEmpty()) {
-            return dequeCat();
-        }
-
-        if (cats.peekFirst().getOrder() < dogs.peekFirst().getOrder()) {
-            return dequeCat();
-        } else {
-            return dequeDog();
-        }
-    }
-
-    @Override
-    public Cat dequeCat() {
-        return (Cat) cats.removeFirst().getAnimal();
-    }
-
-    @Override
-    public Dog dequeDog() {
-        return (Dog) dogs.removeFirst().getAnimal();
     }
 }

@@ -9,7 +9,7 @@ public abstract class RandomNodeAbstractTest {
     protected abstract RandomNode<Integer> createNode(Integer value);
 
     @Test
-    public void testRandomNode() throws Exception {
+    public void testRandomNode() {
         RandomNode<Integer> n1 = createNode(1);
         RandomNode<Integer> n2 = createNode(2);
         RandomNode<Integer> n3 = createNode(3);

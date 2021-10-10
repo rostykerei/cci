@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 
 public class PairImplTest {
     @Test
-    public void getFirst() throws Exception {
+    public void getFirst() {
         Pair<Integer, String> pair = new PairImpl<>(1, "A");
 
         assertEquals(1, (int) pair.getFirst());

@@ -4,7 +4,7 @@ import nl.rostykerei.cci.datastructure.BinaryTreeNode;
 
 /**
  * Implementation of {@link CheckSubtree} using DFS and
- * recursive tree comparision.
+ * recursive tree comparison.
  *
  * @param <T> the class of the objects in the tree
  * @author Rosty Kerei
@@ -18,8 +18,8 @@ public final class CheckSubtreeImpl<T extends Comparable<T>>
 
         return tree != null
                 && (treeEquals(tree, subtree)
-                    || isSubtree(tree.getRight(), subtree)
-                    || isSubtree(tree.getLeft(), subtree));
+                || isSubtree(tree.getRight(), subtree)
+                || isSubtree(tree.getLeft(), subtree));
 
     }
 

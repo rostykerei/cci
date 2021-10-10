@@ -33,8 +33,8 @@ public final class SortStackImpl<T extends Comparable<? super T>>
     /**
      * Recursively find a min value and pours out stack.
      *
-     * @param stack input stack
-     * @param out out stack
+     * @param stack    input stack
+     * @param out      out stack
      * @param minValue min value, initial null
      * @return min value
      */
@@ -60,7 +60,7 @@ public final class SortStackImpl<T extends Comparable<? super T>>
     /**
      * Removes the item from the stack.
      *
-     * @param stack input stack
+     * @param stack  input stack
      * @param remove node to remove
      * @return new stack without removed node
      */
@@ -84,7 +84,7 @@ public final class SortStackImpl<T extends Comparable<? super T>>
     /**
      * Moves stack upside down from in to out.
      *
-     * @param in input stack
+     * @param in  input stack
      * @param out output stack
      */
     private void swap(final Stack<T> in, final Stack<T> out) {

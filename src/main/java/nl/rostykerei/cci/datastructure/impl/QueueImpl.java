@@ -22,33 +22,6 @@ public final class QueueImpl<T> implements Queue<T> {
      */
     private QueueNode<T> last;
 
-    /**
-     * A node within the queue.
-     *
-     * @param <T> the class of the objects in the queue
-     */
-    private static class QueueNode<T> {
-
-        /**
-         * Data holder.
-         */
-        private final T data;
-
-        /**
-         * Next node.
-         */
-        private QueueNode<T> next;
-
-        /**
-         * Node constructor.
-         *
-         * @param value data value
-         */
-        QueueNode(final T value) {
-            this.data = value;
-        }
-    }
-
     @Override
     public void add(final T item) {
         QueueNode<T> t = new QueueNode<>(item);
@@ -94,5 +67,32 @@ public final class QueueImpl<T> implements Queue<T> {
     @Override
     public boolean isEmpty() {
         return first == null;
+    }
+
+    /**
+     * A node within the queue.
+     *
+     * @param <T> the class of the objects in the queue
+     */
+    private static class QueueNode<T> {
+
+        /**
+         * Data holder.
+         */
+        private final T data;
+
+        /**
+         * Next node.
+         */
+        private QueueNode<T> next;
+
+        /**
+         * Node constructor.
+         *
+         * @param value data value
+         */
+        QueueNode(final T value) {
+            this.data = value;
+        }
     }
 }

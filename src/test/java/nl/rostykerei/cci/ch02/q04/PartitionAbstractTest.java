@@ -27,18 +27,18 @@ public abstract class PartitionAbstractTest extends AbstractFactoryTest<Partitio
     }
 
     @Test
-    public void partition() throws Exception {
+    public void partition() {
         assertEquals(Arrays.asList(3, 2, 1, 5, 8, 5, 10), testInstance.partition(getLinkedList(), 5).toList());
     }
 
     @Test
-    public void partition2() throws Exception {
+    public void partition2() {
         assertEquals(Arrays.asList(3, 5, 8, 5, 10, 2, 1), testInstance.partition(getLinkedList(), 15).toList());
 
     }
 
     @Test
-    public void partition3() throws Exception {
+    public void partition3() {
         assertEquals(Arrays.asList(3, 5, 8, 5, 10, 2, 1), testInstance.partition(getLinkedList(), 0).toList());
 
     }

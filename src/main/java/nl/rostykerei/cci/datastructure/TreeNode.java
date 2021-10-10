@@ -25,18 +25,18 @@ public interface TreeNode<T> {
     List<TreeNode<T>> getChildren();
 
     /**
-     * Sets node's parent.
-     *
-     * @param parent parent node
-     */
-    void setParent(TreeNode<T> parent);
-
-    /**
      * Gets node's parent.
      *
      * @return parent node
      */
     TreeNode<T> getParent();
+
+    /**
+     * Sets node's parent.
+     *
+     * @param parent parent node
+     */
+    void setParent(TreeNode<T> parent);
 
     /**
      * Gets node's data.

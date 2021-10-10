@@ -12,7 +12,7 @@ import static org.junit.Assert.assertEquals;
 public abstract class DeleteMiddleNodeAbstractTest extends AbstractFactoryTest<DeleteMiddleNode<Integer>> {
 
     @Test
-    public void deleteMiddleNode() throws Exception {
+    public void deleteMiddleNode() {
         SinglyLinkedList<Integer> n5 = new SinglyLinkedListImpl<>(5);
 
         SinglyLinkedList<Integer> n4 = new SinglyLinkedListImpl<>(4);
@@ -34,7 +34,7 @@ public abstract class DeleteMiddleNodeAbstractTest extends AbstractFactoryTest<D
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testLastNode() throws Exception {
+    public void testLastNode() {
         SinglyLinkedList<Integer> n2 = new SinglyLinkedListImpl<>(2);
         SinglyLinkedList<Integer> n1 = new SinglyLinkedListImpl<>(1);
         n1.setNext(n2);

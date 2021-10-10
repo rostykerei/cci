@@ -19,7 +19,7 @@
             <id>rosty</id>
             <name>Rosty Kerei</name>
             <email>rosty.kerei@gmail.com</email>
-            <url>http://www.rostykerei.nl/</url>
+            <url>https://www.rostykerei.nl/</url>
             <timezone>+1</timezone>
             <roles>
                 <role>Developer</role>
@@ -29,7 +29,7 @@
 
     <organization>
         <name>Rosty Kerei</name>
-        <url>http://www.rostykerei.nl/</url>
+        <url>https://www.rostykerei.nl/</url>
     </organization>
 
     <inceptionYear>2017</inceptionYear>

@@ -1,6 +1,7 @@
 package nl.rostykerei.cci.ch01.q01;
 
 import org.junit.Test;
+
 import static org.junit.Assert.assertFalse;
 
 public class IsUniqueArrayTest extends UniqueCheckerAbstractTest {
@@ -11,7 +12,7 @@ public class IsUniqueArrayTest extends UniqueCheckerAbstractTest {
     }
 
     @Test
-    public void tooLargeTest() throws Exception {
+    public void tooLargeTest() {
         StringBuilder sb = new StringBuilder();
 
         for (char i = 0; i < 255; i++) {

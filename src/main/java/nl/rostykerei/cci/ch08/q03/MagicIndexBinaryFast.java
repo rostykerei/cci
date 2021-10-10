@@ -18,7 +18,7 @@ public final class MagicIndexBinaryFast implements MagicIndex {
      *
      * @param input array to search on
      * @param start start index
-     * @param end end index
+     * @param end   end index
      * @return magic index or null if not found
      */
     private Integer binarySearch(final int[] input,

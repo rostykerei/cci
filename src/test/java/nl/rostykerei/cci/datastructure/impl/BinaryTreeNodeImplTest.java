@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 
 public class BinaryTreeNodeImplTest {
     @Test
-    public void test1() throws Exception {
+    public void test1() {
         BinaryTreeNode<Integer> root = new BinaryTreeNodeImpl<>(2);
         BinaryTreeNode<Integer> left = new BinaryTreeNodeImpl<>(1);
         BinaryTreeNode<Integer> right = new BinaryTreeNodeImpl<>(3);
@@ -30,7 +30,7 @@ public class BinaryTreeNodeImplTest {
     }
 
     @Test
-    public void getChildrenTest() throws Exception {
+    public void getChildrenTest() {
         BinaryTreeNode<Integer> root = new BinaryTreeNodeImpl<>(2);
 
         assertEquals(0, root.getChildren().size());
@@ -53,7 +53,7 @@ public class BinaryTreeNodeImplTest {
     }
 
     @Test(expected = UnsupportedOperationException.class)
-    public void addChildTest() throws Exception {
+    public void addChildTest() {
         new BinaryTreeNodeImpl<>(2).addChild(new BinaryTreeNodeImpl<>(1));
     }
 }

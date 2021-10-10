@@ -5,7 +5,9 @@ import org.junit.Test;
 
 import java.util.NoSuchElementException;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class QueueImplTest {
 
@@ -14,7 +16,7 @@ public class QueueImplTest {
     }
 
     @Test
-    public void queueTest() throws Exception {
+    public void queueTest() {
         Queue<Integer> queue = createQueue();
 
         queue.add(1);
@@ -36,19 +38,19 @@ public class QueueImplTest {
     }
 
     @Test(expected = NoSuchElementException.class)
-    public void removeEmpty() throws Exception {
+    public void removeEmpty() {
         Queue<Integer> queue = createQueue();
         queue.remove();
     }
 
     @Test(expected = NoSuchElementException.class)
-    public void peekEmpty() throws Exception {
+    public void peekEmpty() {
         Queue<Integer> queue = createQueue();
         queue.peek();
     }
 
     @Test
-    public void isEmpty() throws Exception {
+    public void isEmpty() {
         Queue<Integer> queue = createQueue();
 
         assertTrue(queue.isEmpty());

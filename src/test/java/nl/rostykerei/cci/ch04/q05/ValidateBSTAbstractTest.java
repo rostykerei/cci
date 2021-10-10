@@ -12,16 +12,16 @@ import static org.junit.Assert.assertTrue;
 public abstract class ValidateBSTAbstractTest extends AbstractFactoryTest<ValidateBST<Integer>> {
 
     @Test
-    public void testValid() throws Exception {
+    public void testValid() {
         BinaryTreeNode<Integer> root = new MinimalTreeImpl<Integer>().buildBST(
-                new Integer[] {1, 2, 3, 4, 5, 6, 7}
+                new Integer[]{1, 2, 3, 4, 5, 6, 7}
         );
 
         assertTrue(testInstance.isValidBST(root));
     }
 
     @Test
-    public void testValid2() throws Exception {
+    public void testValid2() {
         BinaryTreeNode<Integer> valid = new BinaryTreeNodeImpl<>(
                 new BinaryTreeNodeImpl<>(1),
                 new BinaryTreeNodeImpl<>(3),
@@ -31,7 +31,7 @@ public abstract class ValidateBSTAbstractTest extends AbstractFactoryTest<Valida
     }
 
     @Test
-    public void testInvalid() throws Exception {
+    public void testInvalid() {
         BinaryTreeNode<Integer> invalid = new BinaryTreeNodeImpl<>(
                 new BinaryTreeNodeImpl<>(2),
                 new BinaryTreeNodeImpl<>(3),
@@ -41,7 +41,7 @@ public abstract class ValidateBSTAbstractTest extends AbstractFactoryTest<Valida
     }
 
     @Test
-    public void testInvalid2() throws Exception {
+    public void testInvalid2() {
         BinaryTreeNode<Integer> invalid = new BinaryTreeNodeImpl<>(
                 new BinaryTreeNodeImpl<>(
                         null,
@@ -54,7 +54,7 @@ public abstract class ValidateBSTAbstractTest extends AbstractFactoryTest<Valida
     }
 
     @Test
-    public void testInvalid3() throws Exception {
+    public void testInvalid3() {
         BinaryTreeNode<Integer> invalid = new BinaryTreeNodeImpl<>(
                 new BinaryTreeNodeImpl<>(10),
                 new BinaryTreeNodeImpl<>(

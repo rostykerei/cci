@@ -11,7 +11,7 @@ import static org.junit.Assert.assertNull;
 public abstract class ReturnKthToLastAbstractTest extends AbstractFactoryTest<ReturnKthToLast<Integer>> {
 
     @Test
-    public void kthToLast() throws Exception {
+    public void kthToLast() {
         SinglyLinkedList<Integer> linkedList = new SinglyLinkedListImpl<>(1).setNext(
                 new SinglyLinkedListImpl<>(2).setNext(
                         new SinglyLinkedListImpl<>(3).setNext(

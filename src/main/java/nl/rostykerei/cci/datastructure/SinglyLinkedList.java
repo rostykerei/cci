@@ -9,6 +9,13 @@ package nl.rostykerei.cci.datastructure;
 public interface SinglyLinkedList<T> extends LinkedList<T> {
 
     /**
+     * Gets next node.
+     *
+     * @return next node or null if there is no next
+     */
+    SinglyLinkedList<T> getNext();
+
+    /**
      * Sets next node.
      *
      * @param nextNode next node
@@ -17,16 +24,9 @@ public interface SinglyLinkedList<T> extends LinkedList<T> {
     SinglyLinkedList<T> setNext(SinglyLinkedList<T> nextNode);
 
     /**
-     * Gets next node.
-     *
-     * @return next node or null if there is no next
-     */
-    SinglyLinkedList<T> getNext();
-
-    /**
      * Checks if the node is the last one.
      *
-     * @return true if the node if the last one, false otherwise
+     * @return true if the node is the last one, false otherwise
      */
     boolean isLast();
 

@@ -14,9 +14,9 @@ import static org.junit.Assert.assertEquals;
 public abstract class ListOfDepthsImplAbstractTest extends AbstractFactoryTest<ListOfDepths<Integer>> {
 
     @Test
-    public void test1() throws Exception {
+    public void test1() {
         BinaryTreeNode<Integer> root = new MinimalTreeImpl<Integer>().buildBST(
-                new Integer[] {1, 2, 3, 4, 5, 6, 7}
+                new Integer[]{1, 2, 3, 4, 5, 6, 7}
         );
 
         List<LinkedList<BinaryTreeNode<Integer>>> result = testInstance.getListOfDepth(root);

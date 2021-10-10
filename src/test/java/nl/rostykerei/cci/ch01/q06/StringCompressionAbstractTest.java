@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 public abstract class StringCompressionAbstractTest extends AbstractFactoryTest<StringCompression> {
 
     @Test
-    public void compress() throws Exception {
+    public void compress() {
         assertEquals("a2b1c5a3", testInstance.compress("aabcccccaaa"));
         assertEquals("a2b3", testInstance.compress("aabbb"));
         assertEquals("a4b1", testInstance.compress("aaaab"));

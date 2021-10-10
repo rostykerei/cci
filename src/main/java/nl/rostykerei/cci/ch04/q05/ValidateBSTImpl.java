@@ -19,8 +19,8 @@ public final class ValidateBSTImpl<T extends Comparable<T>>
      * Recursively validate BST nodes.
      *
      * @param node root node
-     * @param min allowed minimum or null
-     * @param max allowed maximum or null
+     * @param min  allowed minimum or null
+     * @param max  allowed maximum or null
      * @return true if the node is a valid BST
      */
     private boolean validateBSTNode(final BinaryTreeNode<T> node,

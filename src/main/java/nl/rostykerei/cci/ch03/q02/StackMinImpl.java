@@ -11,37 +11,6 @@ import java.util.EmptyStackException;
  */
 public final class StackMinImpl extends StackImpl<Integer> implements StackMin {
 
-    /**
-     * Node with a min value.
-     */
-    private class StackMinNode extends StackNode<Integer> {
-
-        /**
-         * Min value holder.
-         */
-        private final int min;
-
-        /**
-         * Constructor.
-         *
-         * @param value data value
-         * @param minValue min value
-         */
-        StackMinNode(final int value, final int minValue) {
-            super(value);
-            this.min = minValue;
-        }
-
-        /**
-         * Gets min value.
-         *
-         * @return min value
-         */
-        private int getMin() {
-            return min;
-        }
-    }
-
     @Override
     public int min() {
         StackMinNode top = (StackMinNode) getTop();
@@ -73,5 +42,36 @@ public final class StackMinImpl extends StackImpl<Integer> implements StackMin {
         t.setNext(top);
 
         setTop(t);
+    }
+
+    /**
+     * Node with a min value.
+     */
+    private static class StackMinNode extends StackNode<Integer> {
+
+        /**
+         * Min value holder.
+         */
+        private final int min;
+
+        /**
+         * Constructor.
+         *
+         * @param value    data value
+         * @param minValue min value
+         */
+        StackMinNode(final int value, final int minValue) {
+            super(value);
+            this.min = minValue;
+        }
+
+        /**
+         * Gets min value.
+         *
+         * @return min value
+         */
+        private int getMin() {
+            return min;
+        }
     }
 }

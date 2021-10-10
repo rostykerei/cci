@@ -90,7 +90,7 @@ public final class RandomNodeImpl<T extends Comparable<T>>
     /**
      * Traverse the node until limited length is reached.
      *
-     * @param node root node
+     * @param node   root node
      * @param length desired length
      * @return {@link Pair} of node and its length.
      */

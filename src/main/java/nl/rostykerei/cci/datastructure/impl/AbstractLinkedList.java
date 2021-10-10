@@ -16,13 +16,13 @@ public abstract class AbstractLinkedList<T> implements LinkedList<T> {
     private T data;
 
     @Override
-    public final void setData(final T value) {
-        this.data = value;
-
+    public final T getData() {
+        return this.data;
     }
 
     @Override
-    public final T getData() {
-        return this.data;
+    public final void setData(final T value) {
+        this.data = value;
+
     }
 }

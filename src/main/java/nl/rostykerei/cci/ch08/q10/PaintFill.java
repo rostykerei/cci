@@ -11,9 +11,9 @@ public interface PaintFill {
      * Fills the surrounding area with the given color.
      *
      * @param screen 2-dimensional array of colors
-     * @param row row to start filling
-     * @param col column to start filling
-     * @param color color to fill
+     * @param row    row to start filling
+     * @param col    column to start filling
+     * @param color  color to fill
      */
     void paintFill(int[][] screen, int row, int col, int color);
 

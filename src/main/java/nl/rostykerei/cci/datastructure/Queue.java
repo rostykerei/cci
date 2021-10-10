@@ -18,8 +18,8 @@ public interface Queue<T> {
     /**
      * Removes the first item from the queue.
      *
-     * @throws java.util.NoSuchElementException if the queue is empty
      * @return first item
+     * @throws java.util.NoSuchElementException if the queue is empty
      */
     T remove();
 
@@ -33,7 +33,7 @@ public interface Queue<T> {
     /**
      * Checks if the queue is empty.
      *
-     * @return true if the queue if empty, false otherwise
+     * @return true if the queue is empty, false otherwise
      */
     boolean isEmpty();
 }

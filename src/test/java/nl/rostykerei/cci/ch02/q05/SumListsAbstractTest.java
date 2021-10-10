@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 public abstract class SumListsAbstractTest extends AbstractFactoryTest<SumLists> {
 
     @Test
-    public void sumListsReverse() throws Exception {
+    public void sumListsReverse() {
 
         DoublyLinkedList<Byte> l617 = new DoublyLinkedListImpl<>((byte) 7).setNext(
                 new DoublyLinkedListImpl<>((byte) 1).setNext(
@@ -28,7 +28,7 @@ public abstract class SumListsAbstractTest extends AbstractFactoryTest<SumLists>
     }
 
     @Test
-    public void sumListsForward() throws Exception {
+    public void sumListsForward() {
 
         DoublyLinkedList<Byte> l617 = new DoublyLinkedListImpl<>((byte) 6).setNext(
                 new DoublyLinkedListImpl<>((byte) 1).setNext(

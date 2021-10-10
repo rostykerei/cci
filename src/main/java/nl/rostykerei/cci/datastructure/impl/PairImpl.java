@@ -24,7 +24,7 @@ public final class PairImpl<F, S> implements Pair<F, S> {
     /**
      * Pair constructor.
      *
-     * @param firstElement first element.
+     * @param firstElement  first element.
      * @param secondElement second element.
      */
     public PairImpl(final F firstElement, final S secondElement) {

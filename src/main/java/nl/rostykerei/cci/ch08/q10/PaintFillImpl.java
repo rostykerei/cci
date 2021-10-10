@@ -18,9 +18,9 @@ public final class PaintFillImpl implements PaintFill {
     /**
      * Recursive array filler.
      *
-     * @param screen input 2-dimensional array
-     * @param row row to start
-     * @param col column to start
+     * @param screen   input 2-dimensional array
+     * @param row      row to start
+     * @param col      column to start
      * @param oldColor old color of the cell
      * @param newColor new color
      */

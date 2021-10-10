@@ -1,5 +1,6 @@
 package nl.rostykerei.cci.ch01.q08;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -26,9 +27,7 @@ public final class ZeroMatrixImpl implements ZeroMatrix {
         }
 
         for (int row : zeroRows) {
-            for (int col = 0; col < input[row].length; col++) {
-                input[row][col] = 0;
-            }
+            Arrays.fill(input[row], 0);
         }
 
         for (int col : zeroCols) {

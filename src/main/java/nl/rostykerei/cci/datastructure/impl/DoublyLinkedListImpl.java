@@ -59,7 +59,12 @@ public final class DoublyLinkedListImpl<T>
     }
 
     @Override
-    public DoublyLinkedList<T> setPrevious(
+    public DoublyLinkedList<T> getPrevious() {
+        return this.previous;
+    }
+
+    @Override
+    public void setPrevious(
             final DoublyLinkedList<T> previousNode) {
 
         if (previousNode == null && this.previous != null) {
@@ -67,7 +72,7 @@ public final class DoublyLinkedListImpl<T>
             this.previous = null;
             p.setNext(null);
 
-            return this;
+            return;
         }
 
         this.previous = previousNode;
@@ -75,13 +80,6 @@ public final class DoublyLinkedListImpl<T>
         if (previousNode != null && previousNode.getNext() != this) {
             previousNode.setNext(this);
         }
-
-        return this;
-    }
-
-    @Override
-    public DoublyLinkedList<T> getPrevious() {
-        return this.previous;
     }
 
     @Override

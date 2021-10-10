@@ -9,7 +9,7 @@ import static org.junit.Assert.assertTrue;
 public abstract class OneWayAbstractTest extends AbstractFactoryTest<OneWay> {
 
     @Test
-    public void testTrue() throws Exception {
+    public void testTrue() {
         assertTrue(testInstance.isOneAway("pale", "ple"));
         assertTrue(testInstance.isOneAway("pales", "pale"));
         assertTrue(testInstance.isOneAway("pale", "bale"));
@@ -18,7 +18,7 @@ public abstract class OneWayAbstractTest extends AbstractFactoryTest<OneWay> {
     }
 
     @Test
-    public void testFalse() throws Exception {
+    public void testFalse() {
         assertFalse(testInstance.isOneAway("pale", "bake"));
         assertFalse(testInstance.isOneAway("pale", "pke"));
         assertFalse(testInstance.isOneAway("pale", "pe"));

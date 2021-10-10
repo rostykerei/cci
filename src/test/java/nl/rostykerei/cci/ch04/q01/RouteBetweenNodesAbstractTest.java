@@ -12,14 +12,14 @@ public abstract class RouteBetweenNodesAbstractTest extends AbstractFactoryTest<
 
     /**
      * Happy-flow test.
-     *    A
-     *  /  \
+     * A
+     * /  \
      * B    D
      * |  / |
      * C    E
      */
     @Test
-    public void testPath() throws Exception {
+    public void testPath() {
         TreeNode<String> treeNodeA = new TreeNodeImpl<>("A");
         TreeNode<String> treeNodeB = new TreeNodeImpl<>("B");
         TreeNode<String> treeNodeC = new TreeNodeImpl<>("C");
@@ -39,16 +39,16 @@ public abstract class RouteBetweenNodesAbstractTest extends AbstractFactoryTest<
     }
 
     /**
-     *      A
-     *     / \
-     *    B   G
-     *    | \
-     *    C  D
-     *      / \
-     *     E   F
+     * A
+     * / \
+     * B   G
+     * | \
+     * C  D
+     * / \
+     * E   F
      */
     @Test
-    public void testPath2() throws Exception {
+    public void testPath2() {
         TreeNode<String> treeNodeA = new TreeNodeImpl<>("A");
         TreeNode<String> treeNodeB = new TreeNodeImpl<>("B");
         TreeNode<String> treeNodeC = new TreeNodeImpl<>("C");
@@ -71,14 +71,14 @@ public abstract class RouteBetweenNodesAbstractTest extends AbstractFactoryTest<
     }
 
     /**
-     *      A
+     * A
      * / /  |  \  \
      * B C  D  E  F
      * |
      * G
      */
     @Test
-    public void testPath3() throws Exception {
+    public void testPath3() {
         TreeNode<String> treeNodeA = new TreeNodeImpl<>("a");
         TreeNode<String> treeNodeB = new TreeNodeImpl<>("b");
         TreeNode<String> treeNodeC = new TreeNodeImpl<>("c");
@@ -99,7 +99,7 @@ public abstract class RouteBetweenNodesAbstractTest extends AbstractFactoryTest<
     }
 
     @Test
-    public void testFalse() throws Exception {
+    public void testFalse() {
         TreeNode<String> treeNodeA = new TreeNodeImpl<>("A");
         TreeNode<String> treeNodeB = new TreeNodeImpl<>("B");
         TreeNode<String> treeNodeC = new TreeNodeImpl<>("C");

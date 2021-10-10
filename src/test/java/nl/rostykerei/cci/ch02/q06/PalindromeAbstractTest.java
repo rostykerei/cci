@@ -11,7 +11,7 @@ import static org.junit.Assert.assertTrue;
 public abstract class PalindromeAbstractTest extends AbstractFactoryTest<Palindrome<String>> {
 
     @Test
-    public void testTrue() throws Exception {
+    public void testTrue() {
         DoublyLinkedList<String> linkedList1 = new DoublyLinkedListImpl<>("A").setNext(
                 new DoublyLinkedListImpl<>("B").setNext(
                         new DoublyLinkedListImpl<>("C").setNext(
@@ -44,7 +44,7 @@ public abstract class PalindromeAbstractTest extends AbstractFactoryTest<Palindr
     }
 
     @Test
-    public void testFalse() throws Exception {
+    public void testFalse() {
         DoublyLinkedList<String> linkedList1 = new DoublyLinkedListImpl<>("A").setNext(
                 new DoublyLinkedListImpl<>("B").setNext(
                         new DoublyLinkedListImpl<>("C").setNext(

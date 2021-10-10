@@ -12,7 +12,7 @@ import static org.junit.Assert.assertNull;
 public class TreeNodeImplTest {
 
     @Test
-    public void getChildren() throws Exception {
+    public void getChildren() {
         TreeNode<Integer> treeNode1 = new TreeNodeImpl<>(1);
         TreeNode<Integer> treeNode2 = new TreeNodeImpl<>(2);
         TreeNode<Integer> treeNode3 = new TreeNodeImpl<>(3);
@@ -29,7 +29,7 @@ public class TreeNodeImplTest {
     }
 
     @Test
-    public void getData() throws Exception {
+    public void getData() {
         assertNull(new TreeNodeImpl<Integer>(null).getData());
         assertEquals(1, (int) new TreeNodeImpl<>(1).getData());
     }

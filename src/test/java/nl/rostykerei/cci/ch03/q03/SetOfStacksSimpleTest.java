@@ -12,12 +12,12 @@ public class SetOfStacksSimpleTest extends StackImplTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void wrongCapacityTest() throws Exception {
+    public void wrongCapacityTest() {
         new SetOfStacksSimple<Integer>(-1);
     }
 
     @Test(expected = UnsupportedOperationException.class)
-    public void popAtTest() throws Exception {
+    public void popAtTest() {
         new SetOfStacksSimple<>(1).popAt(1);
     }
 }
