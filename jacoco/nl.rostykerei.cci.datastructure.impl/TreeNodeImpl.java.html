@@ -14,46 +14,52 @@ import java.util.List;
 public class TreeNodeImpl&lt;T&gt; implements TreeNode&lt;T&gt; {
 
     /**
-     * Parent node.
-     */
-    private TreeNode&lt;T&gt; parent;
-
-    /**
      * Data holder.
      */
     private final T data;
-
     /**
      * List of all children nodes.
      */
-<span class="fc" id="L29">    private final List&lt;TreeNode&lt;T&gt;&gt; children = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L23">    private final List&lt;TreeNode&lt;T&gt;&gt; children = new ArrayList&lt;&gt;();</span>
+    /**
+     * Parent node.
+     */
+    private TreeNode&lt;T&gt; parent;
 
     /**
      * Constructor.
      *
      * @param dataValue node's data
      */
-<span class="fc" id="L36">    public TreeNodeImpl(final T dataValue) {</span>
-<span class="fc" id="L37">        this.data = dataValue;</span>
-<span class="fc" id="L38">    }</span>
+<span class="fc" id="L34">    public TreeNodeImpl(final T dataValue) {</span>
+<span class="fc" id="L35">        this.data = dataValue;</span>
+<span class="fc" id="L36">    }</span>
 
     /**
      * {@inheritDoc}
      */
     @Override
     public void addChild(final TreeNode&lt;T&gt; child) {
-<span class="fc bfc" id="L45" title="All 2 branches covered.">        if (child != null) {</span>
-<span class="fc" id="L46">            child.setParent(this);</span>
-<span class="fc" id="L47">            children.add(child);</span>
+<span class="fc bfc" id="L43" title="All 2 branches covered.">        if (child != null) {</span>
+<span class="fc" id="L44">            child.setParent(this);</span>
+<span class="fc" id="L45">            children.add(child);</span>
         }
-<span class="fc" id="L49">    }</span>
+<span class="fc" id="L47">    }</span>
 
     /**
      * {@inheritDoc}
      */
     @Override
     public List&lt;TreeNode&lt;T&gt;&gt; getChildren() {
-<span class="fc" id="L56">        return children;</span>
+<span class="fc" id="L54">        return children;</span>
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public TreeNode&lt;T&gt; getParent() {
+<span class="fc" id="L62">        return this.parent;</span>
     }
 
     /**
@@ -61,23 +67,15 @@ public class TreeNodeImpl&lt;T&gt; implements TreeNode&lt;T&gt; {
      */
     @Override
     public void setParent(final TreeNode&lt;T&gt; parentNode) {
-<span class="fc" id="L64">        this.parent = parentNode;</span>
-<span class="fc" id="L65">    }</span>
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public TreeNode&lt;T&gt; getParent() {
-<span class="fc" id="L72">        return this.parent;</span>
-    }
+<span class="fc" id="L70">        this.parent = parentNode;</span>
+<span class="fc" id="L71">    }</span>
 
     /**
      * {@inheritDoc}
      */
     @Override
     public T getData() {
-<span class="fc" id="L80">        return data;</span>
+<span class="fc" id="L78">        return data;</span>
     }
 
 

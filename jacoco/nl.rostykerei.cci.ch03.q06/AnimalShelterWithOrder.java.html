@@ -10,19 +10,58 @@ import java.util.LinkedList;
 <span class="fc" id="L10">public final class AnimalShelterWithOrder implements AnimalShelter {</span>
 
     /**
-     * Common order number.
-     */
-<span class="fc" id="L15">    private int order = 0;</span>
-
-    /**
      * Cats queue.
      */
-<span class="fc" id="L20">    private final LinkedList&lt;AnimalWithOrder&gt; cats = new LinkedList&lt;&gt;();</span>
-
+<span class="fc" id="L15">    private final LinkedList&lt;AnimalWithOrder&gt; cats = new LinkedList&lt;&gt;();</span>
     /**
      * Dogs queue.
      */
-<span class="fc" id="L25">    private final LinkedList&lt;AnimalWithOrder&gt; dogs = new LinkedList&lt;&gt;();</span>
+<span class="fc" id="L19">    private final LinkedList&lt;AnimalWithOrder&gt; dogs = new LinkedList&lt;&gt;();</span>
+    /**
+     * Common order number.
+     */
+<span class="fc" id="L23">    private int order = 0;</span>
+
+    @Override
+    public void enqueue(final Animal animal) {
+<span class="fc" id="L27">        AnimalWithOrder animalWithOrder = new AnimalWithOrder(animal, order);</span>
+
+<span class="fc bfc" id="L29" title="All 2 branches covered.">        if (animal instanceof Cat) {</span>
+<span class="fc" id="L30">            cats.addLast(animalWithOrder);</span>
+
+        } else {
+<span class="fc" id="L33">            dogs.addLast(animalWithOrder);</span>
+        }
+
+<span class="fc" id="L36">        order++;</span>
+<span class="fc" id="L37">    }</span>
+
+    @Override
+    public Animal dequeAny() {
+<span class="fc bfc" id="L41" title="All 2 branches covered.">        if (cats.isEmpty()) {</span>
+<span class="fc" id="L42">            return dequeDog();</span>
+        }
+
+<span class="fc bfc" id="L45" title="All 2 branches covered.">        if (dogs.isEmpty()) {</span>
+<span class="fc" id="L46">            return dequeCat();</span>
+        }
+
+<span class="fc bfc" id="L49" title="All 2 branches covered.">        if (cats.peekFirst().getOrder() &lt; dogs.peekFirst().getOrder()) {</span>
+<span class="fc" id="L50">            return dequeCat();</span>
+        } else {
+<span class="fc" id="L52">            return dequeDog();</span>
+        }
+    }
+
+    @Override
+    public Cat dequeCat() {
+<span class="fc" id="L58">        return (Cat) cats.removeFirst().getAnimal();</span>
+    }
+
+    @Override
+    public Dog dequeDog() {
+<span class="fc" id="L63">        return (Dog) dogs.removeFirst().getAnimal();</span>
+    }
 
     /**
      * Wrapper class with order number.
@@ -45,10 +84,10 @@ import java.util.LinkedList;
          * @param animalValue animal
          * @param orderNumber order number
          */
-<span class="fc" id="L48">        AnimalWithOrder(final Animal animalValue, final int orderNumber) {</span>
-<span class="fc" id="L49">            this.animal = animalValue;</span>
-<span class="fc" id="L50">            this.order = orderNumber;</span>
-<span class="fc" id="L51">        }</span>
+<span class="fc" id="L87">        AnimalWithOrder(final Animal animalValue, final int orderNumber) {</span>
+<span class="fc" id="L88">            this.animal = animalValue;</span>
+<span class="fc" id="L89">            this.order = orderNumber;</span>
+<span class="fc" id="L90">        }</span>
 
         /**
          * Returns animal.
@@ -56,7 +95,7 @@ import java.util.LinkedList;
          * @return animal
          */
         private Animal getAnimal() {
-<span class="fc" id="L59">            return animal;</span>
+<span class="fc" id="L98">            return animal;</span>
         }
 
         /**
@@ -65,49 +104,8 @@ import java.util.LinkedList;
          * @return order number
          */
         private int getOrder() {
-<span class="fc" id="L68">            return order;</span>
+<span class="fc" id="L107">            return order;</span>
         }
-    }
-
-    @Override
-    public void enqueue(final Animal animal) {
-<span class="fc" id="L74">        AnimalWithOrder animalWithOrder = new AnimalWithOrder(animal, order);</span>
-
-<span class="fc bfc" id="L76" title="All 2 branches covered.">        if (animal instanceof Cat) {</span>
-<span class="fc" id="L77">            cats.addLast(animalWithOrder);</span>
-
-        } else {
-<span class="fc" id="L80">            dogs.addLast(animalWithOrder);</span>
-        }
-
-<span class="fc" id="L83">        order++;</span>
-<span class="fc" id="L84">    }</span>
-
-    @Override
-    public Animal dequeAny() {
-<span class="fc bfc" id="L88" title="All 2 branches covered.">        if (cats.isEmpty()) {</span>
-<span class="fc" id="L89">            return dequeDog();</span>
-        }
-
-<span class="fc bfc" id="L92" title="All 2 branches covered.">        if (dogs.isEmpty()) {</span>
-<span class="fc" id="L93">            return dequeCat();</span>
-        }
-
-<span class="fc bfc" id="L96" title="All 2 branches covered.">        if (cats.peekFirst().getOrder() &lt; dogs.peekFirst().getOrder()) {</span>
-<span class="fc" id="L97">            return dequeCat();</span>
-        } else {
-<span class="fc" id="L99">            return dequeDog();</span>
-        }
-    }
-
-    @Override
-    public Cat dequeCat() {
-<span class="fc" id="L105">        return (Cat) cats.removeFirst().getAnimal();</span>
-    }
-
-    @Override
-    public Dog dequeDog() {
-<span class="fc" id="L110">        return (Dog) dogs.removeFirst().getAnimal();</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

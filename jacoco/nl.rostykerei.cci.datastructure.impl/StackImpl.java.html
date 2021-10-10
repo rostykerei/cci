@@ -17,6 +17,70 @@ import java.util.EmptyStackException;
     private StackNode&lt;T&gt; top;
 
     /**
+     * {@inheritDoc}
+     */
+    @Override
+    public T pop() {
+<span class="fc bfc" id="L24" title="All 2 branches covered.">        if (top == null) {</span>
+<span class="fc" id="L25">            throw new EmptyStackException();</span>
+        }
+
+<span class="fc" id="L28">        T item = top.data;</span>
+
+<span class="fc" id="L30">        top = top.next;</span>
+
+<span class="fc" id="L32">        return item;</span>
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void push(final T item) {
+<span class="fc" id="L40">        StackNode&lt;T&gt; t = new StackNode&lt;&gt;(item);</span>
+<span class="fc" id="L41">        t.next = top;</span>
+<span class="fc" id="L42">        top = t;</span>
+<span class="fc" id="L43">    }</span>
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public T peek() {
+<span class="fc bfc" id="L50" title="All 2 branches covered.">        if (top == null) {</span>
+<span class="fc" id="L51">            throw new EmptyStackException();</span>
+        }
+
+<span class="fc" id="L54">        return top.data;</span>
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public boolean isEmpty() {
+<span class="fc bfc" id="L62" title="All 2 branches covered.">        return top == null;</span>
+    }
+
+    /**
+     * Gets top node.
+     *
+     * @return top node
+     */
+    protected StackNode&lt;T&gt; getTop() {
+<span class="fc" id="L71">        return top;</span>
+    }
+
+    /**
+     * Sets top node.
+     *
+     * @param node top node
+     */
+    protected void setTop(final StackNode&lt;T&gt; node) {
+<span class="fc" id="L80">        this.top = node;</span>
+<span class="fc" id="L81">    }</span>
+
+    /**
      * A node within the stack.
      *
      * @param &lt;T&gt; the class of the objects in the stack
@@ -38,9 +102,9 @@ import java.util.EmptyStackException;
          *
          * @param value data
          */
-<span class="fc" id="L41">        public StackNode(final T value) {</span>
-<span class="fc" id="L42">            this.data = value;</span>
-<span class="fc" id="L43">        }</span>
+<span class="fc" id="L105">        public StackNode(final T value) {</span>
+<span class="fc" id="L106">            this.data = value;</span>
+<span class="fc" id="L107">        }</span>
 
         /**
          * Sets next node.
@@ -48,72 +112,8 @@ import java.util.EmptyStackException;
          * @param node next node
          */
         public void setNext(final StackNode&lt;T&gt; node) {
-<span class="fc" id="L51">            this.next = node;</span>
-<span class="fc" id="L52">        }</span>
+<span class="fc" id="L115">            this.next = node;</span>
+<span class="fc" id="L116">        }</span>
     }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public T pop() {
-<span class="fc bfc" id="L60" title="All 2 branches covered.">        if (top == null) {</span>
-<span class="fc" id="L61">            throw new EmptyStackException();</span>
-        }
-
-<span class="fc" id="L64">        T item = top.data;</span>
-
-<span class="fc" id="L66">        top = top.next;</span>
-
-<span class="fc" id="L68">        return item;</span>
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public void push(final T item) {
-<span class="fc" id="L76">        StackNode&lt;T&gt; t = new StackNode&lt;&gt;(item);</span>
-<span class="fc" id="L77">        t.next = top;</span>
-<span class="fc" id="L78">        top = t;</span>
-<span class="fc" id="L79">    }</span>
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public T peek() {
-<span class="fc bfc" id="L86" title="All 2 branches covered.">        if (top == null) {</span>
-<span class="fc" id="L87">            throw new EmptyStackException();</span>
-        }
-
-<span class="fc" id="L90">        return top.data;</span>
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public boolean isEmpty() {
-<span class="fc bfc" id="L98" title="All 2 branches covered.">        return top == null;</span>
-    }
-
-    /**
-     * Gets top node.
-     *
-     * @return top node
-     */
-    protected StackNode&lt;T&gt; getTop() {
-<span class="fc" id="L107">        return top;</span>
-    }
-
-    /**
-     * Sets top node.
-     *
-     * @param node top node
-     */
-    protected void setTop(final StackNode&lt;T&gt; node) {
-<span class="fc" id="L116">        this.top = node;</span>
-<span class="fc" id="L117">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

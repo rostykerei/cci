@@ -11,10 +11,43 @@ import java.util.EmptyStackException;
  */
 <span class="fc" id="L12">public final class StackMinImpl extends StackImpl&lt;Integer&gt; implements StackMin {</span>
 
+    @Override
+    public int min() {
+<span class="fc" id="L16">        StackMinNode top = (StackMinNode) getTop();</span>
+
+<span class="fc bfc" id="L18" title="All 2 branches covered.">        if (top == null) {</span>
+<span class="fc" id="L19">            throw new EmptyStackException();</span>
+        }
+
+<span class="fc" id="L22">        return top.getMin();</span>
+    }
+
+    @Override
+    public void push(final Integer item) {
+<span class="fc bfc" id="L27" title="All 2 branches covered.">        if (item == null) {</span>
+<span class="fc" id="L28">            throw new IllegalArgumentException();</span>
+        }
+
+        int min;
+
+<span class="fc" id="L33">        StackMinNode top = (StackMinNode) getTop();</span>
+
+<span class="fc bfc" id="L35" title="All 2 branches covered.">        if (top == null) {</span>
+<span class="fc" id="L36">            min = item;</span>
+        } else {
+<span class="fc" id="L38">            min = Math.min(item, top.getMin());</span>
+        }
+
+<span class="fc" id="L41">        StackMinNode t = new StackMinNode(item, min);</span>
+<span class="fc" id="L42">        t.setNext(top);</span>
+
+<span class="fc" id="L44">        setTop(t);</span>
+<span class="fc" id="L45">    }</span>
+
     /**
      * Node with a min value.
      */
-    private class StackMinNode extends StackNode&lt;Integer&gt; {
+    private static class StackMinNode extends StackNode&lt;Integer&gt; {
 
         /**
          * Min value holder.
@@ -24,13 +57,13 @@ import java.util.EmptyStackException;
         /**
          * Constructor.
          *
-         * @param value data value
+         * @param value    data value
          * @param minValue min value
          */
-<span class="fc" id="L30">        StackMinNode(final int value, final int minValue) {</span>
-<span class="fc" id="L31">            super(value);</span>
-<span class="fc" id="L32">            this.min = minValue;</span>
-<span class="fc" id="L33">        }</span>
+        StackMinNode(final int value, final int minValue) {
+<span class="fc" id="L64">            super(value);</span>
+<span class="fc" id="L65">            this.min = minValue;</span>
+<span class="fc" id="L66">        }</span>
 
         /**
          * Gets min value.
@@ -38,41 +71,8 @@ import java.util.EmptyStackException;
          * @return min value
          */
         private int getMin() {
-<span class="fc" id="L41">            return min;</span>
+<span class="fc" id="L74">            return min;</span>
         }
     }
-
-    @Override
-    public int min() {
-<span class="fc" id="L47">        StackMinNode top = (StackMinNode) getTop();</span>
-
-<span class="fc bfc" id="L49" title="All 2 branches covered.">        if (top == null) {</span>
-<span class="fc" id="L50">            throw new EmptyStackException();</span>
-        }
-
-<span class="fc" id="L53">        return top.getMin();</span>
-    }
-
-    @Override
-    public void push(final Integer item) {
-<span class="fc bfc" id="L58" title="All 2 branches covered.">        if (item == null) {</span>
-<span class="fc" id="L59">            throw new IllegalArgumentException();</span>
-        }
-
-        int min;
-
-<span class="fc" id="L64">        StackMinNode top = (StackMinNode) getTop();</span>
-
-<span class="fc bfc" id="L66" title="All 2 branches covered.">        if (top == null) {</span>
-<span class="fc" id="L67">            min = item;</span>
-        } else {
-<span class="fc" id="L69">            min = Math.min(item, top.getMin());</span>
-        }
-
-<span class="fc" id="L72">        StackMinNode t = new StackMinNode(item, min);</span>
-<span class="fc" id="L73">        t.setNext(top);</span>
-
-<span class="fc" id="L75">        setTop(t);</span>
-<span class="fc" id="L76">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

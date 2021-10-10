@@ -4,7 +4,7 @@ import nl.rostykerei.cci.datastructure.BinaryTreeNode;
 
 /**
  * Implementation of {@link CheckSubtree} using DFS and
- * recursive tree comparision.
+ * recursive tree comparison.
  *
  * @param &lt;T&gt; the class of the objects in the tree
  * @author Rosty Kerei
@@ -18,8 +18,8 @@ import nl.rostykerei.cci.datastructure.BinaryTreeNode;
 
 <span class="fc bfc" id="L19" title="All 2 branches covered.">        return tree != null</span>
 <span class="fc bfc" id="L20" title="All 2 branches covered.">                &amp;&amp; (treeEquals(tree, subtree)</span>
-<span class="fc bfc" id="L21" title="All 2 branches covered.">                    || isSubtree(tree.getRight(), subtree)</span>
-<span class="fc bfc" id="L22" title="All 2 branches covered.">                    || isSubtree(tree.getLeft(), subtree));</span>
+<span class="fc bfc" id="L21" title="All 2 branches covered.">                || isSubtree(tree.getRight(), subtree)</span>
+<span class="fc bfc" id="L22" title="All 2 branches covered.">                || isSubtree(tree.getLeft(), subtree));</span>
 
     }
 

@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Cache extenstion to {@link TripleStepImpl}.
+ * Cache extension to {@link TripleStepImpl}.
  *
  * @author Rosty Kerei
  */
@@ -13,7 +13,7 @@ import java.util.Map;
     /**
      * Cache map.
      */
-<span class="fc" id="L16">    private Map&lt;Integer, Integer&gt; cache = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L16">    private final Map&lt;Integer, Integer&gt; cache = new HashMap&lt;&gt;();</span>
 
     @Override
     public int countPossibleWays(final int stairs) {

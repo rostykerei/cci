@@ -15,6 +15,44 @@ import nl.rostykerei.cci.datastructure.impl.StackImpl;
      */
 <span class="fc" id="L16">    private final Stack&lt;NodeWrapper&gt; stack = new StackImpl&lt;&gt;();</span>
 
+    @Override
+    public int min() {
+<span class="fc" id="L20">        return stack.peek().min;</span>
+    }
+
+    @Override
+    public Integer pop() {
+<span class="fc" id="L25">        return stack.pop().data;</span>
+    }
+
+    @Override
+    public void push(final Integer item) {
+<span class="fc bfc" id="L30" title="All 2 branches covered.">        if (item == null) {</span>
+<span class="fc" id="L31">            throw new IllegalArgumentException();</span>
+        }
+
+<span class="fc" id="L34">        NodeWrapper node = new NodeWrapper();</span>
+<span class="fc" id="L35">        node.data = item;</span>
+
+<span class="fc bfc" id="L37" title="All 2 branches covered.">        if (isEmpty()) {</span>
+<span class="fc" id="L38">            node.min = item;</span>
+        } else {
+<span class="fc" id="L40">            node.min = Math.min(stack.peek().min, item);</span>
+        }
+
+<span class="fc" id="L43">        stack.push(node);</span>
+<span class="fc" id="L44">    }</span>
+
+    @Override
+    public Integer peek() {
+<span class="fc" id="L48">        return stack.peek().data;</span>
+    }
+
+    @Override
+    public boolean isEmpty() {
+<span class="fc" id="L53">        return stack.isEmpty();</span>
+    }
+
     /**
      * Wraps integer node, adds min value.
      */
@@ -29,45 +67,6 @@ import nl.rostykerei.cci.datastructure.impl.StackImpl;
          * Most recent minimum.
          */
         private int min;
-    }
-
-
-    @Override
-    public int min() {
-<span class="fc" id="L37">        return stack.peek().min;</span>
-    }
-
-    @Override
-    public Integer pop() {
-<span class="fc" id="L42">        return stack.pop().data;</span>
-    }
-
-    @Override
-    public void push(final Integer item) {
-<span class="fc bfc" id="L47" title="All 2 branches covered.">        if (item == null) {</span>
-<span class="fc" id="L48">            throw new IllegalArgumentException();</span>
-        }
-
-<span class="fc" id="L51">        NodeWrapper node = new NodeWrapper();</span>
-<span class="fc" id="L52">        node.data = item;</span>
-
-<span class="fc bfc" id="L54" title="All 2 branches covered.">        if (isEmpty()) {</span>
-<span class="fc" id="L55">            node.min = item;</span>
-        } else {
-<span class="fc" id="L57">            node.min = Math.min(stack.peek().min, item);</span>
-        }
-
-<span class="fc" id="L60">        stack.push(node);</span>
-<span class="fc" id="L61">    }</span>
-
-    @Override
-    public Integer peek() {
-<span class="fc" id="L65">        return stack.peek().data;</span>
-    }
-
-    @Override
-    public boolean isEmpty() {
-<span class="fc" id="L70">        return stack.isEmpty();</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

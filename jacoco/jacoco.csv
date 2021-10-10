@@ -11,13 +11,13 @@ Cracking the Coding Interview Solutions,nl.rostykerei.cci.ch04.q01,RouteBetweenN
 Cracking the Coding Interview Solutions,nl.rostykerei.cci.ch01.q09,StringRotationImpl,0,22,0,4,0,3,0,5,0,3
 Cracking the Coding Interview Solutions,nl.rostykerei.cci.ch01.q06,StringCompressionImpl,0,59,0,8,0,13,0,6,0,2
 Cracking the Coding Interview Solutions,nl.rostykerei.cci.ch01.q05,OneWayImpl,0,76,0,14,0,19,0,9,0,2
-Cracking the Coding Interview Solutions,nl.rostykerei.cci.ch01.q08,ZeroMatrixImpl,0,100,0,14,0,17,0,9,0,2
+Cracking the Coding Interview Solutions,nl.rostykerei.cci.ch01.q08,ZeroMatrixImpl,0,89,0,12,0,16,0,8,0,2
 Cracking the Coding Interview Solutions,nl.rostykerei.cci.datastructure.impl,BinaryTreeNodeImpl,0,67,0,8,0,23,0,12,0,8
 Cracking the Coding Interview Solutions,nl.rostykerei.cci.datastructure.impl,SinglyLinkedListImpl,0,40,0,4,0,13,0,7,0,5
 Cracking the Coding Interview Solutions,nl.rostykerei.cci.datastructure.impl,StackImpl,0,59,0,6,0,17,0,10,0,7
 Cracking the Coding Interview Solutions,nl.rostykerei.cci.datastructure.impl,AbstractLinkedList,0,10,0,0,0,4,0,3,0,3
 Cracking the Coding Interview Solutions,nl.rostykerei.cci.datastructure.impl,PairImpl,0,15,0,0,0,6,0,3,0,3
-Cracking the Coding Interview Solutions,nl.rostykerei.cci.datastructure.impl,DoublyLinkedListImpl,0,109,0,22,0,31,0,19,0,8
+Cracking the Coding Interview Solutions,nl.rostykerei.cci.datastructure.impl,DoublyLinkedListImpl,0,105,0,22,0,31,0,19,0,8
 Cracking the Coding Interview Solutions,nl.rostykerei.cci.datastructure.impl,TreeNodeImpl,0,35,0,2,0,13,0,7,0,6
 Cracking the Coding Interview Solutions,nl.rostykerei.cci.datastructure.impl,QueueImpl,0,68,0,12,0,19,0,11,0,5
 Cracking the Coding Interview Solutions,nl.rostykerei.cci.datastructure.impl,QueueImpl.QueueNode,0,6,0,0,0,3,0,1,0,1
@@ -62,8 +62,8 @@ Cracking the Coding Interview Solutions,nl.rostykerei.cci.ch02.q01,RemoveDupsHas
 Cracking the Coding Interview Solutions,nl.rostykerei.cci.ch03.q04,QueueViaStacksImpl,0,64,0,6,0,17,0,9,0,6
 Cracking the Coding Interview Solutions,nl.rostykerei.cci.ch04.q12,PathsWithSumImpl,0,59,0,6,0,14,0,6,0,3
 Cracking the Coding Interview Solutions,nl.rostykerei.cci.ch03.q03,SetOfStacksSimple,0,121,0,12,0,32,0,12,0,6
-Cracking the Coding Interview Solutions,nl.rostykerei.cci.ch03.q03,SetOfStacksFull.StackWithSize,0,28,0,0,0,7,0,3,0,3
-Cracking the Coding Interview Solutions,nl.rostykerei.cci.ch03.q03,SetOfStacksFull,0,118,0,12,0,24,0,13,0,7
+Cracking the Coding Interview Solutions,nl.rostykerei.cci.ch03.q03,SetOfStacksFull.StackWithSize,0,25,0,0,0,7,0,3,0,3
+Cracking the Coding Interview Solutions,nl.rostykerei.cci.ch03.q03,SetOfStacksFull,0,116,0,12,0,24,0,13,0,7
 Cracking the Coding Interview Solutions,nl.rostykerei.cci.ch04.q11,RandomNodeImpl,0,139,0,20,0,37,0,17,0,7
 Cracking the Coding Interview Solutions,nl.rostykerei.cci.ch03.q06,AnimalShelter3Queues,0,80,0,4,0,20,0,7,0,5
 Cracking the Coding Interview Solutions,nl.rostykerei.cci.ch03.q06,AnimalShelterWithOrder.AnimalWithOrder,0,15,0,0,0,6,0,3,0,3
@@ -72,8 +72,8 @@ Cracking the Coding Interview Solutions,nl.rostykerei.cci.ch04.q10,CheckSubtreeI
 Cracking the Coding Interview Solutions,nl.rostykerei.cci.ch03.q05,SortStackImpl,0,105,0,16,0,31,0,13,0,5
 Cracking the Coding Interview Solutions,nl.rostykerei.cci.ch03.q05,SortStackImproved,0,43,0,8,0,11,0,6,0,2
 Cracking the Coding Interview Solutions,nl.rostykerei.cci.ch08.q10,PaintFillImpl,0,83,0,10,0,10,0,8,0,3
-Cracking the Coding Interview Solutions,nl.rostykerei.cci.ch03.q02,StackMinImpl,0,53,0,6,0,15,0,6,0,3
-Cracking the Coding Interview Solutions,nl.rostykerei.cci.ch03.q02,StackMinImpl.StackMinNode,0,14,0,0,0,5,0,2,0,2
+Cracking the Coding Interview Solutions,nl.rostykerei.cci.ch03.q02,StackMinImpl,0,52,0,6,0,15,0,6,0,3
+Cracking the Coding Interview Solutions,nl.rostykerei.cci.ch03.q02,StackMinImpl.StackMinNode,0,11,0,0,0,4,0,2,0,2
 Cracking the Coding Interview Solutions,nl.rostykerei.cci.ch03.q02,StackMinWrapperImpl,0,69,0,4,0,15,0,8,0,6
 Cracking the Coding Interview Solutions,nl.rostykerei.cci.ch03.q01,ThreeInOneImpl,0,119,0,10,0,22,0,11,0,6
 Cracking the Coding Interview Solutions,nl.rostykerei.cci.ch02.q07,IntersectionImpl,0,27,0,6,0,11,0,5,0,2

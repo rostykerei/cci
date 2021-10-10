@@ -21,7 +21,7 @@ import java.util.Set;
     /**
      * Map of project dependencies.
      */
-<span class="fc" id="L24">    private Map&lt;T, Set&lt;T&gt;&gt; dependencyMap = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L24">    private final Map&lt;T, Set&lt;T&gt;&gt; dependencyMap = new HashMap&lt;&gt;();</span>
 
     @Override
     public List&lt;T&gt; buildOrder(

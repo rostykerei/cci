@@ -17,7 +17,7 @@
 <a class="jxr_linenumber" name="L9" href="#L9">9</a>   <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">abstract</strong> <strong class="jxr_keyword">class</strong> <a name="OneWayAbstractTest" href="../../../../../nl/rostykerei/cci/ch01/q05/OneWayAbstractTest.html#OneWayAbstractTest">OneWayAbstractTest</a> <strong class="jxr_keyword">extends</strong> AbstractFactoryTest&lt;OneWay&gt; {
 <a class="jxr_linenumber" name="L10" href="#L10">10</a>  
 <a class="jxr_linenumber" name="L11" href="#L11">11</a>      @Test
-<a class="jxr_linenumber" name="L12" href="#L12">12</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testTrue() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="L12" href="#L12">12</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testTrue() {
 <a class="jxr_linenumber" name="L13" href="#L13">13</a>          assertTrue(testInstance.isOneAway(<span class="jxr_string">"pale"</span>, <span class="jxr_string">"ple"</span>));
 <a class="jxr_linenumber" name="L14" href="#L14">14</a>          assertTrue(testInstance.isOneAway(<span class="jxr_string">"pales"</span>, <span class="jxr_string">"pale"</span>));
 <a class="jxr_linenumber" name="L15" href="#L15">15</a>          assertTrue(testInstance.isOneAway(<span class="jxr_string">"pale"</span>, <span class="jxr_string">"bale"</span>));
@@ -26,7 +26,7 @@
 <a class="jxr_linenumber" name="L18" href="#L18">18</a>      }
 <a class="jxr_linenumber" name="L19" href="#L19">19</a>  
 <a class="jxr_linenumber" name="L20" href="#L20">20</a>      @Test
-<a class="jxr_linenumber" name="L21" href="#L21">21</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testFalse() <strong class="jxr_keyword">throws</strong> Exception {
+<a class="jxr_linenumber" name="L21" href="#L21">21</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">void</strong> testFalse() {
 <a class="jxr_linenumber" name="L22" href="#L22">22</a>          assertFalse(testInstance.isOneAway(<span class="jxr_string">"pale"</span>, <span class="jxr_string">"bake"</span>));
 <a class="jxr_linenumber" name="L23" href="#L23">23</a>          assertFalse(testInstance.isOneAway(<span class="jxr_string">"pale"</span>, <span class="jxr_string">"pke"</span>));
 <a class="jxr_linenumber" name="L24" href="#L24">24</a>          assertFalse(testInstance.isOneAway(<span class="jxr_string">"pale"</span>, <span class="jxr_string">"pe"</span>));
@@ -37,6 +37,6 @@
 <a class="jxr_linenumber" name="L29" href="#L29">29</a>  }
 </pre>
 <hr/>
-<div id="footer">Copyright &#169; 2017&#x2013;2021 <a href="http://www.rostykerei.nl/">Rosty Kerei</a>. All rights reserved.</div>
+<div id="footer">Copyright &#169; 2017&#x2013;2021 <a href="https://www.rostykerei.nl/">Rosty Kerei</a>. All rights reserved.</div>
 </body>
 </html>
