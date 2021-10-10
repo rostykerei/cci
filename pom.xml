@@ -47,7 +47,7 @@
 
     <ciManagement>
         <system>Travis</system>
-        <url>https://travis-ci.org/rostykerei/cci</url>
+        <url>https://github.com/rostykerei/cci/actions</url>
     </ciManagement>
 
     <licenses>

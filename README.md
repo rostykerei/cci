@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/rostykerei/cci.svg?branch=master)](https://travis-ci.org/rostykerei/cci)
+![Build Status](https://github.com/rostykerei/cci/actions/workflows/master.yml/badge.svg)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=nl.rostykerei%3Acci&metric=alert_status)](https://sonarcloud.io/dashboard?id=nl.rostykerei%3Acci)
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=nl.rostykerei%3Acci&metric=ncloc)](https://sonarcloud.io/dashboard?id=nl.rostykerei%3Acci)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=nl.rostykerei%3Acci&metric=bugs)](https://sonarcloud.io/dashboard?id=nl.rostykerei%3Acci)
@@ -11,7 +11,7 @@ My solutions for "Cracking the Coding Interview" book
 
 ## Build
 
-    mvn clean install
+    mvn clean verify
     
 ## Run tests
 
