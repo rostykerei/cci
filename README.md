@@ -4,6 +4,7 @@
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=nl.rostykerei%3Acci&metric=bugs)](https://sonarcloud.io/dashboard?id=nl.rostykerei%3Acci)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=nl.rostykerei%3Acci&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=nl.rostykerei%3Acci)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=nl.rostykerei%3Acci&metric=code_smells)](https://sonarcloud.io/dashboard?id=nl.rostykerei%3Acci)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=nl.rostykerei%3Acci&metric=coverage)](https://sonarcloud.io/dashboard?id=nl.rostykerei%3Acci)
 
 # Cracking the Coding Interview Solutions
 
