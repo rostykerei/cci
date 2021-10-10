@@ -33,4 +33,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B clean verify site org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=nl.rostykerei:cci -Dgithub.global.oauth2Token=$GITHUB_TOKEN
+        run: mvn -B clean verify site org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=nl.rostykerei:cci
+      - name: Deploy site
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./target/site
