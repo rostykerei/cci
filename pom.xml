@@ -46,7 +46,7 @@
     </issueManagement>
 
     <ciManagement>
-        <system>Travis</system>
+        <system>GitHub Actions</system>
         <url>https://github.com/rostykerei/cci/actions</url>
     </ciManagement>
 
@@ -211,11 +211,6 @@
             </plugin>
 
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>findbugs-maven-plugin</artifactId>
-            </plugin>
-
-            <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <reportSets>
@@ -242,14 +237,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jxr-plugin</artifactId>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-pmd-plugin</artifactId>
-                <configuration>
-                    <skipEmptyReport>false</skipEmptyReport>
-                </configuration>
             </plugin>
 
             <plugin>
