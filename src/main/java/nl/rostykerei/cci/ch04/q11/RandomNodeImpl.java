@@ -5,6 +5,7 @@ import nl.rostykerei.cci.datastructure.Pair;
 import nl.rostykerei.cci.datastructure.impl.BinaryTreeNodeImpl;
 import nl.rostykerei.cci.datastructure.impl.PairImpl;
 
+import java.security.SecureRandom;
 import java.util.Random;
 
 /**
@@ -19,7 +20,7 @@ public final class RandomNodeImpl<T extends Comparable<T>>
     /**
      * Randomise.
      */
-    private static final Random RANDOM = new Random();
+    private static final Random RANDOM = new SecureRandom();
 
     /**
      * Node's size.
@@ -44,7 +45,7 @@ public final class RandomNodeImpl<T extends Comparable<T>>
         size += delta;
 
         if (this.getParent() != null) {
-            ((RandomNodeImpl) this.getParent()).updateSize(delta);
+            ((RandomNodeImpl<T>) this.getParent()).updateSize(delta);
         }
     }
 
@@ -53,13 +54,13 @@ public final class RandomNodeImpl<T extends Comparable<T>>
         int dSize = 0;
 
         if (getLeft() != null) {
-            dSize -= ((RandomNodeImpl) getLeft()).size;
+            dSize -= ((RandomNodeImpl<T>) getLeft()).size;
         }
 
         super.setLeft(leftNode);
 
         if (leftNode != null) {
-            dSize += ((RandomNodeImpl) leftNode).size;
+            dSize += ((RandomNodeImpl<T>) leftNode).size;
         }
 
         if (dSize != 0) {
@@ -72,13 +73,13 @@ public final class RandomNodeImpl<T extends Comparable<T>>
         int dSize = 0;
 
         if (getRight() != null) {
-            dSize -= ((RandomNodeImpl) getRight()).size;
+            dSize -= ((RandomNodeImpl<T>) getRight()).size;
         }
 
         super.setRight(rightNode);
 
         if (rightNode != null) {
-            dSize += ((RandomNodeImpl) rightNode).size;
+            dSize += ((RandomNodeImpl<T>) rightNode).size;
         }
 
         if (dSize != 0) {
