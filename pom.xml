@@ -63,36 +63,23 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.report.inputEncoding>UTF-8</project.report.inputEncoding>
 
-        <project.build.targetJdk>1.8</project.build.targetJdk>
+        <project.build.targetJdk>11</project.build.targetJdk>
 
-        <plugin.codacy.version>1.0.3</plugin.codacy.version>
-        <plugin.checkstyle.version>2.17</plugin.checkstyle.version>
-        <plugin.compiler.version>3.6.2</plugin.compiler.version>
-        <plugin.findbugs.version>3.0.5</plugin.findbugs.version>
-        <plugin.jacoco.version>0.7.9</plugin.jacoco.version>
-        <plugin.javadoc.version>3.0.0-M1</plugin.javadoc.version>
-        <plugin.jxr.version>2.5</plugin.jxr.version>
-        <plugin.pmd.version>3.8</plugin.pmd.version>
-        <plugin.project-info.version>2.9</plugin.project-info.version>
-        <plugin.site.version>3.6</plugin.site.version>
-        <plugin.sources.version>3.0.1</plugin.sources.version>
-        <plugin.surefire.version>2.20</plugin.surefire.version>
-
-        <checkstyle.version>8.2</checkstyle.version>
-        <junit.version>4.12</junit.version>
+        <plugin.checkstyle.version>3.1.2</plugin.checkstyle.version>
+        <plugin.compiler.version>3.8.1</plugin.compiler.version>
+        <plugin.javadoc.version>3.3.1</plugin.javadoc.version>
+        <plugin.jxr.version>3.1.1</plugin.jxr.version>
+        <plugin.project-info.version>3.1.2</plugin.project-info.version>
+        <plugin.site.version>3.9.1</plugin.site.version>
+        <plugin.sources.version>3.2.1</plugin.sources.version>
+        <plugin.surefire.version>3.0.0-M5</plugin.surefire.version>
+        <checkstyle.version>9.0.1</checkstyle.version>
+        <junit.version>4.13.2</junit.version>
     </properties>
-
-    <prerequisites>
-        <maven>3.0.4</maven>
-    </prerequisites>
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>com.gavinmogan</groupId>
-                <artifactId>codacy-maven-plugin</artifactId>
-                <version>${plugin.codacy.version}</version>
-            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
@@ -127,57 +114,12 @@
             </plugin>
 
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>findbugs-maven-plugin</artifactId>
-                <version>${plugin.findbugs.version}</version>
-                <executions>
-                    <execution>
-                        <id>default</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <classFilesDirectory>${project.build.outputDirectory}</classFilesDirectory>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>${plugin.jacoco.version}</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>report</id>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>report-aggregate</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>report-aggregate</goal>
-                        </goals>
-                        <configuration>
-                            <skip>true</skip>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>${plugin.javadoc.version}</version>
+                <configuration>
+                    <source>11</source>
+                </configuration>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
@@ -192,25 +134,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jxr-plugin</artifactId>
                 <version>${plugin.jxr.version}</version>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-pmd-plugin</artifactId>
-                <version>${plugin.pmd.version}</version>
-                <configuration>
-                    <targetJdk>${project.build.targetJdk}</targetJdk>
-                    <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>default</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
 
             <plugin>
