@@ -67,6 +67,7 @@
 
         <plugin.checkstyle.version>3.1.2</plugin.checkstyle.version>
         <plugin.compiler.version>3.8.1</plugin.compiler.version>
+        <plugin.jacoco.version>0.8.7</plugin.jacoco.version>
         <plugin.javadoc.version>3.3.1</plugin.javadoc.version>
         <plugin.jxr.version>3.1.1</plugin.jxr.version>
         <plugin.project-info.version>3.1.2</plugin.project-info.version>
@@ -114,6 +115,27 @@
                     <target>${project.build.targetJdk}</target>
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${plugin.jacoco.version}</version>
+                <executions>
+                    <execution>
+                        <id>jacoco-initialize</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>jacoco-site</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
 
             <plugin>
