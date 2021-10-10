@@ -5,6 +5,7 @@ import nl.rostykerei.cci.datastructure.Pair;
 import nl.rostykerei.cci.datastructure.impl.BinaryTreeNodeImpl;
 import nl.rostykerei.cci.datastructure.impl.PairImpl;
 
+import java.security.SecureRandom;
 import java.util.Random;
 
 /**
@@ -19,12 +20,12 @@ public final class RandomNodeImpl&lt;T extends Comparable&lt;T&gt;&gt;
     /**
      * Randomise.
      */
-<span class="fc" id="L22">    private static final Random RANDOM = new Random();</span>
+<span class="fc" id="L23">    private static final Random RANDOM = new SecureRandom();</span>
 
     /**
      * Node's size.
      */
-<span class="fc" id="L27">    private int size = 1;</span>
+<span class="fc" id="L28">    private int size = 1;</span>
 
     /**
      * Node's constructor.
@@ -32,8 +33,8 @@ public final class RandomNodeImpl&lt;T extends Comparable&lt;T&gt;&gt;
      * @param dataValue node's value
      */
     public RandomNodeImpl(final T dataValue) {
-<span class="fc" id="L35">        super(dataValue);</span>
-<span class="fc" id="L36">    }</span>
+<span class="fc" id="L36">        super(dataValue);</span>
+<span class="fc" id="L37">    }</span>
 
     /**
      * Updates node's size.
@@ -41,50 +42,50 @@ public final class RandomNodeImpl&lt;T extends Comparable&lt;T&gt;&gt;
      * @param delta size delta
      */
     private void updateSize(final int delta) {
-<span class="fc" id="L44">        size += delta;</span>
+<span class="fc" id="L45">        size += delta;</span>
 
-<span class="fc bfc" id="L46" title="All 2 branches covered.">        if (this.getParent() != null) {</span>
-<span class="fc" id="L47">            ((RandomNodeImpl) this.getParent()).updateSize(delta);</span>
+<span class="fc bfc" id="L47" title="All 2 branches covered.">        if (this.getParent() != null) {</span>
+<span class="fc" id="L48">            ((RandomNodeImpl&lt;T&gt;) this.getParent()).updateSize(delta);</span>
         }
-<span class="fc" id="L49">    }</span>
+<span class="fc" id="L50">    }</span>
 
     @Override
     public void setLeft(final BinaryTreeNode&lt;T&gt; leftNode) {
-<span class="fc" id="L53">        int dSize = 0;</span>
+<span class="fc" id="L54">        int dSize = 0;</span>
 
-<span class="fc bfc" id="L55" title="All 2 branches covered.">        if (getLeft() != null) {</span>
-<span class="fc" id="L56">            dSize -= ((RandomNodeImpl) getLeft()).size;</span>
+<span class="fc bfc" id="L56" title="All 2 branches covered.">        if (getLeft() != null) {</span>
+<span class="fc" id="L57">            dSize -= ((RandomNodeImpl&lt;T&gt;) getLeft()).size;</span>
         }
 
-<span class="fc" id="L59">        super.setLeft(leftNode);</span>
+<span class="fc" id="L60">        super.setLeft(leftNode);</span>
 
-<span class="fc bfc" id="L61" title="All 2 branches covered.">        if (leftNode != null) {</span>
-<span class="fc" id="L62">            dSize += ((RandomNodeImpl) leftNode).size;</span>
+<span class="fc bfc" id="L62" title="All 2 branches covered.">        if (leftNode != null) {</span>
+<span class="fc" id="L63">            dSize += ((RandomNodeImpl&lt;T&gt;) leftNode).size;</span>
         }
 
-<span class="fc bfc" id="L65" title="All 2 branches covered.">        if (dSize != 0) {</span>
-<span class="fc" id="L66">            updateSize(dSize);</span>
+<span class="fc bfc" id="L66" title="All 2 branches covered.">        if (dSize != 0) {</span>
+<span class="fc" id="L67">            updateSize(dSize);</span>
         }
-<span class="fc" id="L68">    }</span>
+<span class="fc" id="L69">    }</span>
 
     @Override
     public void setRight(final BinaryTreeNode&lt;T&gt; rightNode) {
-<span class="fc" id="L72">        int dSize = 0;</span>
+<span class="fc" id="L73">        int dSize = 0;</span>
 
-<span class="fc bfc" id="L74" title="All 2 branches covered.">        if (getRight() != null) {</span>
-<span class="fc" id="L75">            dSize -= ((RandomNodeImpl) getRight()).size;</span>
+<span class="fc bfc" id="L75" title="All 2 branches covered.">        if (getRight() != null) {</span>
+<span class="fc" id="L76">            dSize -= ((RandomNodeImpl&lt;T&gt;) getRight()).size;</span>
         }
 
-<span class="fc" id="L78">        super.setRight(rightNode);</span>
+<span class="fc" id="L79">        super.setRight(rightNode);</span>
 
-<span class="fc bfc" id="L80" title="All 2 branches covered.">        if (rightNode != null) {</span>
-<span class="fc" id="L81">            dSize += ((RandomNodeImpl) rightNode).size;</span>
+<span class="fc bfc" id="L81" title="All 2 branches covered.">        if (rightNode != null) {</span>
+<span class="fc" id="L82">            dSize += ((RandomNodeImpl&lt;T&gt;) rightNode).size;</span>
         }
 
-<span class="fc bfc" id="L84" title="All 2 branches covered.">        if (dSize != 0) {</span>
-<span class="fc" id="L85">            updateSize(dSize);</span>
+<span class="fc bfc" id="L85" title="All 2 branches covered.">        if (dSize != 0) {</span>
+<span class="fc" id="L86">            updateSize(dSize);</span>
         }
-<span class="fc" id="L87">    }</span>
+<span class="fc" id="L88">    }</span>
 
     /**
      * Traverse the node until limited length is reached.
@@ -97,29 +98,29 @@ public final class RandomNodeImpl&lt;T extends Comparable&lt;T&gt;&gt;
             final RandomNode&lt;T&gt; node,
             final int length) {
 
-<span class="fc bfc" id="L100" title="All 2 branches covered.">        if (node == null) {</span>
-<span class="fc" id="L101">            return new PairImpl&lt;&gt;(length, null);</span>
+<span class="fc bfc" id="L101" title="All 2 branches covered.">        if (node == null) {</span>
+<span class="fc" id="L102">            return new PairImpl&lt;&gt;(length, null);</span>
         }
 
-<span class="fc bfc" id="L104" title="All 2 branches covered.">        if (length == 0) {</span>
-<span class="fc" id="L105">            return new PairImpl&lt;&gt;(0, node);</span>
+<span class="fc bfc" id="L105" title="All 2 branches covered.">        if (length == 0) {</span>
+<span class="fc" id="L106">            return new PairImpl&lt;&gt;(0, node);</span>
         }
 
-<span class="fc" id="L108">        Pair&lt;Integer, RandomNode&lt;T&gt;&gt; left = traverse(</span>
-<span class="fc" id="L109">                (RandomNode&lt;T&gt;) node.getLeft(),</span>
+<span class="fc" id="L109">        Pair&lt;Integer, RandomNode&lt;T&gt;&gt; left = traverse(</span>
+<span class="fc" id="L110">                (RandomNode&lt;T&gt;) node.getLeft(),</span>
                 length - 1);
 
-<span class="fc bfc" id="L112" title="All 2 branches covered.">        if (left.getSecond() != null) {</span>
-<span class="fc" id="L113">            return left;</span>
+<span class="fc bfc" id="L113" title="All 2 branches covered.">        if (left.getSecond() != null) {</span>
+<span class="fc" id="L114">            return left;</span>
         }
 
-<span class="fc" id="L116">        return traverse((RandomNode&lt;T&gt;) node.getRight(), left.getFirst());</span>
+<span class="fc" id="L117">        return traverse((RandomNode&lt;T&gt;) node.getRight(), left.getFirst());</span>
     }
 
     @Override
     public RandomNode&lt;T&gt; getRandomNode() {
-<span class="fc" id="L121">        int rand = RANDOM.nextInt(this.size);</span>
-<span class="fc" id="L122">        return traverse(this, rand).getSecond();</span>
+<span class="fc" id="L122">        int rand = RANDOM.nextInt(this.size);</span>
+<span class="fc" id="L123">        return traverse(this, rand).getSecond();</span>
     }
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

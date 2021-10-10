@@ -28,7 +28,7 @@ import java.util.Set;
      * @return true if route can be found, false otherwise
      */
     private boolean dfs(final TreeNode&lt;T&gt; node, final TreeNode&lt;T&gt; finish,
-                        final Set&lt;TreeNode&gt; seen) {
+                        final Set&lt;TreeNode&lt;T&gt;&gt; seen) {
 
 <span class="fc bfc" id="L33" title="All 2 branches covered.">        if (node.equals(finish)) {</span>
 <span class="fc" id="L34">            return true;</span>
@@ -45,4 +45,4 @@ import java.util.Set;
 <span class="fc" id="L45">        return false;</span>
     }
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

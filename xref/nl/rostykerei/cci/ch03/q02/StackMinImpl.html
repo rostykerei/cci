@@ -17,12 +17,12 @@
 <a class="jxr_linenumber" name="L9" href="#L9">9</a>   <em class="jxr_javadoccomment"> *</em>
 <a class="jxr_linenumber" name="L10" href="#L10">10</a>  <em class="jxr_javadoccomment"> * @author Rosty Kerei</em>
 <a class="jxr_linenumber" name="L11" href="#L11">11</a>  <em class="jxr_javadoccomment"> */</em>
-<a class="jxr_linenumber" name="L12" href="#L12">12</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../nl/rostykerei/cci/ch03/q02/StackMinImpl.html">StackMinImpl</a> <strong class="jxr_keyword">extends</strong> StackImpl&lt;Integer&gt; <strong class="jxr_keyword">implements</strong> <a href="../../../../../nl/rostykerei/cci/ch03/q02/StackMin.html">StackMin</a> {
+<a class="jxr_linenumber" name="L12" href="#L12">12</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">class</strong> <a name="StackMinImpl" href="../../../../../nl/rostykerei/cci/ch03/q02/StackMinImpl.html#StackMinImpl">StackMinImpl</a> <strong class="jxr_keyword">extends</strong> StackImpl&lt;Integer&gt; <strong class="jxr_keyword">implements</strong> <a name="StackMin" href="../../../../../nl/rostykerei/cci/ch03/q02/StackMin.html#StackMin">StackMin</a> {
 <a class="jxr_linenumber" name="L13" href="#L13">13</a>  
 <a class="jxr_linenumber" name="L14" href="#L14">14</a>      <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="L15" href="#L15">15</a>  <em class="jxr_javadoccomment">     * Node with a min value.</em>
 <a class="jxr_linenumber" name="L16" href="#L16">16</a>  <em class="jxr_javadoccomment">     */</em>
-<a class="jxr_linenumber" name="L17" href="#L17">17</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">class</strong> <a href="../../../../../nl/rostykerei/cci/ch03/q02/StackMinImpl.html">StackMinNode</a> <strong class="jxr_keyword">extends</strong> StackNode&lt;Integer&gt; {
+<a class="jxr_linenumber" name="L17" href="#L17">17</a>      <strong class="jxr_keyword">private</strong> <strong class="jxr_keyword">class</strong> StackMinNode <strong class="jxr_keyword">extends</strong> StackNode&lt;Integer&gt; {
 <a class="jxr_linenumber" name="L18" href="#L18">18</a>  
 <a class="jxr_linenumber" name="L19" href="#L19">19</a>          <em class="jxr_javadoccomment">/**</em>
 <a class="jxr_linenumber" name="L20" href="#L20">20</a>  <em class="jxr_javadoccomment">         * Min value holder.</em>
@@ -35,7 +35,7 @@
 <a class="jxr_linenumber" name="L27" href="#L27">27</a>  <em class="jxr_javadoccomment">         * @param value data value</em>
 <a class="jxr_linenumber" name="L28" href="#L28">28</a>  <em class="jxr_javadoccomment">         * @param minValue min value</em>
 <a class="jxr_linenumber" name="L29" href="#L29">29</a>  <em class="jxr_javadoccomment">         */</em>
-<a class="jxr_linenumber" name="L30" href="#L30">30</a>          <a href="../../../../../nl/rostykerei/cci/ch03/q02/StackMinImpl.html">StackMinNode</a>(<strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> value, <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> minValue) {
+<a class="jxr_linenumber" name="L30" href="#L30">30</a>          StackMinNode(<strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> value, <strong class="jxr_keyword">final</strong> <strong class="jxr_keyword">int</strong> minValue) {
 <a class="jxr_linenumber" name="L31" href="#L31">31</a>              <strong class="jxr_keyword">super</strong>(value);
 <a class="jxr_linenumber" name="L32" href="#L32">32</a>              <strong class="jxr_keyword">this</strong>.min = minValue;
 <a class="jxr_linenumber" name="L33" href="#L33">33</a>          }
@@ -52,7 +52,7 @@
 <a class="jxr_linenumber" name="L44" href="#L44">44</a>  
 <a class="jxr_linenumber" name="L45" href="#L45">45</a>      @Override
 <a class="jxr_linenumber" name="L46" href="#L46">46</a>      <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">int</strong> min() {
-<a class="jxr_linenumber" name="L47" href="#L47">47</a>          <a href="../../../../../nl/rostykerei/cci/ch03/q02/StackMinImpl.html">StackMinNode</a> top = (StackMinNode) getTop();
+<a class="jxr_linenumber" name="L47" href="#L47">47</a>          StackMinNode top = (StackMinNode) getTop();
 <a class="jxr_linenumber" name="L48" href="#L48">48</a>  
 <a class="jxr_linenumber" name="L49" href="#L49">49</a>          <strong class="jxr_keyword">if</strong> (top == <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="L50" href="#L50">50</a>              <strong class="jxr_keyword">throw</strong> <strong class="jxr_keyword">new</strong> EmptyStackException();
@@ -69,7 +69,7 @@
 <a class="jxr_linenumber" name="L61" href="#L61">61</a>  
 <a class="jxr_linenumber" name="L62" href="#L62">62</a>          <strong class="jxr_keyword">int</strong> min;
 <a class="jxr_linenumber" name="L63" href="#L63">63</a>  
-<a class="jxr_linenumber" name="L64" href="#L64">64</a>          <a href="../../../../../nl/rostykerei/cci/ch03/q02/StackMinImpl.html">StackMinNode</a> top = (StackMinNode) getTop();
+<a class="jxr_linenumber" name="L64" href="#L64">64</a>          StackMinNode top = (StackMinNode) getTop();
 <a class="jxr_linenumber" name="L65" href="#L65">65</a>  
 <a class="jxr_linenumber" name="L66" href="#L66">66</a>          <strong class="jxr_keyword">if</strong> (top == <strong class="jxr_keyword">null</strong>) {
 <a class="jxr_linenumber" name="L67" href="#L67">67</a>              min = item;
@@ -77,7 +77,7 @@
 <a class="jxr_linenumber" name="L69" href="#L69">69</a>              min = Math.min(item, top.getMin());
 <a class="jxr_linenumber" name="L70" href="#L70">70</a>          }
 <a class="jxr_linenumber" name="L71" href="#L71">71</a>  
-<a class="jxr_linenumber" name="L72" href="#L72">72</a>          <a href="../../../../../nl/rostykerei/cci/ch03/q02/StackMinImpl.html">StackMinNode</a> t = <strong class="jxr_keyword">new</strong> <a href="../../../../../nl/rostykerei/cci/ch03/q02/StackMinImpl.html">StackMinNode</a>(item, min);
+<a class="jxr_linenumber" name="L72" href="#L72">72</a>          StackMinNode t = <strong class="jxr_keyword">new</strong> StackMinNode(item, min);
 <a class="jxr_linenumber" name="L73" href="#L73">73</a>          t.setNext(top);
 <a class="jxr_linenumber" name="L74" href="#L74">74</a>  
 <a class="jxr_linenumber" name="L75" href="#L75">75</a>          setTop(t);
@@ -85,6 +85,6 @@
 <a class="jxr_linenumber" name="L77" href="#L77">77</a>  }
 </pre>
 <hr/>
-<div id="footer">Copyright &#169; 2017&#x2013;2018 <a href="http://www.rostykerei.nl/">Rosty Kerei</a>. All rights reserved.</div>
+<div id="footer">Copyright &#169; 2017&#x2013;2021 <a href="http://www.rostykerei.nl/">Rosty Kerei</a>. All rights reserved.</div>
 </body>
 </html>
