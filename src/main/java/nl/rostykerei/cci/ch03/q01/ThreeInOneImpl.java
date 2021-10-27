@@ -14,7 +14,7 @@ public final class ThreeInOneImpl<T> implements ThreeInOne<T> {
     /**
      * Array to hold all elements of all stacks.
      */
-    private final Object[] elements;
+    private final T[] elements;
 
     /**
      * Index positions of all stacks.
@@ -32,8 +32,9 @@ public final class ThreeInOneImpl<T> implements ThreeInOne<T> {
      * @param numberOfStacks number of stacks to hold
      * @param stackCapacity  capacity of each of the stacks
      */
+    @SuppressWarnings("unchecked")
     public ThreeInOneImpl(final int numberOfStacks, final int stackCapacity) {
-        this.elements = new Object[stackCapacity * numberOfStacks];
+        this.elements = (T[]) new Object[stackCapacity * numberOfStacks];
         this.indexes = new int[numberOfStacks];
         Arrays.fill(this.indexes, -1);
 
@@ -61,13 +62,12 @@ public final class ThreeInOneImpl<T> implements ThreeInOne<T> {
     }
 
     @Override
-    @SuppressWarnings("unchecked")
     public T peek(final int stackNumber) {
         if (isEmpty(stackNumber)) {
             throw new EmptyStackException();
         }
 
-        return (T) elements[stackNumber * capacity + indexes[stackNumber]];
+        return elements[stackNumber * capacity + indexes[stackNumber]];
     }
 
     @Override
