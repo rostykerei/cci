@@ -14,7 +14,7 @@ public final class ThreeInOneImpl&lt;T&gt; implements ThreeInOne&lt;T&gt; {
     /**
      * Array to hold all elements of all stacks.
      */
-    private final Object[] elements;
+    private final T[] elements;
 
     /**
      * Index positions of all stacks.
@@ -32,42 +32,42 @@ public final class ThreeInOneImpl&lt;T&gt; implements ThreeInOne&lt;T&gt; {
      * @param numberOfStacks number of stacks to hold
      * @param stackCapacity  capacity of each of the stacks
      */
-<span class="fc" id="L35">    public ThreeInOneImpl(final int numberOfStacks, final int stackCapacity) {</span>
-<span class="fc" id="L36">        this.elements = new Object[stackCapacity * numberOfStacks];</span>
-<span class="fc" id="L37">        this.indexes = new int[numberOfStacks];</span>
-<span class="fc" id="L38">        Arrays.fill(this.indexes, -1);</span>
+    @SuppressWarnings(&quot;unchecked&quot;)
+<span class="fc" id="L36">    public ThreeInOneImpl(final int numberOfStacks, final int stackCapacity) {</span>
+<span class="fc" id="L37">        this.elements = (T[]) new Object[stackCapacity * numberOfStacks];</span>
+<span class="fc" id="L38">        this.indexes = new int[numberOfStacks];</span>
+<span class="fc" id="L39">        Arrays.fill(this.indexes, -1);</span>
 
-<span class="fc" id="L40">        this.capacity = stackCapacity;</span>
-<span class="fc" id="L41">    }</span>
+<span class="fc" id="L41">        this.capacity = stackCapacity;</span>
+<span class="fc" id="L42">    }</span>
 
     @Override
     public T pop(final int stackNumber) {
-<span class="fc" id="L45">        T element = peek(stackNumber);</span>
-<span class="fc" id="L46">        indexes[stackNumber]--;</span>
+<span class="fc" id="L46">        T element = peek(stackNumber);</span>
+<span class="fc" id="L47">        indexes[stackNumber]--;</span>
 
-<span class="fc" id="L48">        return element;</span>
+<span class="fc" id="L49">        return element;</span>
     }
 
     @Override
     public void push(final T item, final int stackNumber) {
-<span class="fc" id="L53">        checkStackNumber(stackNumber);</span>
+<span class="fc" id="L54">        checkStackNumber(stackNumber);</span>
 
-<span class="fc bfc" id="L55" title="All 2 branches covered.">        if (indexes[stackNumber] == capacity - 1) {</span>
-<span class="fc" id="L56">            throw new StackOverflowError(</span>
+<span class="fc bfc" id="L56" title="All 2 branches covered.">        if (indexes[stackNumber] == capacity - 1) {</span>
+<span class="fc" id="L57">            throw new StackOverflowError(</span>
                     &quot;Stack number &quot; + stackNumber + &quot; overflows&quot;);
         }
 
-<span class="fc" id="L60">        elements[stackNumber * capacity + ++indexes[stackNumber]] = item;</span>
-<span class="fc" id="L61">    }</span>
+<span class="fc" id="L61">        elements[stackNumber * capacity + ++indexes[stackNumber]] = item;</span>
+<span class="fc" id="L62">    }</span>
 
     @Override
-    @SuppressWarnings(&quot;unchecked&quot;)
     public T peek(final int stackNumber) {
 <span class="fc bfc" id="L66" title="All 2 branches covered.">        if (isEmpty(stackNumber)) {</span>
 <span class="fc" id="L67">            throw new EmptyStackException();</span>
         }
 
-<span class="fc" id="L70">        return (T) elements[stackNumber * capacity + indexes[stackNumber]];</span>
+<span class="fc" id="L70">        return elements[stackNumber * capacity + indexes[stackNumber]];</span>
     }
 
     @Override
